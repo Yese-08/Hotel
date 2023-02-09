@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  
+  <section class="vh-100" style="background-image: url(../assets/img/fon10.jpg)">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="../assets/img/img22.jpg" 
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form>
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                      <img src="../assets/img/log1.png" alt="Actualizar" width="30" height="24">
+                      <span class="h1 fw-bold mb-0">HOTEL MAR AZUL</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; text-align: center">Iniciar sesión</h5>
+  
+                    <div class="form-outline mb-4">
+                      <input type="email" id="email" class="form-control form-control-lg" placeholder="Email"/>
+                     
+                    </div>
+<!--FIN CONTENIDO-->
+<div class="modal fade" id="recuperar_contraseña" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="text-align: center">
+      <form action="">
+        <div class="modal-header" >
+          <h1 class="modal-title fs-5" id="Actualizar" >
+            <div class="card-header h5 text-white bg-primary">Restablecer contraseña</div>
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="card-body px-5">
+            <p class="card-text py-2">
+              Ingrese su dirección de correo 
+              electrónico y le enviaremos un correo
+              electrónico con instrucciones para 
+              restablecer su contraseña.
+            </p>
+            <div class="form-outline">
+                <input type="email" id="Email" name="email" class="form-control my-3" placeholder="Email" />
+                
+            </div>
+            <a href="../html/Login.html" class="btn btn-primary w-100">Restablecer la contraseña</a>
+            
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--actualizar-->
+
+  
+                    <div class="form-outline mb-4">
+                      <input type="password" id="password" class="form-control form-control-lg" placeholder="Contraseña" />
+                      
+                      
+                    </div>
+  
+                    <div class="pt-1 mb-4" style="text-align: center;">
+                      <button class="btn btn-dark btn-lg btn-block" type="button">Iniciar</button>
+                      <br>
+                      <a href="#recuperar_contraseña" data-bs-toggle="modal" data-bs-target="#recuperar_contraseña" data-bs-whatever="@mdo" class="small text-muted">¿Olvidó su contraseña?</a>
+                      <br>
+                      <a href="../html/registrar.html" class="small text-muted">¿No se encuentra registrado?</a>
+                    </div>
+  
+                    
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+
+
+</body>
+</html>

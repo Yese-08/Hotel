@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+   <!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+       <!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Registrarse</h2>
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="floatingInput" placeholder="Nombre y apellido">
+                      <label for="">Nombre y apellido</label>
+                  <br>
+                  <select class="form-select" aria-label="Default select example">
+                      <option value="0">Tipo de documento</option>
+                      <option value="1" >Tarjeta de identidad</option>
+                      <option value="2">Cedula</option>
+                      <option value="3">Cedula extranjera </option>
+                    </select>
+                  <br>
+                  <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="costohab" name="costohab" placeholder="Numero de documento">
+                      <label for="">Numero de documento</label>
+                  </div>
+                  
+                  <div class="form-outline mb-4 text-lg-start">
+                    <label for="">Ingrese fecha de nacimiento</label>
+                    <input type="date" id="fechaIngreso" name ="fechaIngreso" class="form-control form-control-lg" placeholder="Fecha de ingreso" />
+                  </div>
+                  
+                  <select class="form-select" aria-label="Default select example">
+                    <option value="0">Nacionalidad</option>
+                    <option value="1" >Colombiana</option>
+                    <option value="2">Peruana</option>
+                    <option value="3">Venezolana</option>
+                    <option value="4">Brasileña</option>
+                    </select>
+                  <br>
+                  <div class="form-floating mb-3" >
+                      <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Telefono">
+                      <label for="">Telefono</label>
+                      
+                  
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example18" class="form-control form-control-lg" placeholder="Email" />
+                  </div>
+                  <select class="form-select" aria-label="Default select example">
+                    <option value="0">Genero</option>
+                    <option value="1" >Masculino</option>
+                    <option value="2">Femenino</option>
+                    </select>
+                  <br>
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form2Example18" class="form-control form-control-lg" placeholder="Usuario" />
+                  
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form2Example28" class="form-control form-control-lg" placeholder="contraseña" />
+                  </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Registrarse
+              </button>
+              <br>
+              <div class="pt-1 mb-4">
+                <a href="Login.html" style="text-align: center;">¿Ya tiene una cuenta?</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-lg-6 mb-5 mb-lg-0">
+      <img src="../assets/img/fon11.png" class="w-100 rounded-4 shadow-4" height="1050"
+          alt="" />
+    </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+  </body>
+
+</html>

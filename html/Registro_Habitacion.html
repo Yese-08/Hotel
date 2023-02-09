@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset='utf-8'>
+      <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+      <title>Registrar habitación</title>
+
+      <!-- Lineas importantes-->
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <script src="../js/popper.min.js" ></script>
+      <script src="../js/bootstrap.bundle.min.js"></script>
+      
+  </head>
+  <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
+    <!---MENÚ PRINCIPAL-->
+    <script src="../js/menu2.js"></script>    
+    <!--FIN MENÚ PRINCIPAL-->
+  
+    <br><br>
+    <br><br>
+    <!---INICIO CONTENIDO-->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Registrar_Habitacion" data-bs-whatever="@mdo">Registrar habitación</button>
+  <div class="modal fade" id="Registrar_Habitacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="Registrar">Registrar habitación</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="N_habitacion" id="N_habitacion" placeholder="N° Habitacion">
+            <label for="N_habitacion">Número de habitación</label>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Categoria</option>
+            </select>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--FIN CONTENIDO-->
+  <!--actualizar-->
+  <div class="modal fade" id="Actualizar_Habitacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="Registrar">Registrar habitación</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="N_habitacion" id="N_habitacion" placeholder="N° Habitacion">
+            <label for="N_habitacion">Número de habitación</label>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Categoria</option>
+            </select>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--fin actualizar-->       
+    <br><br>
+    <table class="table table-bordered border-primary">
+      <thead>
+        <tr>
+          <th scope="col">N° habitación</th>
+          <th scope="col">Categoría</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Actualizar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th >1</th>
+          <td>simple</td>
+          <td>Ocupado</td>
+          <td><a href="#Actualizar_Habitacion" data-bs-toggle="modal" data-bs-target="#Actualizar_Habitacion" data-bs-whatever="@mdo"><img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></td></a>
+        </tr>
+      </tbody>
+    </table>  
+  </body>
+</html>

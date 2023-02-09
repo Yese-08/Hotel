@@ -1,0 +1,199 @@
+
+
+table {
+    border-collapse: collapse;    
+}
+html {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgb(0, 0, 0);
+    background: #ddd;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 6rem auto 0;
+    max-width: 800px;
+    background: white;
+    border: 1px solid #aaa;
+    padding: 2rem
+}
+
+.container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem
+}
+a {
+    color: #009688;
+    text-decoration: none
+}
+
+p {
+    margin: 0
+}
+
+.row {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 0
+}
+
+.col,
+.logoholder,
+.me,
+.info,
+.bank,
+[class*="col-"] {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0 1rem;
+    min-height: 1px
+}
+
+.col-4 {
+    width: 25%
+}
+
+.col-3 {
+    width: 33.33%
+    
+}
+
+.col-2 {
+    width:43.33%
+}
+
+.col-2-4 {
+    width: 75%
+}
+
+.col-1 {
+    width: 100%
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-right {
+    text-align: right
+}
+
+.control-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #009688;
+    color: white;
+    line-height: 4rem;
+    height: 4rem
+}
+
+.control-bar .slogan {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-right: 2rem
+}
+
+.control-bar label {
+    margin-right: 1rem
+}
+
+.control-bar a {
+    margin: 0;
+    padding: .5em 1em;
+    background: rgba(255, 255, 255, 0.8)
+}
+
+
+
+header {
+    margin: 1rem 0 0;
+    padding: 0 0 2rem 0;
+    border-bottom: 3pt solid #009688
+}
+
+header p {
+    font-size: .9rem
+}
+
+header a {
+    color: #000
+}
+
+.logo {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    border: none;
+    fill: #009688
+}
+
+.logoholder {
+    width: 14%
+}
+
+.me {
+    width: 30%
+}
+
+.info {
+    width: 30%
+}
+
+.bank {
+    width: 26%
+}
+
+.section {
+    margin: 2rem 0 0
+}
+.client {
+    margin: 0 0 3rem 0
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    color: #009688
+}
+
+
+.invoicelist-body thead {
+    text-align: left;
+    border-bottom: 1pt solid #666
+}
+
+.invoicelist-body td,
+.invoicelist-body th {
+    position: relative;
+    padding: 1rem
+}
+.note h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold
+}
+
+.reserva{   
+    background-image: url(../img/fondo1.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(0, 0, 0);
+    padding: 10%;
+    margin: 0;
+}
+

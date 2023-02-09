@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Reserva_Cliente</title>
+
+    <!-- Lineas importantes-->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/popper.min.js" ></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body zoom="60">
+  
+    <!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 text-center">
+              <h2 class="fw-bold mb-5">Reserva de habitación</h2>
+              <form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Codigo reserva" required>
+                        <label for="floatingInput">Código reserva</label>
+                    <br>
+                    <select class="form-select" aria-label="Default select example" required>
+                        <option selected>Número de habitación</option>
+                      </select>
+                    <br>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="costohab" name="costohab" placeholder="Costo de habitación" required>
+                        <label for="floatingInput">Costo de habitación</label>
+                    </div>
+                    <div class="form-floating mb-3" >
+                        <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Número de personas" required>
+                        <label for="floatingInput">N° de personas</label>
+                    <br>
+                        <div class="form-outline mb-4 text-lg-start">
+                          <label for="">Fecha de ingreso</label>
+                          <input type="date" id="fechaIngreso" name ="fechaIngreso" class="form-control form-control-lg" placeholder="Fecha de ingreso" required/>
+                        </div>
+
+                        <div class="form-outline mb-4 text-lg-start">
+                          <label for="">Fecha de salida</label>
+                          <input type="date" id="fechaSalida" name="fechaSalida" class="form-control form-control-lg" placeholder="Fecha de salida" required/>
+                        </div>
+                    
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="numnoches" name="numnoches" placeholder="numero de noches" required>
+                      <label for="floatingInput">N° de noches</label>
+                  </div>
+                    <select class="form-select" aria-label="Default select example" required>
+                      <option selected>Servicios adicionales</option>
+                    </select>
+                    <br>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="costoSer" name="costoSer" placeholder="costo de servicio" required>
+                      <label for= "floatingInput">Costo de servicio</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="total" name="total" placeholder="Total a pagar" required>
+                    <label for="floatingInput">Total a pagar</label>
+                </div>
+                </div>
+  
+                <!-- Submit button -->
+                <a type="submit" class="btn btn-primary btn-block mb-4" href="Factura.html">
+                  Generar reporte
+                </a>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img src="../assets/img/fondo21.png" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
+</body>
+</html>

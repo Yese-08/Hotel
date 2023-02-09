@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registrar Servicios</title>
+
+    <!-- Lineas importantes-->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/popper.min.js" ></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    
+</head>
+<body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
+    <!---MENÚ PRINCIPAL-->
+    <script src="../js/menu.js"></script>
+  
+  <!--FIN MENÚ PRINCIPAL-->
+ 
+  <br><br>
+  <br><br>
+  <!---INICIO CONTENIDO-->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Registrar servicios</button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar servicios</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="CodServicio" id="CodServicio" placeholder="Codigo de servicio">
+          <label for="floatingInput">Código</label>
+          </div>
+          <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="NomServicio" id="NomServicio" placeholder="Nombre">
+          <label for="floatingInput">Nombre</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="CostServicio" id="CostServicio" placeholder="Costo">
+            <label for="floatingInput">Costo</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+            
+<br>
+<br>
+        <table class="table table-bordered border-primary">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            </tr>
+            <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            </tr>
+            <tr>
+            <th scope="row">3</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            </tr>
+        </tbody>
+        </table>
+
+  
+  <!--FIN CONTENIDO-->
+</body>
+
+</html>
