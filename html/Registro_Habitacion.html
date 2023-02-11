@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../css/bootstrap.min.css">
       <script src="../js/popper.min.js" ></script>
       <script src="../js/bootstrap.bundle.min.js"></script>
+      <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
       
   </head>
   <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
@@ -24,19 +25,14 @@
   <div class="modal fade" id="Registrar_Habitacion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form action="">
+        <form action="../php/Reg_habitacion.php" method="post">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="Registrar">Registrar habitación</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
-            <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="N_habitacion" id="N_habitacion" placeholder="N° Habitacion">
-            <label for="N_habitacion">Número de habitación</label>
-            </div>
            
             <div>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" id="categoria" name="categoria">
                 <option selected>Categoria</option>
                 <option value="Simple">Simple</option>
                 <option value="Doble">Doble</option>
@@ -54,13 +50,15 @@
                 <input type="text" class="form-control" name="Precio" id="Precio" placeholder="$50.000">
                 <label for="Precio">Precio</label>
               </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+              </div>
             </div>
             
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Registrar</button>
-          </div>
+          
+          
         </form>
       </div>
     </div>
@@ -104,7 +102,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
           </div>
         </form>
       </div>
