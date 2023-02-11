@@ -39,59 +39,58 @@
             <form>
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="floatingInput" placeholder="Nombre y apellido">
-                      <label for="numPer">Nombre y apellido</label>
+                      <input type="text"  class="form-control" name="NomApe" id="NomApe" placeholder="Nombre y apellido">
+                      <label for="NomApe">Nombre y apellido</label>
                   <br>
-                  <select class="form-select" aria-label="Default select example">
-                      <option value="0">Tipo de documento</option>
-                      <option value="1" >Tarjeta de identidad</option>
-                      <option value="2">Cedula</option>
-                      <option value="3">Cedula extranjera </option>
+                  <select class="form-select" aria-label="Default select example" name="TipoDoc" id="TipoDoc">
+                      <option value="">Tipo de documento</option>
+                      <option value="T.I" >T.I</option>
+                      <option value="C.C">C.C</option>
+                      <option value="C.E">C.E</option>
                     </select>
                   <br>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="costohab" name="costohab" placeholder="Numero de documento">
-                      <label for="numPer">Numero de documento</label>
+                      <input type="text" class="form-control" id="NDocum" name="NDocum" placeholder="Numero de documento">
+                      <label for="NDocum">Numero de documento</label>
                   </div>
                   
                   <div class="form-outline mb-4 text-lg-start">
-                    <label for="numPer">Ingrese fecha de nacimiento</label>
+                    <label for="fechaIngreso">Ingrese fecha de nacimiento</label>
                     <input type="date" id="fechaIngreso" name ="fechaIngreso" class="form-control form-control-lg" placeholder="Fecha de ingreso" />
                   </div>
                   
-                  <select class="form-select" aria-label="Default select example">
-                    <option value="0">Nacionalidad</option>
-                    <option value="1" >Colombiana</option>
-                    <option value="2">Peruana</option>
-                    <option value="3">Venezolana</option>
-                    <option value="4">Brasileña</option>
+                  <select class="form-select" aria-label="Default select example" id="Nacionalidad" name="Nacionalidad">
+                    <option value="">Nacionalidad</option>
+                    <option value="Colombiana" >Colombiana</option>
+                    <option value="Peruana">Peruana</option>
+                    <option value="Venezolana">Venezolana</option>
+                    <option value="Brasileña">Brasileña</option>
                     </select>
                   <br>
                   <div class="form-floating mb-3" >
                       <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Telefono">
                       <label for="numPer">Telefono</label>
-                      
-                  
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example18" class="form-control form-control-lg" placeholder="Email" />
+                    <input type="email"  class="form-control form-control-lg" id="Email" name="Email"placeholder="Email" />
+                    <label for="Email">Email</label>
                   </div>
-                  <select class="form-select" aria-label="Default select example">
-                    <option value="0">Genero</option>
-                    <option value="1" >Masculino</option>
-                    <option value="2">Femenino</option>
-                    <option value="3">Otro</option>
+                  <select class="form-select" aria-label="Default select example" name="Genero" id="Genero">
+                    <option value="">Genero</option>
+                    <option value="Masculino" >Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
                     </select>
                   <br>
                   <div class="form-floating mb-3" >
-                    <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Usuario">
-                    <label for="numPer">Usuario</label>
+                    <input type="text" class="form-control" id="Usuario" name="Usuario" placeholder="Usuario">
+                    <label for="Usuario">Usuario</label>
                     
                 
                 </div>
                  
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example28" class="form-control form-control-lg" placeholder="contraseña" />
+                    <input type="password" id="contraseña"  name="contraseña" class="form-control form-control-lg" placeholder="contraseña" />
                   </div>
               </div>
 

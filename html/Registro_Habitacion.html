@@ -14,7 +14,7 @@
   </head>
   <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
     <!---MENÚ PRINCIPAL-->
-    <script src="../js/menu2.js"></script>    
+    <script src="../js/menu.js"></script>    
     <!--FIN MENÚ PRINCIPAL-->
   
     <br><br>
@@ -34,9 +34,27 @@
             <input type="text" class="form-control" name="N_habitacion" id="N_habitacion" placeholder="N° Habitacion">
             <label for="N_habitacion">Número de habitación</label>
             </div>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Categoria</option>
-            </select>
+           
+            <div>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Categoria</option>
+                <option value="Simple">Simple</option>
+                <option value="Doble">Doble</option>
+                <option value="Suite">Suite</option>               
+              </select>
+              <br>
+            </div>
+            
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="Detalles" id="Detalles" placeholder="ventilador, TV64pl">
+                <label for="Detalles">Detalles</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="Precio" id="Precio" placeholder="$50.000">
+                <label for="Precio">Precio</label>
+              </div>
+            </div>
             
           </div>
           <div class="modal-footer">
@@ -59,12 +77,29 @@
           </div>
           <div class="modal-body">
             <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="N_habitacion" id="N_habitacion" placeholder="N° Habitacion">
+            <input type="text" class="form-control" name="N_habitacion" id="N_habitacion" placeholder="N° Habitacion" disabled>
             <label for="N_habitacion">Número de habitación</label>
             </div>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Categoria</option>
-            </select>
+
+            <div>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Categoria</option>
+                <option value="Simple">Simple</option>
+                <option value="Doble">Doble</option>
+                <option value="Suite">Suite</option>               
+              </select>
+              <br>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="Detalles" id="Detalles" placeholder="ventilador, TV64pl">
+                <label for="Detalles">Detalles</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="Precio" id="Precio" placeholder="$50.000">
+                <label for="Precio">Precio</label>
+              </div>
+            </div>
             
           </div>
           <div class="modal-footer">
