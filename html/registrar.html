@@ -40,7 +40,7 @@
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="floatingInput" placeholder="Nombre y apellido">
-                      <label for="">Nombre y apellido</label>
+                      <label for="numPer">Nombre y apellido</label>
                   <br>
                   <select class="form-select" aria-label="Default select example">
                       <option value="0">Tipo de documento</option>
@@ -51,11 +51,11 @@
                   <br>
                   <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="costohab" name="costohab" placeholder="Numero de documento">
-                      <label for="">Numero de documento</label>
+                      <label for="numPer">Numero de documento</label>
                   </div>
                   
                   <div class="form-outline mb-4 text-lg-start">
-                    <label for="">Ingrese fecha de nacimiento</label>
+                    <label for="numPer">Ingrese fecha de nacimiento</label>
                     <input type="date" id="fechaIngreso" name ="fechaIngreso" class="form-control form-control-lg" placeholder="Fecha de ingreso" />
                   </div>
                   
@@ -69,7 +69,7 @@
                   <br>
                   <div class="form-floating mb-3" >
                       <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Telefono">
-                      <label for="">Telefono</label>
+                      <label for="numPer">Telefono</label>
                       
                   
                   </div>
@@ -80,12 +80,16 @@
                     <option value="0">Genero</option>
                     <option value="1" >Masculino</option>
                     <option value="2">Femenino</option>
+                    <option value="3">Otro</option>
                     </select>
                   <br>
-                  <div class="form-outline mb-4">
-                    <input type="email" id="form2Example18" class="form-control form-control-lg" placeholder="Usuario" />
-                  
-                  </div>
+                  <div class="form-floating mb-3" >
+                    <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Usuario">
+                    <label for="numPer">Usuario</label>
+                    
+                
+                </div>
+                 
                   <div class="form-outline mb-4">
                     <input type="password" id="form2Example28" class="form-control form-control-lg" placeholder="contraseña" />
                   </div>
