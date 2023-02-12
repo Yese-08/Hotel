@@ -37,60 +37,180 @@
               backdrop-filter: blur(30px);
               ">
             <div class="card-body p-5 shadow-5 text-center">
-              <h2 class="fw-bold mb-5">Reserva de habitación</h2>
-              <form>
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" placeholder="Codigo reserva" required>
-                        <label for="floatingInput">Código reserva</label>
+              <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover; ">
+                <div class="container" >
                     <br>
-                    <select class="form-select" aria-label="Default select example" required>
-                        <option selected>Número de habitación</option>
-                      </select>
-                    <br>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="costohab" name="costohab" placeholder="Costo de habitación" required>
-                        <label for="floatingInput">Costo de habitación</label>
-                    </div>
-                    <div class="form-floating mb-3" >
-                        <input type="text" class="form-control" id="numPer" name="numPer" placeholder="Número de personas" required>
-                        <label for="floatingInput">N° de personas</label>
-                    <br>
-                        <div class="form-outline mb-4 text-lg-start">
-                          <label for="">Fecha de ingreso</label>
-                          <input type="date" id="fechaIngreso" name ="fechaIngreso" class="form-control form-control-lg" placeholder="Fecha de ingreso" required/>
+                    <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Reserva de habitación</h1><br>
+                      
+                        <div class="panel panel-primary" >               
+                            
+                            <div class="panel-body" >            
+                                <form action="../php/Reg_Reserva.php" method="post">
+            
+                                    <div class="row" >
+                                        <div class="col">
+                                          <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" name="NomApe" id="NomApe" placeholder="Nombre y apellido" name="NomApe" required/>
+                                            <label for="NomApe">Nombre y apellido</label><br>
+                                        </div>
+                                        </div>
+                                        <div class="col">                            
+                                            <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;" >
+                                                <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion">
+                                                    <option selected>Numero habitación</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select> <br>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="row">
+                                        <div class="col">
+                                          <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
+                                            <select class="form-select" aria-label="Default select example" name="Tdocumento" id ="Tdocumento"required>
+                                                <option selected>Tipo documento</option>
+                                                <option value="C.C">C.C</option>
+                                                <option value="T.I">T.I</option>
+                                                <option value="C.E">C.E</option>
+                                            </select>
+                                        </div>     
+                                        </div>
+                                        <div class="col">                            
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                                <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required>
+                                                <label for="CostoH">Costo habitación</label><br>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">                       
+                                        <div class="col">
+                                          <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" name="NDocum" id="NDocum" placeholder="Numero de documento" required/>
+                                            <label for="NDocum">Numero de documento</label><br>
+                                        </div>                       
+                                        </div>        
+                                        <div class="col">                            
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                                <input class="form-control" name="Nperso"  id="Nperso" placeholder="N° de Personas" required>
+                                                <label for="NPerso">N° de Personas</label><br>
+                                            </div>
+                                        </div>
+                                    </div>             
+                                    <div class="row">
+                                        <div class="col">
+                                          <div class="col-md-8" style="margin: 0 auto; text-align: justify;">
+                                            <label>Fecha de nacimiento</label>
+                                            <input class="form-control" name="FNacimiento" id="FNacimiento" type="date" placeholder="Fecha de nacimiento" required/>
+                                        </div>
+                                        </div>
+                                        <div class="col">                        
+                                            <div class="col-md-7 col-lg-8" style="margin: 0 auto; text-align: justify;">
+                                                <label>Fecha de ingreso</label>
+                                                <input class="form-control" name="FIngreso"  id="FIngreso" type="datetime-local" placeholder="Fecha ingreso" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">   
+                                          <br>                         
+                                          <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
+                                            <select class="form-select" aria-label="Default select example" name ="nacionalidad" id="nacionalidad">
+                                                <option selected>Nacionalidad</option>
+                                                <option value="Colombia">Colombiana</option>
+                                                <option value="Ecuador">Ecuadotoriana</option>
+                                            
+                                            </select>
+                                        </div>    
+                                        </div>
+                                        <div class="col">                         
+                                            <div class="col-md-7 col-lg-8" style="margin: 0 auto; text-align: justify;">
+                                                <label>Fecha salida</label>
+                                                <br><input class="form-control" name="FSalida"  id="FSalida" type="datetime-local" placeholder="Fecha salida" required><br>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                    <div class="row">
+                                        <div class="col">
+                                          <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" name="Telefono" id="Telefono" placeholder="Telefono" required/>
+                                            <label for="Telefono">Telefono</label><br>
+                                        </div>                
+                                        </div>    
+                                        <div class="col">                            
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                                <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required>
+                                                <label for="NNoches">N° de noches</label><br>
+                                            </div>
+                                        </div>
+                                    </div>                    
+                                    <div class="row">
+                                        <div class="col">
+                                          <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" name="Email" id="Email" placeholder="Email" required/>
+                                            <label for="Email">Email</label><br>
+                                        </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
+                                                <select class="form-select" aria-label="Default select example" name="serviciosAd" id="serviciosAd">
+                                                <option selected>Servicios Adicionales</option>
+                                                <option value="Picsina">Picsina</option>
+                                                <option value="Restaurante">Restaurante</option>
+                                                <option value="Gimnacio">Gimnacio</option>
+                                                </select>                                  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                          <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
+                                            <select class="form-select" aria-label="Default select example" name="genero" id="genero">
+                                                <option selected>Genero</option>
+                                                <option value="Femenino">Femenino</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="otro">otro</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                        <div class="col">                            
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                                <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required>
+                                                <label for="CServicio">Costo de servicio</label><br>
+                                            </div>
+                                        </div>
+                                    </div>               
+                                    <div class="row">
+                                        <div class="col">
+                                            
+                                        </div>                        
+                                        <div class="col"  >
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                                <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required>
+                                                <label for="TPagar">Total a pagar</label><br>
+                                            </div>                            
+                                        </div>
+                                        
+                                    </div>
+                                   
+                                    <div class="container text-center">
+                                        <div class="row">                          
+                                        <div class="col align-self-center">
+                                            <button type="submit" class="btn btn-primary">
+                                                Generar reporte
+                                            </button>
+                                
+                                        </div>                          
+                                        </div>
+                                    </div>   
+                                    
+                                </form>
+                            
+                            </div>
                         </div>
-
-                        <div class="form-outline mb-4 text-lg-start">
-                          <label for="">Fecha de salida</label>
-                          <input type="date" id="fechaSalida" name="fechaSalida" class="form-control form-control-lg" placeholder="Fecha de salida" required/>
-                        </div>
-                    
-                    </div>
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="numnoches" name="numnoches" placeholder="numero de noches" required>
-                      <label for="floatingInput">N° de noches</label>
-                  </div>
-                    <select class="form-select" aria-label="Default select example" required>
-                      <option selected>Servicios adicionales</option>
-                    </select>
-                    <br>
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="costoSer" name="costoSer" placeholder="costo de servicio" required>
-                      <label for= "floatingInput">Costo de servicio</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="total" name="total" placeholder="Total a pagar" required>
-                    <label for="floatingInput">Total a pagar</label>
+                   
                 </div>
-                </div>
-  
-                <!-- Submit button -->
-                <a type="submit" class="btn btn-primary btn-block mb-4" href="Factura.html">
-                  Generar reporte
-                </a>
-  
-              </form>
             </div>
           </div>
         </div>
