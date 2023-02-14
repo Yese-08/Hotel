@@ -26,8 +26,8 @@
         <div class="col-md-3">
             <h2>Buscar habitacion</h2>
 
-                <form action="Registro_Habitacion.php" method="POST">
-                    <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" require>
+                <form action="Ver_Clientes.php" method="POST">
+                    <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero de documento" require>
                      
                     <input type="submit" class="btn btn-primary" value="Buscar">
                 </form>
@@ -71,7 +71,7 @@
                                         <th><?php  echo $row['genero']?></th>
                                                                               
                                         <th></th>  
-                                        <th><a href="../php/Ver_Clientes.php?numero_documento=<?php echo $row['numero_documento'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>                                                                                        
+                                        <th><a href="../php/Actua_cliente.php?numero_documento=<?php echo $row['numero_documento'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>                                                                                        
                                     </tr>
                                 <?php 
                                     }

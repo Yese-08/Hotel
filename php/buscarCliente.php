@@ -10,7 +10,7 @@ include 'conexion.php';
 		if (mysqli_num_rows($query) <= 0) {
 			echo '
 				<script> 
-					alert("no existe esta habitacion");
+					alert("No existe este cliente");
 	
 				</script>
 			';	
