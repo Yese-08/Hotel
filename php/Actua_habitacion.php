@@ -32,7 +32,7 @@
     <!---MENÚ PRINCIPAL-->
     <script src="../js/menu.js"></script>    
     <!--FIN MENÚ PRINCIPAL-->
-   
+   <br><br><br><br>
 
   <section class="text-center text-lg-start">
   <style>
@@ -59,13 +59,16 @@
             backdrop-filter: blur(30px);
             ">
           <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Registrarse</h2>
+            
+            <h2 class="fw-bold mb-5">Actualizar habitación</h2>
             <form action="update.php" method="POST">
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
-                      <input type="header"  class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>">
+                      <input type="header"  class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>" disabled>
                       <label for="habitacion">"N° Habitacion"</label>
                   <br>
+                  <input type="hidden"  class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>">
+
                   <select class="form-select" aria-label="Default select example" name="Categoria" id="Categoria">
                       <option value="<?php echo $row['categoria']  ?>"><?php echo $row['categoria']  ?></option>
                       <option value="Simple" >Simple</option>
@@ -88,16 +91,18 @@
             </form>
             
           </div>
-          <div class="col-lg-6 mb-5 mb-lg-0">
-              <img src="../assets/img/cama.jpg" class="w-300 rounded-4 shadow-4" height="500"
-              alt="" />
-           </div>
+          
         </div>
         
       </div>
 
-    
+      
     </div>
+    <div class="col-lg-6 mb-5 mb-lg-0">
+              <img src="../assets/img/cama.jpg" class="w-800 rounded-4 shadow-4" height = "700" width = "800"
+              alt="" />
+      </div>
+
   </div>
   <!-- Jumbotron -->
 </section>
