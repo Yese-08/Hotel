@@ -33,11 +33,11 @@
         </div>
         <div class="modal-body">          
           <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="NomServicio" id="NomServicio" placeholder="Nombre">
+          <input type="text" class="form-control" name="NomServicio" id="NomServicio" placeholder="Nombre" required>
           <label for="floatingInput">Nombre</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="CostServicio" id="CostServicio" placeholder="Costo">
+            <input type="text" class="form-control" name="CostServicio" id="CostServicio" placeholder="Costo" required>
             <label for="floatingInput">Costo</label>
             </div>
         </div>
@@ -52,39 +52,51 @@
             
 <br>
 <br>
-        <table class="table table-bordered border-primary">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-        </tbody>
-        </table>
 
-  
+  <br><br>        
+  <br><br>
+  <div class="container mt-5">
+    <div class="row">                         
+      <div class="col-md-3">
+        <h2>Buscar servicio</h2>
+        <form action="Registro_Servicios.php" method="POST">
+          <input type="text" class="form-control mb-3" name="buscar" placeholder="Codigo de servico " >
+          <input type="submit" class="btn btn-primary" value="Buscar">
+        </form><br>
+      </div>
+      <div class="col-md-8">
+        <table class="table" >
+          <thead class="table-success table-striped" >
+              <tr>
+                  <th>Código</th>
+                  <th>Nombre</th>
+                  <th>Costo</th>
+
+                  <th></th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+            <?php
+            include '../php/buscar.php';
+            $query= buscar('servicios','cod');
+            while($row=mysqli_fetch_array($query)){
+            ?>
+                <tr>
+                    <th><?php  echo $row['cod']?></th>
+                    <th><?php  echo $row['nombre']?></th>
+                    <th><?php  echo "$".$row['precio']?></th>                                       
+                    
+                        
+                </tr>
+            <?php 
+                }
+            ?>
+          </tbody>
+                                       
+      </div>
+    </div>  
+  </div>
   <!--FIN CONTENIDO-->
 </body>
-
 </html>

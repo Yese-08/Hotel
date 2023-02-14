@@ -32,23 +32,23 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
            
-            <div>
-              <select class="form-select" aria-label="Default select example" id="categoria" name="categoria">
+          <div>
+              <select class="form-select" aria-label="Default select example" id="categoria" name="categoria"  required>
                 <option selected>Categoria</option>
                 <option value="Simple">Simple</option>
                 <option value="Doble">Doble</option>
                 <option value="Suite">Suite</option>               
               </select>
               <br>
-            </div>
+          </div>
             
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="Detalles" id="Detalles" placeholder="ventilador, TV64pl">
+                <input type="text" class="form-control" name="Detalles" id="Detalles" placeholder="ventilador, TV64pl" required>
                 <label for="Detalles">Detalles</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" name="Precio" id="Precio" placeholder="$50.000">
+                <input type="text" class="form-control" name="Precio" id="Precio" placeholder="$50.000" required>
                 <label for="Precio">Precio</label>
               </div>
               <div class="modal-footer">
@@ -64,8 +64,8 @@
       </div>
     </div>
   </div>
-    
-    <body><br><br>        
+   <!--  INICIO VIZULIZACION DE TABLA--> 
+   <br><br>        
         <br><br>
         <div class="container mt-5">
             <div class="row">                         
@@ -73,8 +73,8 @@
                     <h2>Buscar habitacion</h2>
 
                         <form action="Registro_Habitacion.php" method="POST">
-                            <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" require>
-                                    
+                            <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" >
+                             
                             <input type="submit" class="btn btn-primary" value="Buscar">
                         </form>
                         
@@ -101,7 +101,9 @@
                                 <tbody>
                                         <?php
                                         include '../php/buscar.php';
+                                        $query= buscar('habitacion','numero_hab');
                                         while($row=mysqli_fetch_array($query)){
+                                        
                                         ?>
                                             <tr>
                                                 <th><?php  echo $row['numero_hab']?></th>
@@ -121,7 +123,7 @@
         </div>
     </body>
 </html>
-  <!--fin actualizar-->          
+  <!--fin vizuliazar tabla-->          
       
   </body>
 </html>
