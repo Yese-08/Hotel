@@ -1,5 +1,5 @@
 document.write(
-'<nav class="navbar bg-body-tertiary fixed-top">'+
+'<nav class="navbar bg-dark fixed-top" data-bs-theme="dark">'+
 '<div class="container-fluid">'+
 
 '<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">'+
