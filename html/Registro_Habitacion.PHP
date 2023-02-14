@@ -64,8 +64,8 @@
       </div>
     </div>
   </div>
-    
-    <body><br><br>        
+   <!--  INICIO VIZULIZACION DE TABLA--> 
+   <br><br>        
         <br><br>
         <div class="container mt-5">
             <div class="row">                         
@@ -74,7 +74,7 @@
 
                         <form action="Registro_Habitacion.php" method="POST">
                             <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" require>
-                                    
+                             
                             <input type="submit" class="btn btn-primary" value="Buscar">
                         </form>
                         
@@ -121,7 +121,7 @@
         </div>
     </body>
 </html>
-  <!--fin actualizar-->          
+  <!--fin vizuliazar tabla-->          
       
   </body>
 </html>

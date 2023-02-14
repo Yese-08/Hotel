@@ -1,0 +1,11 @@
+<?php 
+    include 'conexion.php';
+    include '../php/conexion.php';
+
+    $numero_documento=$_GET['numero_documento'];
+
+    $sql="SELECT * FROM cliente WHERE numero_documento='$numero_documento'";
+    $query=mysqli_query($conexion,$sql);
+    $row=mysqli_fetch_array($query);      
+
+?>

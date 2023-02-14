@@ -5,7 +5,7 @@ include 'conexion.php';
 		$buscar = $_POST['buscar'];    
 	 
 	}   $buscar=$_POST['buscar'];
-		$sql="SELECT * FROM habitacion WHERE numero_hab	 like '%".$buscar."%' ";
+		$sql="SELECT * FROM cliente WHERE numero_documento	 like '%".$buscar."%' ";
 		$query=mysqli_query($conexion,$sql);
 		if (mysqli_num_rows($query) <= 0) {
 			echo '
@@ -20,9 +20,3 @@ include 'conexion.php';
 	
 ?>
 	
-
-
-
-
-
-

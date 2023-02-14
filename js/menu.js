@@ -25,12 +25,12 @@ document.write(
 
 '<li class="nav-item">'+
 
-'<a class="nav-link active" aria-current="page" href="Ver_Clientes.html"> <img src="../assets/img/iconClientes.png" alt="Clientes" width="30" height="24">  Clientes</a>'+
+'<a class="nav-link active" aria-current="page" href="Ver_Clientes.php"> <img src="../assets/img/iconClientes.png" alt="Clientes" width="30" height="24">  Clientes</a>'+
 
 '</li>'+
 
 '<li class="nav-item">'+
-'<a class="nav-link active" aria-current="page" href="Registro_Servicios.html"> <img src="../assets/img/iconFavorito.png" alt="Clientes" width="30" height="24">  Servicios adicionales  </a></a>'+
+'<a class="nav-link active" aria-current="page" href="Registro_Servicios.php"> <img src="../assets/img/iconFavorito.png" alt="Clientes" width="30" height="24">  Servicios adicionales  </a></a>'+
 
 '</li>'+
 
