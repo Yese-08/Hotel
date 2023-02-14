@@ -20,7 +20,7 @@ document.write(
 '</li>'+
 
 '<li class="nav-item">'+
-'<a class="nav-link active" aria-current="page" href="Registro_Habitacion.html"> <img src="../assets/img/IconCama.png" alt="cama-img" width="30" height="24"> Habitaciones</a>'+
+'<a class="nav-link active" aria-current="page" href="Registro_Habitacion.php"> <img src="../assets/img/IconCama.png" alt="cama-img" width="30" height="24"> Habitaciones</a>'+
 '</li>'+
 
 '<li class="nav-item">'+
