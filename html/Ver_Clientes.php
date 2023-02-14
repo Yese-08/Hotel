@@ -24,7 +24,7 @@
   <div class="container mt-5">
     <div class="row">                         
         <div class="col-md-3">
-            <h2>Buscar habitacion</h2>
+            <h2>Buscar cliente</h2>
 
                 <form action="Ver_Clientes.php" method="POST">
                     <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero de documento" require>
@@ -44,7 +44,7 @@
                                 <th>Tipo de documento</th>
                                 <th >N° Documento</th>
                                 <th >Fecha de nacimiento</th>                           
-                                <th>Nacionalida</th>
+                                <th>Procedencia</th>
                                 <th>Telefono</th>
                                 <th>Email</th>
                                 <th>Genero</th>
