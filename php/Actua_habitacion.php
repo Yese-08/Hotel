@@ -39,10 +39,10 @@
                 
                 <div class="form-floating mb-3">
             
-                <input type="text" class="form-control" name="habitacion" id="habitacion" placeholder="N° Habitacion"  value="<?php echo $row['numero_hab']  ?>" disabled>
+                <input type="" class="form-control" name="habitacion" id="habitacion" placeholder="N° Habitacion"  value="<?php echo $row['numero_hab']  ?>" disabled>
                 <label for="habitacion">Número de habitación</label>
                 </div>
-                <input type="text" class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>">                                          
+                <input type="header" class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>">                                          
                 <input type="text" class="form-control" name="Categoria" placeholder="Categoria" value="<?php echo $row['categoria']  ?>">
                 <input type="text" class="form-control" name="Detalles" placeholder="Detalles" value="<?php echo $row['detalles']  ?>">
                 <input type="text" class="form-control" name="Precio" placeholder="Precio" value="<?php echo $row['precio']  ?>">
@@ -78,7 +78,7 @@
             backdrop-filter: blur(30px);
             ">
           <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Registrarse</h2>
+            <h2 class="fw-bold mb-5">Actualizar</h2>
             <form action="update.php" method="POST">
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
