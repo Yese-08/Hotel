@@ -1,3 +1,23 @@
+<?php
+	include "../php/conexion.php";
+	session_start();    
+    $user = $_SESSION['ide'];
+    $query= "SELECT nombre, tipo_documento, numero_documento, fecha_nacimiento, nacionalidad, telefono, email, genero FROM cliente where numero_documento='$user'";
+	$_consulta= mysqli_query($conexion,$query);
+    while($Date=mysqli_fetch_assoc($_consulta)){
+        $nombre = $Date['nombre'];
+        $T_Documento = $Date['tipo_documento'];
+        $n_Documento = $Date['numero_documento'];
+        $fecha = $Date['fecha_nacimiento'];
+        $nacionalidad = $Date['nacionalidad'];
+        $telefono = $Date['telefono'];
+        $email = $Date['email'];
+        $genero = $Date['genero'];
+       
+    }
+?>
+    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +65,13 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Nombres</label>
-                                <input class="form-control" name="Nombre" id="Nombre" type="text" value="Carlos Perez" required/>
+                                <input class="form-control" name="Nombre" id="Nombre" type="text" value= <?php echo $nombre?> required/>
                             </div>
                         </div>
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Nacionalidad</label>
-                                <br><input class="form-control" name="Nacionalidad"  id="Nacionalidad" type="text" value="Colombia" required><br>
+                                <br><input class="form-control" name="Nacionalidad"  id="Nacionalidad" type="text" value = <?php echo $nacionalidad?> required><br>
                             </div>
                         </div>
                     </div>    
@@ -59,13 +79,13 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Tipo documento</label>
-                                <input class="form-control" name="TDocume" id="TDocume" type="text" value="Cedula de ciudadania" required/>
+                                <input class="form-control" name="TDocume" id="TDocume" type="text" value= <?php echo $T_Documento?> required/>
                             </div>
                         </div>
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Telefono</label>
-                                <br><input class="form-control" name="Telefono"  id="Telefono" type="text" value="3201845678" required><br>
+                                <br><input class="form-control" name="Telefono"  id="Telefono" type="text" value= <?php echo $telefono?> required><br>
                             </div>
                         </div>
                     </div>    
@@ -73,13 +93,13 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>N° Documento</label>
-                                <br><input class="form-control" name="NDocume"  id="NDocume" type="text" value="98233456" required><br>
+                                <br><input class="form-control" name="NDocume"  id="NDocume" type="text" value= <?php echo $n_Documento?> required><br>
                             </div>
                         </div>
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Correo electronico</label>
-                                <br><input class="form-control" name="Email"  id="Email" type="text" value="CarlosP@gmail.com" required><br>
+                                <br><input class="form-control" name="Email"  id="Email" type="text" value= <?php echo $nombre?> required><br>
                             </div>
                         </div>
                     </div>    
@@ -87,13 +107,13 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Fecha de nacimiento</label>
-                                <input class="form-control" name="FNacimiento" id="FNacimiento" type="text" value="09/08/1998" required/>
+                                <input class="form-control" name="FNacimiento" id="FNacimiento" type="text" value= <?php echo $fecha?> required/>
                             </div>
                         </div>
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
-                                <label>Nacionalidad</label>
-                                <br><input class="form-control" name="Nacionalidad"  id="Nacionalidad" type="text" value="Colombia" required><br>
+                                <label>Genero</label>
+                                <br><input class="form-control" name="Genero"  id="Genero" type="text" value= <?php echo $genero?> required><br>
                             </div>
                         </div>
                     </div>    

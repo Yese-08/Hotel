@@ -22,7 +22,7 @@ document.write(
 ''+
     '            <li class="nav-item">'+
     '              '+
-    '              <a class="nav-link active" href="Informacion_Cliente.html"> <img src="../assets/img/iconUser.png" alt="Clientes" width="30" height="24">  Información personal</a>'+
+    '              <a class="nav-link active" href="Informacion_Cliente.php"> <img src="../assets/img/iconUser.png" alt="Clientes" width="30" height="24">  Información personal</a>'+
     '                  '+
     '            </li>'+
 ''+
@@ -49,7 +49,7 @@ document.write(
     '          </td>'+
     '          <td class="bg-orange round-corner-top">'+
     '            <a class="navbar-brand" href="#">HOTEL MAR AZUL</a>'+
-    '          </td>'+
+    '          </td>'+ 
     '        </tr> '+
     '      </table>'+
     '    </div>'+

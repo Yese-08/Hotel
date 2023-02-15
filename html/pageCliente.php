@@ -1,3 +1,7 @@
+<?php 
+
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +20,7 @@
 <body>
   
   <script src="../js/menu3.js"></script>
+  
   <br>
   <br>
   <br>
@@ -23,8 +28,9 @@
   <br>
   <br>
   <br>
-  <br>
-  <h1 style="text-align: center; font-family: cursive"> ° BIENVENIDO °</h1>
+  
+  <h1 style="text-align: center; font-family: cursive"> ----- <?php echo '<strong style="text-align: center; font-family: cursive">'.$_SESSION['usuario'].'</strong>';?> -----  </h1>
+  <h1 style="text-align: center; font-family: cursive"> ° BIENVENIDO ° </h1>
   <h2 style="text-align: center; font-family: cursive">----- A NUESTRO -----</h2>
   <h2 style="text-align: center; font-family: cursive" >PEQUEÑO HOGAR</h2>
   <h1 style="text-align: center; font-family: cursive">°°°°° AHORA °°°°°</h1>

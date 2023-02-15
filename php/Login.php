@@ -1,6 +1,8 @@
 <?php 
 	include "conexion.php";
 	session_start();
+	error_reporting(0);
+
 	$email= $_POST['email'] ;
 	$password= $_POST['password'] ;
 
@@ -10,15 +12,21 @@
 		
 		while ($obj = mysqli_fetch_object($_consulta)) {
 			if ( $obj->tipo_usuario == 'Recepcionista'){
-				header("location: ../html/pageRecepcionista.html" );
+				header("location: ../html/pageRecepcionista.php" );
+				$_SESSION['usuario'] = $obj->nombre;
+				
+				
 			}
-			else{
-				header("location: ../html/pageCliente.html" );
+			else if ( $obj->tipo_usuario == 'usuario'){
+				header("location: ../html/pageCliente.php" );
+				$_SESSION['usuario'] = $obj->nombre;
+				$_SESSION['ide'] = $obj->numero_documento;
+				
 			}
 		}
-	}else{
+	}
+	else{
 		echo "El usuario y contraseña no existe";
-	
 	}
 	
 
