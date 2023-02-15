@@ -4,7 +4,7 @@
 	$NomApe= $_POST['NomApe'];
 	$TipoDoc =$_POST['TipoDoc'];
 	$NDocum =$_POST['NDocum'];
-    $fechaIngreso =$_POST['fechaIngreso'];
+    $fecha_nacimiento =$_POST['fechaNac'];
 	$Nacionalidad =$_POST['Nacionalidad'];
 	$numPer =$_POST['numPer'];
 	$Email =$_POST['Email'];
@@ -12,7 +12,7 @@
 	$Usuario =$_POST['Usuario'];
 	$contraseña =$_POST['contraseña'];
 	
-	$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaIngreso', '$Nacionalidad', '$numPer', '$Email', '$Genero', '$Usuario', '$contraseña')";
+	$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fecha_nacimiento', '$Nacionalidad', '$numPer', '$Email', '$Genero', '$Usuario', '$contraseña')";
 		$_consulta = mysqli_query($conexion, $sql);
 		if($_consulta){			
 			echo '
