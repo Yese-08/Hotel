@@ -29,6 +29,7 @@ $sql = "INSERT INTO reserva values('', '$nombre_client','$tipo_documento', '$num
 				alert("se registro exitosamente");
 			</script>
 		';	
+        Header("Location: ../html/Factura.html");
     }
     else{
         echo 'error de consulta';

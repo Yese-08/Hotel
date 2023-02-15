@@ -1,10 +1,11 @@
 <?php
 	include 'conexion.php';
 	session_start();	
+	$T_usuario= $_POST['T_usuario'];
 	$NomApe= $_POST['NomApe'];
 	$TipoDoc =$_POST['TipoDoc'];
 	$NDocum =$_POST['NDocum'];
-    $fecha_nacimiento =$_POST['fechaNac'];
+    $fechaNacimiento =$_POST['fechaNac'];
 	$Nacionalidad =$_POST['Nacionalidad'];
 	$numPer =$_POST['numPer'];
 	$Email =$_POST['Email'];
@@ -12,7 +13,7 @@
 	$Usuario =$_POST['Usuario'];
 	$contraseña =$_POST['contraseña'];
 	
-	$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fecha_nacimiento', '$Nacionalidad', '$numPer', '$Email', '$Genero', '$Usuario', '$contraseña')";
+	$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$Email', '$Genero', '$Usuario', '$contraseña','$T_usuario')";
 		$_consulta = mysqli_query($conexion, $sql);
 		if($_consulta){			
 			echo '

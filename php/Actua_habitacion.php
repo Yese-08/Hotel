@@ -1,9 +1,6 @@
 <?php 
     include 'conexion.php';
-    include '../php/conexion.php';
-
     $numero_hab=$_GET['numero_hab'];
-
     $sql="SELECT * FROM habitacion WHERE numero_hab='$numero_hab'";
     $query=mysqli_query($conexion,$sql);
     $row=mysqli_fetch_array($query);      
@@ -99,7 +96,7 @@
       
     </div>
     <div class="col-lg-6 mb-5 mb-lg-0">
-              <img src="../assets/img/cama.jpg" class="w-800 rounded-4 shadow-4" height = "700" width = "800"
+              <img src="../assets/img/hab4.png" class="w-800 rounded-4 shadow-4" height = "700" width = "800"
               alt="" />
       </div>
 

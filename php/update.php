@@ -16,7 +16,7 @@ $_consulta=mysqli_query($conexion,$sql);
     if($_consulta ){		
         echo '
 			<script> 
-				alert("se registro exitosamente");
+				alert("se actualizo exitosamente");
 			</script>
 		';	
         Header("Location: ../html/Registro_Habitacion.php");

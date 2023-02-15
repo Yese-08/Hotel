@@ -40,24 +40,22 @@
                     <table class="table" >
                         <thead class="table-success table-striped" >
                             <tr>
-                                <th>Nombre y Apellido</th>
-                                <th>Tipo de documento</th>
+                                <th>Nombre </th>
+                                <th>T.D</th>
                                 <th >N° Documento</th>
                                 <th >Fecha de nacimiento</th>                           
                                 <th>Procedencia</th>
                                 <th>Telefono</th>
                                 <th>Email</th>
                                 <th>Genero</th>
-                                <th>Actualizar </th>
-                                
+                                <th>Actualizar</th>
                                 <th></th>
-                                
                             </tr>
                         </thead>
-
                         <tbody>
                                 <?php
-                                include '../php/buscarCliente.php';
+                                include '../php/buscar.php';
+                                $query= buscar('cliente','numero_documento');
                                 while($row=mysqli_fetch_array($query)){
                                 ?>
                                     <tr>
