@@ -19,8 +19,13 @@
                     <br>
                     ¿Desea eliminar su cuenta?
                     <br><br><br>
-                    <a class="btn btn-danger" href="pageCliente.html" role="button" style="margin-right: 10px">No</a>
-                    <a class="btn btn-primary" href="../index.html" role="button" style="margin-left: 50px">Si</a>
+                    
+                    <form action="../php/Elimina.php" method="post">
+                        <a class="btn btn-danger" href="pageCliente.html" role="button" style="margin-right: 10px">No</a>
+                        <input type="hidden" value="Si" >
+                        <a type="submit" class="btn btn-primary" role="button" style="margin-left: 50px">Si</a>
+                    </form>
+                    
                 </div>
             
             </div>

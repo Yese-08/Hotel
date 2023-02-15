@@ -76,10 +76,7 @@
                             <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" >
                              
                             <input type="submit" class="btn btn-primary" value="Buscar">
-                        </form>
-                        
-                       
-                        <br>
+                        </form><br>
     
                         </div>
                         <div class="col-md-8">

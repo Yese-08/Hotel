@@ -9,7 +9,7 @@ function buscar($tabla, $id){
 
 	 
 	} $buscar=$_POST['buscar'];
-		$sql="SELECT * FROM $tabla WHERE  $id	 like '%".$buscar."%' ";
+		$sql="SELECT * FROM $tabla WHERE  $id like '%".$buscar."%' ";
 		$query=mysqli_query($conexion,$sql);
 		if (mysqli_num_rows($query) <= 0) {
 			echo '
