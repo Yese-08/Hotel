@@ -1,6 +1,7 @@
 <?php 
     include 'conexion.php';
     include '../php/conexion.php';
+    session_start();
 
     $numero_documento=$_GET['numero_documento'];
 

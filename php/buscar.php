@@ -1,6 +1,7 @@
 <?php
 function buscar($tabla, $id){
 	include 'conexion.php';
+	session_start();
 	if(!isset($_POST['buscar'])){
 		$_POST['buscar']= '';$buscar = $_POST['buscar'];
 

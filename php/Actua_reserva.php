@@ -1,5 +1,6 @@
 <?php 
     include 'conexion.php';
+    session_start();
     $numero_reserva=$_GET['numero_reserva'];
     $sql="SELECT * FROM reserva WHERE numero_reserva='$numero_reserva'";
     $query=mysqli_query($conexion,$sql);

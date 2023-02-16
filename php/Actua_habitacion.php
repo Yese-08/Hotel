@@ -1,5 +1,6 @@
 <?php 
     include 'conexion.php';
+    session_start();
     $numero_hab=$_GET['numero_hab'];
     $sql="SELECT * FROM habitacion WHERE numero_hab='$numero_hab'";
     $query=mysqli_query($conexion,$sql);
