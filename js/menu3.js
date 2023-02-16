@@ -34,7 +34,7 @@ document.write(
     '            '+
     '              <li class="nav-item">'+
     '                '+
-    '                <a class="nav-link active" href="cerrarSesionCliente.html"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">Cerrar sesión</a>'+
+    '                <a class="nav-link active" href="../php/cerrar_sesion.php"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">Cerrar sesión</a>'+
     '               '+
     '              </li>'+
     '            '+

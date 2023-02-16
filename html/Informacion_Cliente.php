@@ -1,6 +1,7 @@
 <?php
 	include "../php/conexion.php";
-	session_start();    
+    include "../php/function_validarSesion.php";
+    
     $user = $_SESSION['ide'];
     $query= "SELECT nombre, tipo_documento, numero_documento, fecha_nacimiento, nacionalidad, telefono, email, genero FROM cliente where numero_documento='$user'";
 	$_consulta= mysqli_query($conexion,$query);
@@ -43,13 +44,7 @@
                 <img src="../assets/img/icon1.png" alt="img-icon1" style="padding: -50px; ">
                 <a class="navbar-brand" href="#">HOTEL MAR AZUL</a>
             </p>
-           
-          
-            <p class="d-flex" role="search">            
-              <a class="navbar-brand" >Actualizar</a>
-              <a class="navbar-brand" >Eliminar</a>          
-            </p>
-          </div>
+        </div>
         </div>
     </nav>
     <!--hhh-->
@@ -60,17 +55,17 @@
         <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Mis datos</h1><br>
         <div class="panel panel-primary" >               
             <div class="panel-body" >            
-                <form id="form" class="form-horizontal" role="form" >
+                <form id="form" class="form-horizontal" role="form" action="../php/updateCliente.php" method="post" >
                     <div class="row">
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Nombres</label>
-                                <input class="form-control" name="Nombre" id="Nombre" type="text" value= <?php echo $nombre?> required/>
+                                <input class="form-control" name="NomApe" id="Nombre" type="text" value= <?php echo $nombre?> required/>
                             </div>
                         </div>
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
-                                <label>Nacionalidad</label>
+                                <label>Procedencia</label>
                                 <br><input class="form-control" name="Nacionalidad"  id="Nacionalidad" type="text" value = <?php echo $nacionalidad?> required><br>
                             </div>
                         </div>
@@ -79,13 +74,13 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Tipo documento</label>
-                                <input class="form-control" name="TDocume" id="TDocume" type="text" value= <?php echo $T_Documento?> required/>
+                                <input class="form-control" name="TipoDoc" id="TDocume" type="text" value= <?php echo $T_Documento?> required/>
                             </div>
                         </div>
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Telefono</label>
-                                <br><input class="form-control" name="Telefono"  id="Telefono" type="text" value= <?php echo $telefono?> required><br>
+                                <br><input class="form-control" name="numPer"  id="Telefono" type="text" value= <?php echo $telefono?> required><br>
                             </div>
                         </div>
                     </div>    
@@ -93,7 +88,7 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>N° Documento</label>
-                                <br><input class="form-control" name="NDocume"  id="NDocume" type="text" value= <?php echo $n_Documento?> required><br>
+                                <br><input class="form-control" name="NDocum"  id="NDocume" type="text" value= <?php echo $n_Documento?> required><br>
                             </div>
                         </div>
                         <div class="col">                         
@@ -107,16 +102,20 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Fecha de nacimiento</label>
-                                <input class="form-control" name="FNacimiento" id="FNacimiento" type="text" value= <?php echo $fecha?> required/>
+                                <input class="form-control" name ="fechaNac" id="FNacimiento" type="text" value= <?php echo $fecha?> required/>
                             </div>
                         </div>
-                        <div class="col">                         
+                        <div class="col">        
+                                             
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Genero</label>
                                 <br><input class="form-control" name="Genero"  id="Genero" type="text" value= <?php echo $genero?> required><br>
                             </div>
                         </div>
-                    </div>    
+                    </div>
+                    
+
+                    <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar"> Actualizar</button>    
                 </form>
             </div>
         </div>

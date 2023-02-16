@@ -1,6 +1,5 @@
 <?php 
-
-session_start();
+include '../php/function_validarSesion.php'
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +12,7 @@ session_start();
      <link rel="stylesheet" href="../css/bootstrap.min.css">
      <link rel="stylesheet" href="../css/clienteFondo animado.css">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-     <script src="../js/popper.min.js" ></script>
+     <script src="../js/popper.min.js"></script>
      <script src="../js/bootstrap.bundle.min.js"></script>
      <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
 </head>
@@ -29,7 +28,7 @@ session_start();
   <br>
   <br>
   
-  <h1 style="text-align: center; font-family: cursive"> ----- <?php echo '<strong style="text-align: center; font-family: cursive">'.$_SESSION['usuario'].'</strong>';?> -----  </h1>
+  <h1 style="text-align: center; font-family: cursive"> ----- <?php echo '<strong style="text-align: center; font-family: cursive">'.$varsesion.'</strong>';?> -----  </h1>
   <h1 style="text-align: center; font-family: cursive"> ° BIENVENIDO ° </h1>
   <h2 style="text-align: center; font-family: cursive">----- A NUESTRO -----</h2>
   <h2 style="text-align: center; font-family: cursive" >PEQUEÑO HOGAR</h2>

@@ -85,7 +85,7 @@
                   
 
                   <div class="form-outline mb-4 text-lg-start">
-                    <label for="fechaIngreso">Ingrese fecha de nacimiento</label>
+                    <label for="fechaIngreso">Fecha de nacimiento</label>
                     <input type="date" id="fechaIngreso" name ="fechaNac" class="form-control form-control-lg" placeholder="Fecha de nacimiento" value="<?php echo $row['fecha_nacimiento']  ?>"/>
                   </div>
                   <div class="form-outline mb-4 text-lg-start">
@@ -112,18 +112,10 @@
 
                   <div class="form-floating mb-3">
                       <input type="text" class="form-control" name="Genero" placeholder="Genero" value="<?php echo $row['genero']  ?>">
-                      <label for="Detalles">Email</label>
+                      <label for="Genero">Genero</label>
                   </div>
 
-                  <div class="form-floating mb-3">
-                      <input type="hidden" class="form-control" name="Usuario" placeholder="Usuario" value="<?php echo $row['usario']  ?>">
-                      
-                  </div>
-
-                  <div class="form-floating mb-3">
-                      <input type="hidden" class="form-control" name="contraseña" placeholder="contraseña" value="<?php echo $row['contraseña']  ?>">
-                      
-                  </div>
+                
 
 
                   <!-- Submit button -->
