@@ -22,7 +22,7 @@
   <br><br>
   <br><br>
   <!---INICIO CONTENIDO-->
-  <a href="../html/reserva_habitacion.html">
+  <a href="../html/reserva_habitacion.php">
     <button type="button" class="btn btn-primary" name="regReserva" id="regReserva" >Registrar reserva</button>
   </a>
   <!--FIN CONTENIDO-->
@@ -62,7 +62,7 @@
                                   <th>Costo Servicio</th>
                                   <th>Total </th>
                                   <th>Actualizar</th>
-                                  
+                                  <th>Eliminar</th>
                               </tr>
                           </thead>
 
@@ -90,7 +90,8 @@
                                           <th><?php  echo  "$".$row['costo_servicio']?></th>
                                           <th><?php  echo  "$".$row['total_pagar']?></th>
                                           
-                                          <th><a href="../php/Actua_reserva.php?numero_reserva=<?php echo $row['numero_reserva'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>                                                                                        
+                                          <th><a href="../php/Actua_reserva.php?numero_reserva=<?php echo $row['numero_reserva'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>    
+                                          <th><a href="../php/eliminar_reserva.php?numero_reserva=<?php echo $row['numero_reserva'] ?>"> <img src="../assets/img/iconEliminar.png" alt="Eliminar" width="30" height="24"></a></th>                                                                                                                                                                            
                                       </tr>
                                   <?php 
                                       }

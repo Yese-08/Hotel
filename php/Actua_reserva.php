@@ -119,8 +119,8 @@
                                 </div>
                                 <div class="col">                            
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Costo"  id="Costo" placeholder="Costo" value="<?php echo $row['costo']  ?>"   required>
-                                        <label for="Costo">Costo</label><br>
+                                        <input class="form-control" name="Costo"  id="Costo" placeholder="Costo habitacion" value="<?php echo $row['costo']  ?>"   required onchange="totalPagar();">
+                                        <label for="Costo">Costo habitacion</label><br>
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="N_Noches" id="N_Noches" placeholder="N_Noches"  value="<?php echo $row['numero_noches']  ?>"  required/>
+                                        <input class="form-control" name="N_Noches" id="N_Noches" placeholder="N_Noches"  value="<?php echo $row['numero_noches']  ?>"  required onchange="totalPagar();">
                                         <label for="N_Noches"> Noches</label><br>
                                     </div>
                                 </div>
@@ -163,7 +163,7 @@
                                 </div>
                                 <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Costos_servicios" id="Costos_servicios" placeholder="Costos_servicios"  value="<?php echo $row['costo_servicio']  ?>"  required/>
+                                        <input class="form-control" name="Costos_servicios" id="Costos_servicios" placeholder="Costos_servicios"  value="<?php echo $row['costo_servicio']  ?>"  required onchange="totalPagar();">
                                         <label for="Costos_servicios"> Costo servicios</label><br>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@
                                 </div>                        
                                 <div class="col"  >
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar"  value="<?php echo $row['total_pagar']  ?>"  required>
+                                        <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar"  value="<?php echo $row['total_pagar']  ?>"  required onchange="totalPagar();">
                                         <label for="TPagar">Total a pagar</label><br>
                                     </div>                            
                                 </div>
@@ -211,6 +211,20 @@
     <!-- Jumbotron -->
   </section>
   <!-- Section: Design Block -->
-</body>
+  <script>
+        // si la respuesta que se espera es sumar
+        function totalPagar(){
+            var CostoH = document.getElementById('Costo').value;
+            var CServicio = document.getElementById('Costos_servicios').value;
+            var Nnoches = document.getElementById('N_Noches').value;
+
+            if(CostoH !=='' && CServicio!==''){
+                var suma = parseInt(CostoH )+parseInt(CServicio);
+                var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
+                document.getElementById('TPagar').value = sumCosHbSer;
+            }
+        
+        } 
+    </script>
 </body>
 </html>

@@ -34,10 +34,24 @@
                             <div class="col">                            
                                 <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;">
                                     <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion">
-                                        <option selected>Numero habitación</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                    <option selected>Número de habitación</option>
+                                        <?php
+                                            include("../php/conexion.php");
+                                            $getServicios1 = "SELECT * FROM habitacion order by categoria";
+                                            $getServicios2 = mysqli_query($conexion,$getServicios1);
+                                        
+                                            while($row = mysqli_fetch_array($getServicios2)){
+                                                $numero_hab = $row['numero_hab'];
+                                                $categoria = $row['categoria'];
+                                                $detalles = $row['detalles'];
+                                                $precio = $row['precio'];
+
+                                                ?>
+                                                <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
+                                                <?php
+                                        }
+
+                                        ?>
                                     </select> <br>
                                 </div>
                             </div>
@@ -52,7 +66,7 @@
                             </div>
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="sumar();">
+                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="totalPagar();">
                                     <label for="CostoH">Costo habitación</label><br>
                                 </div>
                             </div>
@@ -107,9 +121,9 @@
                             <div class="col">
                                 <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
                                     <select class="form-select" aria-label="Default select example" name ="nacionalidad" id="nacionalidad">
-                                        <option selected>Prosedencia</option>
+                                        <option selected>Procedencia</option>
                                         <option value="Colombia">Colombia</option>
-                                        <option value="Ecuador">Ecuadoto</option>
+                                        <option value="Ecuador">Ecuador</option>
                                         <option value="Venezuela">Venezuela</option>
                                         <option value="Brasil">Brasil </option>
                                     
@@ -118,7 +132,7 @@
                             </div>    
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required>
+                                    <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required onchange="totalPagar();">
                                     <label for="NNoches">N° de noches</label><br>
                                 </div>
                             </div>
@@ -132,11 +146,24 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
-                                    <select class="form-select" aria-label="Default select example" name="serviciosAd" id="serviciosAd">
-                                    <option selected>Servicios Adicionales</option>
-                                    <option value="Picsina">Picsina</option>
-                                    <option value="Restaurante">Restaurante</option>
-                                    <option value="Gimnacio">Gimnacio</option>
+                                    <select class="form-select" name="serviciosAd" id="serviciosAd">
+                                    <option selected>Servicios adicionales</option>
+                                        <?php
+                                        include("../php/conexion.php");
+                                        $getServicios1 = "SELECT * FROM servicios order by nombre";
+                                        $getServicios2 = mysqli_query($conexion,$getServicios1);
+                                    
+                                        while($row = mysqli_fetch_array($getServicios2)){
+                                            $cod = $row['cod'];
+                                            $nombre = $row['nombre'];
+                                            $precio = $row['precio'];
+
+                                            ?>
+                                            <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
+                                            <?php
+                                      }
+
+                                    ?>
                                     </select>                                  
                                 </div>
                             </div>
@@ -150,7 +177,7 @@
                             </div>
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required  onchange="sumar();">
+                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required  onchange="totalPagar();">
                                     <label for="CServicio">Costo de servicio</label><br>
                                 </div>
                             </div>
@@ -168,7 +195,7 @@
                             </div>                        
                             <div class="col"  >
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required>
+                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="totalPagar();">
                                     <label for="TPagar">Total a pagar</label><br>
                                 </div>                            
                             </div>
@@ -194,15 +221,21 @@
     </div>
     <script>
         // si la respuesta que se espera es sumar
-        function sumar(){
+        function totalPagar(){
             var CostoH = document.getElementById('CostoH').value;
             var CServicio = document.getElementById('CServicio').value;
-    
+            var Nnoches = document.getElementById('NNoches').value;
+
             if(CostoH !=='' && CServicio!==''){
                 var suma = parseInt(CostoH )+parseInt(CServicio);
-                document.getElementById('TPagar').value = suma;
+                var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
+                document.getElementById('TPagar').value = sumCosHbSer;
             }
+        
         }
+
+       
+            
     </script>
 </body>
 </html>

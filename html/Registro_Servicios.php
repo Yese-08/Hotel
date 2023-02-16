@@ -65,15 +65,12 @@
         </form><br>
       </div>
       <div class="col-md-8">
-        <table class="table" >
-          <thead class="table-success table-striped" >
+        <table class="table table-striped table-hover table-primary   table-responsive" >
+          <thead class=" table-striped table-dark" >
               <tr>
                   <th>Código</th>
                   <th>Nombre</th>
-                  <th>Costo</th>
-
-                  <th></th>
-                  
+                  <th>Costo</th> 
               </tr>
           </thead>
           <tbody>

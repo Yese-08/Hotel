@@ -73,15 +73,15 @@
                     <h2>Buscar habitacion</h2>
 
                         <form action="Registro_Habitacion.php" method="POST">
-                            <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" >
-                             
-                            <input type="submit" class="btn btn-primary" value="Buscar">
+                          <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" >
+                            
+                          <input type="submit" class="btn btn-primary" value="Buscar">
                         </form><br>
     
                         </div>
-                        <div class="col-md-8">
-                            <table class="table" >
-                                <thead class="table-success table-striped" >
+                        <div class="col">
+                            <table class="table table-striped table-hover table-primary   table-responsive"  >
+                                <thead class=" table-striped table-dark" >
                                     <tr>
                                         <th>N° habitacion</th>
                                         <th>Categoria</th>
@@ -89,9 +89,7 @@
                                         <th >Precio</th>                           
                                         <th>Estado </th>
                                         <th>Actualizar </th>
-                                        
-                                        <th></th>
-                                        
+                                                         
                                     </tr>
                                 </thead>
 
