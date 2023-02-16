@@ -36,9 +36,9 @@
                 <br>
 
                 </div>
-                <div class="col-md-8">
-                    <table class="table" >
-                        <thead class="table-success table-striped" >
+                <div class="col">
+                    <table class="table table-striped table-hover table-primary   table-responsive"  >
+                        <thead class=" table-striped table-dark" >
                             <tr>
                                 <th>Nombre </th>
                                 <th>T.D</th>

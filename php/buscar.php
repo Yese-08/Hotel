@@ -14,7 +14,7 @@ function buscar($tabla, $id){
 		if (mysqli_num_rows($query) <= 0) {
 			echo '
 				<script> 
-					alert("no existe esta habitacion");
+					alert("Tu busqueda no se ha encontrado");
 	
 				</script>
 			';
