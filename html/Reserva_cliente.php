@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +75,7 @@
                                                         $precio = $row['precio'];
 
                                                         ?>
-                                                        <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
+                                                        <option value="<?php echo $numero_hab; ?>"><?php echo $numero_hab; ?></option>
                                                         <?php
                                                   }
 

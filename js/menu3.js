@@ -28,7 +28,7 @@ document.write(
 ''+
     '            <li class="nav-item">'+
     '              '+
-    '              <a class="nav-link active" href="eliminarCuentaCliente.html"> <img src="../assets/img/iconDelete.png" alt="Clientes" width="30" height="24">Eliminar cuenta</a>'+
+    '              <a class="nav-link active" href="../php/eliminar_cliente.php"> <img src="../assets/img/iconDelete.png" alt="Clientes" width="30" height="24">Eliminar cuenta</a>'+
     '                  '+
     '            </li>'+
     '            '+

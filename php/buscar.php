@@ -1,7 +1,4 @@
 <?php
-
-
-
 function buscar($tabla, $id){
 	include 'conexion.php';
 	if(!isset($_POST['buscar'])){
@@ -21,10 +18,7 @@ function buscar($tabla, $id){
 		}
 	return $query;
 	
-}
-	
-
-	
+}	
 ?>
 	
 

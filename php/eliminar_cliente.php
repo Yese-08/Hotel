@@ -1,20 +1,21 @@
 <?php
 include 'conexion.php';
- $numero_reserva=$_GET['numero_reserva'];
- $sql="SELECT * FROM reserva WHERE numero_reserva='$numero_reserva'";
- $query=mysqli_query($conexion,$sql);
+session_start();
+$user = $_SESSION['ide'];
+$sql="SELECT * FROM cliente WHERE numero_documento='$user'";
+$query=mysqli_query($conexion,$sql);
       
 
 if(($query)>0){
     if($query){
-        $sql= "DELETE FROM reserva where numero_reserva ='$numero_reserva' ";
+        $sql= "DELETE FROM cliente where numero_documento='$user'";
         $query= mysqli_query($conexion,$sql);
 		echo '
         <script> 
             alert("Se elimino exitosamente ");  
         </script>
         ';	
-        Header("Location:../html/Registro_Reservas.php");	
+        Header("Location:http://localhost/conGra/proyecto/");	
 	}
     
 }
@@ -26,6 +27,6 @@ else{
         </script>
     ';	
 
-    Header("Location: ../html/Registro_Reserva.php");	
+    Header("Location: ../html/informacion_cliente.php");	
 }    
 ?>
