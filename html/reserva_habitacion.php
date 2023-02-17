@@ -36,10 +36,8 @@
                                     <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion">
                                     <option selected>Número de habitación</option>
                                         <?php
-                                            include("../php/conexion.php");
-                                            $getServicios1 = "SELECT * FROM habitacion order by categoria";
-                                            $getServicios2 = mysqli_query($conexion,$getServicios1);
-                                        
+                                            include "../php/buscar.php";
+                                            $getServicios2= mostrar('habitacion','numero_hab');
                                             while($row = mysqli_fetch_array($getServicios2)){
                                                 $numero_hab = $row['numero_hab'];
                                                 $categoria = $row['categoria'];
@@ -47,7 +45,7 @@
                                                 $precio = $row['precio'];
 
                                                 ?>
-                                                <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
+                                                <option value="<?php echo $numero_hab; ?>"><?php echo $numero_hab; ?></option>
                                                 <?php
                                         }
 
@@ -66,7 +64,7 @@
                             </div>
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="totalPagar();">
+                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" value=<?php echo $precio; ?> required  onchange="totalPagar();">
                                     <label for="CostoH">Costo habitación</label><br>
                                 </div>
                             </div>
@@ -99,7 +97,7 @@
                             <div class="col">                        
                                 <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                     <label>Fecha de ingreso</label>
-                                    <input class="form-control" name="FIngreso"  id="FIngreso" type="datetime-local" placeholder="Fecha ingreso" required>
+                                    <input class="form-control" name="FIngreso"  id="FIngreso" type="date" placeholder="Fecha ingreso" required onchange="calcularnoche();">
                                 </div>
                             </div>
                         </div>
@@ -113,7 +111,7 @@
                             <div class="col">                         
                                 <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                     <label>Fecha salida</label>
-                                    <br><input class="form-control" name="FSalida"  id="FSalida" type="datetime-local" placeholder="Fecha salida" required><br>
+                                    <br><input class="form-control" name="FSalida"  id="FSalida" type="date" placeholder="Fecha salida" required onchange="calcularnoche();"><br>
                                 </div>
                             </div>
                         </div>    
@@ -132,7 +130,7 @@
                             </div>    
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required onchange="totalPagar();">
+                                    <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required onchange="calcularnoche()  onmousedown=totalPagar();">
                                     <label for="NNoches">N° de noches</label><br>
                                 </div>
                             </div>
@@ -146,25 +144,19 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
-                                    <select class="form-select" name="serviciosAd" id="serviciosAd">
+                                    <select class="form-select" name="serviciosAd" id="serviciosAd" onchange="autoservicio();" >
                                     <option selected>Servicios adicionales</option>
                                         <?php
-                                        include("../php/conexion.php");
-                                        $getServicios1 = "SELECT * FROM servicios order by nombre";
-                                        $getServicios2 = mysqli_query($conexion,$getServicios1);
-                                    
+                                        $getServicios2= mostrar('servicios','nombre');
                                         while($row = mysqli_fetch_array($getServicios2)){
-                                            $cod = $row['cod'];
                                             $nombre = $row['nombre'];
-                                            $precio = $row['precio'];
-
                                             ?>
                                             <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
                                             <?php
-                                      }
 
-                                    ?>
-                                    </select>                                  
+                                        }?>   
+                                    </select>           
+                                                       
                                 </div>
                             </div>
                         </div>
@@ -175,11 +167,14 @@
                                     <label for="Email">Email</label><br>
                                 </div>
                             </div>
-                            <div class="col">                            
+                            <div class="col">        
+                                                    
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required  onchange="totalPagar();">
+                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" value= <?php echo $precio; ?>  required  onchange="totalPagar();">
                                     <label for="CServicio">Costo de servicio</label><br>
                                 </div>
+                               
+                                
                             </div>
                         </div>               
                         <div class="row">
@@ -201,6 +196,7 @@
                             </div>
                             
                         </div>
+                        
                        
                         <div class="container text-center">
                             <div class="row">                          
@@ -224,18 +220,35 @@
         function totalPagar(){
             var CostoH = document.getElementById('CostoH').value;
             var CServicio = document.getElementById('CServicio').value;
-            var Nnoches = document.getElementById('NNoches').value;
+            var Nnoches = calcularnoche();
+           
 
             if(CostoH !=='' && CServicio!==''){
                 var suma = parseInt(CostoH )+parseInt(CServicio);
                 var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
-                document.getElementById('TPagar').value = sumCosHbSer;
+                document.getElementById('TPagar').value = sumCosHbSer
+                return console.log(suma,sumCosHbSer,Nnoches)
             }
         
         }
 
-       
+        function calcularnoche(){
+            var fechaI = document.getElementById('FIngreso').value;
+            var fechaS = document.getElementById('FSalida').value;
+            var fecha1 = new Date(fechaI);
+            var fecha2 = new Date(fechaS);
             
+            var diferencia = fecha2.getTime() - fecha1.getTime();
+            var diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
+            document.getElementById('NNoches').value = diasDeDiferencia
+        
+            return diasDeDiferencia ;
+            
+            
+        }
     </script>
+
+
+
 </body>
 </html>

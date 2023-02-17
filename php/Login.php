@@ -26,7 +26,12 @@
 		}
 	}
 	else{
-		echo "El usuario y contraseña no existe";
+		if(isset($_REQUEST['email'])){ ?>
+         <div class="alert show showAlert" style="color:#f44336;">
+               <strong> Ops.! </strong>
+               El Correo no Existe, por favor Verifique.
+        </div>
+	<?php }
 	}
 	
 

@@ -19,6 +19,27 @@ function buscar($tabla, $id){
 	return $query;
 	
 }	
+
+function mostrar($tabla, $id){
+	include 'conexion.php';
+	$getServicios1 = "SELECT * FROM $tabla order by $id";
+	$getServicios2 = mysqli_query($conexion,$getServicios1);
+
+	return $getServicios2;
+	
+}	
+function mostrarre($tabla, $id,$nomcol){
+	include 'conexion.php';
+	$cod_reserva=$_GET[$id];
+    $sql="SELECT * FROM $tabla WHERE $nomcol='$cod_reserva'";
+    $query=mysqli_query($conexion,$sql);
+	return $query;
+	
+}	
+
+
+
+
 ?>
 	
 

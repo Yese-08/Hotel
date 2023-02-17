@@ -55,11 +55,17 @@
     <div class="col-2">
       <h1 >Factura</h1>
     </div><!--.col-->
-
+    <?php 
+    include '../php/buscar.php';
+    $query=mostrarre('reserva','numero_reserva','numero_reserva');
+   
+    while($row=mysqli_fetch_array($query)){
+  ?>     
     <div class="col-2 text-right details">
       <p >
-      Fecha inicio:  <br>
-      Fecha final : <br>      
+      Fecha inicio:  <?php  echo $row['fecha_ingreso']?><br>
+      Fecha final : <?php  echo $row['fecha_salida']?><br>
+      
       </p>  
     </div><!--.col-->
     <hr><br>
@@ -68,21 +74,21 @@
       <br>
       <p  class="client">
         <strong>Datos del Cliente</strong><br>
-        Nombres: <br>
-        Numero cedula:<br>
-        Correo electronico: 
-      </p>
+        Nombres:  <?php  echo $row['nombre_cliente']?><br>
+        Identificacion:   <?php  echo $row['numero_documento']?> <br>
+        Correo electronico:   <?php  echo $row['email']?>   
+      </p>   
     </div><!--.col-->
       
     <div class="col">  
       <br>
       <p  class="client">
         <strong>Datos de la reserva</strong><br>
-        <strong>Codigo: </strong><br>
-        N° habitacion:<br>
-        Categoria:<br>
-        Costo habitacion: $<br>
-        N° personas:<br>
+        <strong>Codigo: <?php  echo $row['numero_reserva']?><br> </strong> 
+        N° habitacion: <?php  echo $row['numero_hab']?><br>
+        Categoria: <?php  echo $row['numero_hab']?> <br>
+        Costo habitacion: $ <?php  echo $row['costo']?> <br>
+        N° personas:<?php  echo $row['numero_personas']?> <br>
       </p>
     </div><!--.col-->
 
@@ -90,8 +96,8 @@
       <br>
       <p  class="client">
         <strong>Servicios adicionales</strong><br>
-        Nombre:<br>
-        Costo: $<br>
+        Nombre: <?php  echo $row['servicios_adicionales']?> <br>
+        Costo: $<?php  echo $row['costo_servicio']?> <br>
         
       </p>
     </div><!--.col-->
@@ -100,22 +106,24 @@
   <div class="invoicelist-body">
     <table>
       <thead >
-        <th width="5%">N° Noches</th>
-        <th width="10%">servicio adicional</th>
-        <th width="15%">Precio</th>
-      
-        <th width="10%">Total</th>
+        <th width="5%">N° Noches </th>
+        <th width="10%">servicio adicional  $</th>
+        <th width="15%">Precio $</th>
+        <th width="10%">Total $</th>
       </thead>
       <tbody>      
         <tr>
-          <td width='5%'>5</td>         
-          <td class="amount"></td>          
-          <td >$60.000</td>
-          <td ></td>
+          <td width='5%'><?php  echo $row['numero_noches']?></td>         
+          <td class="amount"><?php  echo '$'.$row['costo_servicio']?></td>          
+          <td ><?php  echo '$'.$row['costo']?> </td>
+          <td ><?php  echo '$'.$row['total_pagar']?></td>
         </tr>
       </tbody>
     </table>
   </div><!--.invoice-body-->
+  <?php 
+    }
+    ?>
 
   <div class="note" >
     

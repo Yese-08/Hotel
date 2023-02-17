@@ -29,7 +29,20 @@ $sql = "INSERT INTO reserva values('', '$nombre_client','$tipo_documento', '$num
 				alert("se registro exitosamente");
 			</script>
 		';	
-        Header("Location: ../html/Factura.html");
+        $sql1 = 'SELECT * FROM reserva ORDER by numero_reserva DESC LIMIT 1';
+        $_consulta1 = mysqli_query($conexion, $sql1);
+        if(mysqli_num_rows($_consulta1)>0){
+		
+            while ($obj = mysqli_fetch_object($_consulta1)) {
+                $id= $obj->numero_reserva;
+                Header("Location: ../html/Factura.php?numero_reserva=$id");
+                
+            }
+        }
+        else{
+            echo 'error de orede by';
+        }
+      
     }
     else{
         echo 'error de consulta';
