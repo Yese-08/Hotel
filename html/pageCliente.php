@@ -3,6 +3,8 @@ include '../php/function_validarSesion.php'
 ?>
 <!DOCTYPE html>
 <html>
+<?php
+  if($_SESSION['user']== 'usuario'){?>
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -40,3 +42,5 @@ include '../php/function_validarSesion.php'
 </div>
 </body>
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>

@@ -2,6 +2,8 @@
 include '../php/function_validarSesion.php'
 ?>
 <!DOCTYPE html>
+<?php
+  if($_SESSION['user']== 'Recepcionista'){?>
 <html>
 <head>
     <meta charset='utf-8'>
@@ -16,6 +18,7 @@ include '../php/function_validarSesion.php'
      <script src="../js/popper.min.js" ></script>
      <script src="../js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
   <div>
     
@@ -34,3 +37,5 @@ include '../php/function_validarSesion.php'
   <script src="../js/menu.js"></script>
 </body>
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>

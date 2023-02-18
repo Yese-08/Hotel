@@ -2,6 +2,8 @@
 include '../php/function_validarSesion.php'
 ?>
 <!DOCTYPE html>
+<?php
+  if($_SESSION['user']== 'Recepcionista'){?>
 <html>
 <head>
     <meta charset='utf-8'>
@@ -17,6 +19,7 @@ include '../php/function_validarSesion.php'
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
     
 </head>
+
 <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
     <!---MENÚ PRINCIPAL-->
     <script src="../js/menu.js"></script>
@@ -91,7 +94,6 @@ include '../php/function_validarSesion.php'
     
   <!--FIN CONTENIDO-->
 </body>
-
-    
-
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>
