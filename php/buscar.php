@@ -24,7 +24,7 @@ function buscar($tabla, $id){
 function mostrar($tabla, $id,){
 	include 'conexion.php';
 	if($tabla== 'habitacion'){
-		$getServicios1 = "SELECT * FROM $tabla where estado ='disponible' order by $id";
+		$getServicios1 = "SELECT * FROM $tabla where estado ='Disponible' order by $id";
 		$getServicios2 = mysqli_query($conexion,$getServicios1);
 
 	

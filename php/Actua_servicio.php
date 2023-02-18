@@ -1,8 +1,8 @@
 <?php 
     include 'conexion.php';
     session_start();
-    $numero_hab=$_GET['numero_hab'];
-    $sql="SELECT * FROM habitacion WHERE numero_hab='$numero_hab'";
+    $codigo=$_GET['cod'];
+    $sql="SELECT * FROM servicios WHERE cod='$codigo'";
     $query=mysqli_query($conexion,$sql);
     $row=mysqli_fetch_array($query);      
 
@@ -14,7 +14,7 @@
         <title></title>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Actualizar habitación</title>
+        <title>Actualizar servicio</title>
 
         <!-- Lineas importantes-->
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -58,36 +58,26 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             
-            <h2 class="fw-bold mb-5">Actualizar habitación</h2>
-            <form action="update.php" method="POST">
+            <h2 class="fw-bold mb-5">Actualizar servicio</h2>
+            <form action="updateServicio.php" method="POST">
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
-                      <input type="header"  class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>" disabled>
-                      <label for="habitacion">"N° Habitacion"</label>
+                      <input type="header"  class="form-control" name="codigo" placeholder="Codigo servicio" value="<?php echo $row['cod']  ?>" disabled>
+                      <label for="habitacion">"Codigo servicio"</label>
                   <br>
-                  <input type="hidden"  class="form-control" name="habitacion" placeholder="N° Habitacion" value="<?php echo $row['numero_hab']  ?>">
+                  <input type="hidden"  class="form-control" name="codigo" placeholder="N° Habitacion" value="<?php echo $row['cod']  ?>">
 
-                  <select class="form-select" aria-label="Default select example" name="Categoria" id="Categoria">
-                      <option value="<?php echo $row['categoria']  ?>"><?php echo $row['categoria']  ?></option>
-                      <option value="Simple" >Simple</option>
-                      <option value="Doble">Doble</option>
-                      <option value="Suite">Suite</option>
-                    </select>
+                  
                   <br>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" name="Detalles" placeholder="Detalles" value="<?php echo $row['detalles']  ?>">
-                      <label for="Detalles">Detalles</label>
+                      <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="<?php echo $row['nombre']  ?>">
+                      <label for="Nombre">Nombre</label>
                   </div>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" name="Precio" placeholder="Precio" value="<?php echo $row['precio']  ?>">
+                      <input type="text" class="form-control" name="precio" placeholder="precio" value="<?php echo $row['precio']  ?>">
                       <label for="Detalles">Precio</label>
                   </div>
 
-                  <select class="form-select" aria-label="Default select example" name="estado" id="estado">
-                      <option value="<?php echo $row['estado']  ?>"><?php echo $row['estado']  ?></option>
-                      <option value="Disponible" >Disponible</option>
-                      <option value="Ocupado">Ocupado</option>
-                    </select>
                     
                     <br>
                   <!-- Submit button -->
@@ -105,7 +95,7 @@
       
     </div>
     <div class="col-lg-6 mb-5 mb-lg-0">
-              <img src="../assets/img/hab4.png" class="w-800 rounded-4 shadow-4" height = "700" width = "800"
+              <img src="../assets/img/servicios.jpg" class="w-800 rounded-4 shadow-4" height = "700" width = "800"
               alt="" />
       </div>
 

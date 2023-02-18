@@ -69,19 +69,24 @@ include '../php/function_validarSesion.php'
   </div>
    <!--  INICIO VIZULIZACION DE TABLA--> 
    <br><br>        
-        <br><br>
+       
         <div class="container mt-5">
             <div class="row">                         
                 <div class="col-md-3">
                     <h2>Buscar habitacion</h2>
 
-                        <form action="Registro_Habitacion.php" method="POST">
-                          <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero habitacion" >
-                            
-                          <input type="submit" class="btn btn-primary" value="Buscar">
-                        </form><br>
+                  <div class="container mt-5">
+                  <form action="Registro_Habitacion.php" method="POST">
+                  <div class="input-group mb-3">
+                      <input type="text" class="form-control" placeholder="Número de habitación" name="buscar">
+                      <button type="submit"> <img src="../assets/img/lupa.png"></button>
+                  </div>
+                  </form>
+                </div>
+                </div>
     
                         </div>
+                        <br>
                         <div class="col">
                             <table class="table table-striped table-hover table-primary   table-responsive"  >
                                 <thead class=" table-striped table-dark" >

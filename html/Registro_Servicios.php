@@ -29,18 +29,18 @@ include '../php/function_validarSesion.php'
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-      <form action="../php/Reg_servicios.php" method="post">
+      <form action="../php/Reg_servicios.php" method="POST">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar servicios</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">          
           <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="NomServicio" id="NomServicio" placeholder="Nombre" required>
+          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
           <label for="floatingInput">Nombre</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" name="CostServicio" id="CostServicio" placeholder="Costo" required>
+            <input type="text" class="form-control" name="precio" id="precio" placeholder="Costo" required>
             <label for="floatingInput">Costo</label>
             </div>
         </div>
@@ -56,17 +56,21 @@ include '../php/function_validarSesion.php'
 <br>
 <br>
 
-  <br><br>        
-  <br><br>
   <div class="container mt-5">
     <div class="row">                         
       <div class="col-md-3">
         <h2>Buscar servicio</h2>
-        <form action="Registro_Servicios.php" method="POST">
-          <input type="text" class="form-control mb-3" name="buscar" placeholder="Codigo de servico " >
-          <input type="submit" class="btn btn-primary" value="Buscar">
-        </form><br>
+        <div class="container mt-5">
+                <form action="Registro_Servicios.php" method="POST">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Código de servicio" name="buscar">
+                    <button type="submit"> <img src="../assets/img/lupa.png" alt="x" ></button>
+                </div>
+                </form>
+                </div>
       </div>
+</div>
+<br>
       <div class="col-md-8">
         <table class="table table-striped table-hover table-primary   table-responsive" >
           <thead class=" table-striped table-dark" >
@@ -74,6 +78,7 @@ include '../php/function_validarSesion.php'
                   <th>Código</th>
                   <th>Nombre</th>
                   <th>Costo</th> 
+                  <th>Actualizar</th> 
               </tr>
           </thead>
           <tbody>
@@ -86,7 +91,8 @@ include '../php/function_validarSesion.php'
                     <th><?php  echo $row['cod']?></th>
                     <th><?php  echo $row['nombre']?></th>
                     <th><?php  echo "$".$row['precio']?></th>                                       
-                    
+                    <th><a href="../php/Actua_servicio.php?cod=<?php echo $row['cod'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>                                                                                        
+
                         
                 </tr>
             <?php 

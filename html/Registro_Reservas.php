@@ -37,11 +37,14 @@ include '../php/function_validarSesion.php'
           <div class="col-md-3">
               <h2 class="">Buscar reserva</h2>
 
-                  <form action="Registro_Reservas.php" method="POST">
-                      <input type="text" class="form-control mb-3-10  m-20" name="buscar" placeholder="Código de reserva" >
-                       
-                      <input type="submit" class="btn btn-dark btn-lg btn-block " value="Buscar">
-                  </form><br>
+              <div class="container mt-5">
+                <form action="Registro_Reservas.php" method="POST">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Código de reserva" name="buscar">
+                    <button type="submit"> <img src="../assets/img/lupa.png" alt="x" ></button>
+                </div>
+                </form>
+                </div>
 
                   </div>
                   <div class="col">
