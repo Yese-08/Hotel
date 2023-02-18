@@ -14,30 +14,25 @@
 	$contraseña =$_POST['contraseña'];
 
 
-	$verificar_correo = pg_query($conexion,"SELECT * FROM cliente WHERE Email='$email' ");
+	$verificar_correo =  mysqli_query($conexion,"SELECT * FROM cliente WHERE email='$email' and usario='$Usuario'");
 	if (mysqli_num_rows($verificar_correo) > 0) {
 		echo '
 			<script> 
 				alert("este correo ya se encuentra registrado, intenta con otro diferente");
-					
 			</script>
 		';	
 	}
-	else{
-	
-	if($_consulta){	
-	$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$Email', '$Genero', '$Usuario', '$contraseña','$T_usuario')";
+	else {	
+		$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$email', '$Genero', '$Usuario', '$contraseña','$T_usuario')";
 		$_consulta = mysqli_query($conexion, $sql);
-				
 			echo '
 			<script> 
 				alert("se registro exitosamente");
 
 			</script>
 		';	
-        }
-        else{
-            echo 'error de consulta';
-   }    }
+        
+       
+   }    
 
 ?>

@@ -40,7 +40,7 @@
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <input type="hidden" name="T_usuario" value="usuario">
                   <div class="form-floating mb-3">
-                      <input type="text"  class="form-control" name="NomApe" requiered id="NomApe" placeholder="Nombre y apellido">
+                      <input type="text"  class="form-control" name="NomApe" requiered id="NomApe" placeholder="Nombre y apellido" required autocomplete="off">
                       <label for="NomApe">Nombre y apellido</label>
                   <br>
                   <select class="form-select" aria-label="Default select example" name="TipoDoc" requiered id="TipoDoc">
@@ -51,7 +51,7 @@
                     </select>
                   <br>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" requiered id="NDocum" name="NDocum" placeholder="Numero de documento">
+                      <input type="text" class="form-control"  id="NDocum" name="NDocum" placeholder="Numero de documento" required autocomplete="off">
                       <label for="NDocum">Numero de documento</label>
                   </div>
                   
@@ -60,7 +60,7 @@
                     <input type="date" requiered id="fechaNac" name ="fechaNac" class="form-control form-control-lg" placeholder="Fecha de ingreso" />
                   </div>
                   
-                  <select class="form-select" aria-label="Default select example" requiered id="Nacionalidad" name="Nacionalidad">
+                  <select class="form-select" aria-label="Default select example" requiered id="Nacionalidad" name="Nacionalidad" >
                     <option value="">Procedencia</option>
                     <option value="Colombia" >Colombia</option>
                     <option value="Perú">Perú</option>
@@ -69,11 +69,11 @@
                     </select>
                   <br>
                   <div class="form-floating mb-3" >
-                      <input type="text" class="form-control" requiered id="numPer" name="numPer" placeholder="Telefono">
+                      <input type="text" class="form-control"  id="numPer" name="numPer" placeholder="Telefono" required autocomplete="off">
                       <label for="numPer">Telefono</label>
                   </div>
                   <div class="form-outline mb-4">
-                    <input type="email"  class="form-control form-control-lg" requiered id="Email" name="Email"placeholder="Email" />
+                    <input type="email"  class="form-control form-control-lg"  id="Email" name="Email" placeholder="Email" required autocomplete="off" />
                     
                   </div>
                   <select class="form-select" aria-label="Default select example" name="Genero" requiered id="Genero">
@@ -84,14 +84,14 @@
                     </select>
                   <br>
                   <div class="form-floating mb-3" >
-                    <input type="text" class="form-control" requiered id="Usuario" name="Usuario" placeholder="Usuario">
+                    <input type="text" class="form-control" requiered id="Usuario" name="Usuario" placeholder="Usuario" autocomplete="off">
                     <label for="Usuario">Usuario</label>
                     
                 
                 </div>
                  
                   <div class="form-outline mb-4">
-                    <input type="password" requiered id="contraseña"  name="contraseña" class="form-control form-control-lg" placeholder="contraseña" />
+                    <input type="password" requiered id="contraseña"  name="contraseña" class="form-control form-control-lg" placeholder="contraseña" autocomplete="off"/>
                   </div>
               </div>
 

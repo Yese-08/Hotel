@@ -1,5 +1,6 @@
 <?php
 include 'conexion.php';
+
 session_start();
 $user = $_SESSION['ide'];
 $sql="SELECT * FROM cliente WHERE numero_documento='$user'";
@@ -15,6 +16,7 @@ if(($query)>0){
             alert("Se elimino exitosamente ");  
         </script>
         ';	
+        include 'cerrar_sesion.php';
         Header("Location:http://localhost/conGra/proyecto/");	
 	}
     
@@ -27,6 +29,6 @@ else{
         </script>
     ';	
 
-    Header("Location: ../html/informacion_cliente.php");	
+    Header("Location:index.html");	
 }    
 ?>

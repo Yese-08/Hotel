@@ -35,17 +35,17 @@ include '../php/function_validarSesion.php'
   <div class="container mt-5">
       <div class="row">                         
           <div class="col-md-3">
-              <h2>Buscar reserva</h2>
+              <h2 class="">Buscar reserva</h2>
 
                   <form action="Registro_Reservas.php" method="POST">
-                      <input type="text" class="form-control mb-3" name="buscar" placeholder="Código de reserva" >
+                      <input type="text" class="form-control mb-3-10  m-20" name="buscar" placeholder="Código de reserva" >
                        
-                      <input type="submit" class="btn btn-primary" value="Buscar">
+                      <input type="submit" class="btn btn-dark btn-lg btn-block " value="Buscar">
                   </form><br>
 
                   </div>
                   <div class="col">
-                      <table class="table table-striped table-hover table-primary   table-responsive" >
+                      <table class="table table-striped table-hover table-primary " >
                           <thead class=" table-striped table-dark" >
                               <tr>
                                   

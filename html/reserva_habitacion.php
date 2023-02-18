@@ -1,3 +1,7 @@
+<?php
+include '../php/function_validarSesion.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

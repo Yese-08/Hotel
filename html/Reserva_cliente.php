@@ -1,5 +1,6 @@
 <?php
-session_start();
+include '../php/function_validarSesion.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,8 @@ session_start();
 <!---MENÚ PRINCIPAL-->
     <script src="../js/menu3.js"></script>    
 <!--FIN MENÚ PRINCIPAL-->    
-    <!-- Section: Design Block -->
+<!-- Section: Design Block -->
+<br><br><br>
 <section class="text-center text-lg-start">
     <style>
       .cascading-right {
@@ -119,18 +121,17 @@ session_start();
                                     </div>             
                                     <div class="row">
                                         <div class="col">
-                                          <div class="col-md-8" style="margin: 0 auto; text-align: justify;">
-                                            <label>Fecha de nacimiento</label>
+                                          <div  class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">                                            
                                             <input class="form-control" name="FNacimiento" id="FNacimiento" type="date" placeholder="Fecha de nacimiento" required/>
+                                            <label>Fecha de nacimiento</label>
                                         </div>
                                         </div>
                                         <div class="col">                        
-                                            <div class="col-md-7 col-lg-8" style="margin: 0 auto; text-align: justify;">
-                                                <label>Fecha de ingreso</label>
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">                                                
                                                 <input class="form-control" name="FIngreso"  id="FIngreso" type="date" placeholder="Fecha ingreso" required onchange="calcularnoche();">
+                                                <label for="Telefono">Fecha de ingreso</label><br></div>
                                             </div>
                                         </div>
-                                    </div>
                                     <div class="row">
                                         <div class="col">   
                                           <br>                         
@@ -145,9 +146,9 @@ session_start();
                                         </div>    
                                         </div>
                                         <div class="col">                         
-                                            <div class="col-md-7 col-lg-8" style="margin: 0 auto; text-align: justify;">
-                                                <label>Fecha salida</label>
-                                                <br><input class="form-control" name="FSalida"  id="FSalida" type="date" placeholder="Fecha salida" required onchange="calcularnoche();"><br>
+                                            <div  class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">                                                
+                                                <input class="form-control" name="FSalida"  id="FSalida" type="date" placeholder="Fecha salida" required onchange="calcularnoche();">
+                                                <label>Fecha salida</label><br>
                                             </div>
                                         </div>
                                     </div>    
