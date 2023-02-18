@@ -1,6 +1,3 @@
-<?php 
-include '../php/function_validarSesion.php'
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +36,9 @@ include '../php/function_validarSesion.php'
                                     <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion">
                                     <option selected>Número de habitación</option>
                                         <?php
-                                            include "../php/buscar.php";
-                                            $getServicios2= mostrar('habitacion','numero_hab');
+                                              include "../php/buscar.php";
+                                              $getServicios2= mostrar('habitacion','numero_hab');
+                                        
                                             while($row = mysqli_fetch_array($getServicios2)){
                                                 $numero_hab = $row['numero_hab'];
                                                 $categoria = $row['categoria'];
@@ -67,7 +65,7 @@ include '../php/function_validarSesion.php'
                             </div>
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" value=<?php echo $precio; ?> required  onchange="totalPagar();">
+                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="totalPagar();">
                                     <label for="CostoH">Costo habitación</label><br>
                                 </div>
                             </div>
@@ -133,7 +131,7 @@ include '../php/function_validarSesion.php'
                             </div>    
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required onchange="calcularnoche()  onmousedown=totalPagar();">
+                                    <input class="form-control" name="NNoches"  id="NNoches" placeholder="N° de noches" required onchange="calcularnoche();">
                                     <label for="NNoches">N° de noches</label><br>
                                 </div>
                             </div>
@@ -147,19 +145,24 @@ include '../php/function_validarSesion.php'
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
-                                    <select class="form-select" name="serviciosAd" id="serviciosAd" onchange="autoservicio();" >
+                                    <select class="form-select" name="serviciosAd" id="serviciosAd">
                                     <option selected>Servicios adicionales</option>
                                         <?php
-                                        $getServicios2= mostrar('servicios','nombre');
+                                        $getServicios2= mostrar('servicios','nombre'); 
+
+                                    
                                         while($row = mysqli_fetch_array($getServicios2)){
+                                            $cod = $row['cod'];
                                             $nombre = $row['nombre'];
+                                            $precio = $row['precio'];
+
                                             ?>
                                             <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
                                             <?php
+                                      }
 
-                                        }?>   
-                                    </select>           
-                                                       
+                                    ?>
+                                    </select>                                  
                                 </div>
                             </div>
                         </div>
@@ -170,14 +173,11 @@ include '../php/function_validarSesion.php'
                                     <label for="Email">Email</label><br>
                                 </div>
                             </div>
-                            <div class="col">        
-                                                    
+                            <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" value= <?php echo $precio; ?>  required  onchange="totalPagar();">
+                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required  onchange="totalPagar();">
                                     <label for="CServicio">Costo de servicio</label><br>
                                 </div>
-                               
-                                
                             </div>
                         </div>               
                         <div class="row">
@@ -199,7 +199,6 @@ include '../php/function_validarSesion.php'
                             </div>
                             
                         </div>
-                        
                        
                         <div class="container text-center">
                             <div class="row">                          
@@ -224,17 +223,14 @@ include '../php/function_validarSesion.php'
             var CostoH = document.getElementById('CostoH').value;
             var CServicio = document.getElementById('CServicio').value;
             var Nnoches = calcularnoche();
-           
 
             if(CostoH !=='' && CServicio!==''){
                 var suma = parseInt(CostoH )+parseInt(CServicio);
                 var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
-                document.getElementById('TPagar').value = sumCosHbSer
-                return console.log(suma,sumCosHbSer,Nnoches)
+                document.getElementById('TPagar').value = sumCosHbSer;
             }
         
         }
-
         function calcularnoche(){
             var fechaI = document.getElementById('FIngreso').value;
             var fechaS = document.getElementById('FSalida').value;
@@ -249,9 +245,9 @@ include '../php/function_validarSesion.php'
             
             
         }
+
+       
+            
     </script>
-
-
-
 </body>
 </html>

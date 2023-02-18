@@ -108,7 +108,7 @@ include '../php/function_validarSesion.php'
                                                 <th><?php  echo $row['categoria']?></th>
                                                 <th><?php  echo $row['detalles']?></th>
                                                 <th><?php  echo "$".$row['precio']?></th>                                       
-                                                <th></th>  
+                                                <th><?php  echo $row['estado']?></th></th>  
                                                 <th><a href="../php/Actua_habitacion.php?numero_hab=<?php echo $row['numero_hab'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>                                                                                        
                                             </tr>
                                         <?php 

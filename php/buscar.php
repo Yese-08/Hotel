@@ -1,7 +1,7 @@
 <?php
 function buscar($tabla, $id){
 	include 'conexion.php';
-	session_start();
+	
 	if(!isset($_POST['buscar'])){
 		$_POST['buscar']= '';$buscar = $_POST['buscar'];
 
@@ -21,14 +21,21 @@ function buscar($tabla, $id){
 	
 }	
 
-function mostrar($tabla, $id){
+function mostrar($tabla, $id,){
 	include 'conexion.php';
-	$getServicios1 = "SELECT * FROM $tabla order by $id";
-	$getServicios2 = mysqli_query($conexion,$getServicios1);
+	if($tabla== 'habitacion'){
+		$getServicios1 = "SELECT * FROM $tabla where estado ='disponible' order by $id";
+		$getServicios2 = mysqli_query($conexion,$getServicios1);
 
-	return $getServicios2;
 	
+	}elseif($tabla== 'servicios'){
+		$getServicios1 = "SELECT * FROM $tabla  order by $id";
+		$getServicios2 = mysqli_query($conexion,$getServicios1);
+	}
+	
+	return $getServicios2;
 }	
+
 function mostrarre($tabla, $id,$nomcol){
 	include 'conexion.php';
 	$cod_reserva=$_GET[$id];

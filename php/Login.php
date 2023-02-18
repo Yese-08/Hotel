@@ -14,15 +14,17 @@
 			if ( $obj->tipo_usuario == 'Recepcionista'){
 				header("location: ../html/pageRecepcionista.php" );
 				$_SESSION['usuario'] = $obj->nombre;
+				$_SESSION['tipo']=$obj->tipo_usuario;
 				echo "Rececionista";
 				
 				
 			}
 			else if ( $obj->tipo_usuario == 'usuario'){
-				header("location: ../html/pageCliente.php" );
+				header("location: ../html/pageCliente.php");
 				$_SESSION['usuario'] = $obj->nombre;
 				$_SESSION['ide'] = $obj->numero_documento;
-				echo "Cliente";
+				$_SESSION['tipo']=$obj->tipo_usuario;
+				
 				
 			}
 		}
