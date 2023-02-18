@@ -82,6 +82,9 @@
                       <input type="text" class="form-control" name="Precio" placeholder="Precio" value="<?php echo $row['precio']  ?>">
                       <label for="Detalles">Precio</label>
                   </div>
+
+                  
+                    <br>
                   <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar"> Actualizar</button>
               <br>

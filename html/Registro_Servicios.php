@@ -56,17 +56,21 @@ include '../php/function_validarSesion.php'
 <br>
 <br>
 
-  <br><br>        
-  <br><br>
   <div class="container mt-5">
     <div class="row">                         
       <div class="col-md-3">
         <h2>Buscar servicio</h2>
-        <form action="Registro_Servicios.php" method="POST">
-          <input type="text" class="form-control mb-3" name="buscar" placeholder="Codigo de servico " >
-          <input type="submit" class="btn btn-primary" value="Buscar">
-        </form><br>
+        <div class="container mt-5">
+                <form action="Registro_Servicios.php" method="POST">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Código de servicio" name="buscar">
+                    <button class="btn btn-dark btn-lg btn-block" type="submit" id="button-addon2" value = "buscar">Buscar</button>
+                </div>
+                </form>
+                </div>
       </div>
+</div>
+<br>
       <div class="col-md-8">
         <table class="table table-striped table-hover table-primary   table-responsive" >
           <thead class=" table-striped table-dark" >

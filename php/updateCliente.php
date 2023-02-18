@@ -24,7 +24,7 @@ $_consulta=mysqli_query($conexion,$sql);
 				alert("se registro exitosamente");
 			</script>
 		';	
-        header("location: ../html/Ver_Clientes.php" );  
+        header("location: ../html/Informacion_Cliente.php" );  
     }
     else{
         echo 'error de consulta';

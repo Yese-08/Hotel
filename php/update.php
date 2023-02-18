@@ -8,7 +8,8 @@ $Categoria = $_POST['Categoria'];
 $Detalles =$_POST['Detalles'];
 $Precio =$_POST['Precio'];
 
-$sql="UPDATE habitacion SET  categoria='$Categoria', detalles='$Detalles', precio='$Precio'  WHERE numero_hab='$N_habitacion'";
+
+$sql="UPDATE habitacion SET  categoria='$Categoria', detalles='$Detalles', precio='$Precio' WHERE numero_hab='$N_habitacion'";
 
 $_consulta=mysqli_query($conexion,$sql);
 
@@ -16,7 +17,7 @@ $_consulta=mysqli_query($conexion,$sql);
     if($_consulta ){		
         echo '
 			<script> 
-				alert("se actualizo exitosamente");
+				alert("se actualizó exitosamente");
 			</script>
 		';	
         Header("Location: ../html/Registro_Habitacion.php");

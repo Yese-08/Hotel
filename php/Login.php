@@ -15,7 +15,7 @@
 				header("location: ../html/pageRecepcionista.php" );
 				$_SESSION['usuario'] = $obj->nombre;
 				$_SESSION['tipo']=$obj->tipo_usuario;
-				echo "Rececionista";
+				echo "Recepcionista";
 				
 				
 			}
