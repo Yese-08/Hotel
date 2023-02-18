@@ -61,8 +61,7 @@ include '../php/function_validarSesion.php';
     include '../php/buscar.php';
     $query=mostrarre('reserva','numero_reserva','numero_reserva');
    
-    while($row=mysqli_fetch_array($query)){
-  ?>     
+  while($row=mysqli_fetch_array($query)){?>     
     <div class="col-2 text-right details">
       <p >
       Fecha inicio:  <?php  echo $row['fecha_ingreso']?><br>
@@ -88,7 +87,10 @@ include '../php/function_validarSesion.php';
         <strong>Datos de la reserva</strong><br>
         <strong>Codigo: <?php  echo $row['numero_reserva']?><br> </strong> 
         N° habitacion: <?php  echo $row['numero_hab']?><br>
-        Categoria: <?php  echo $row['numero_hab']?> <br>
+        <?php  $query1=mostrarre('habitacion','numero_hab','numero_hab');
+        while ($obj = mysqli_fetch_object($query1)) {
+          $cat =$obj->categoria?>
+          Categoria: <?php  echo $cat; }?><br>
         Costo habitacion: $ <?php  echo $row['costo']?> <br>
         N° personas:<?php  echo $row['numero_personas']?> <br>
       </p>
@@ -103,29 +105,27 @@ include '../php/function_validarSesion.php';
         
       </p>
     </div><!--.col-->
-  </div><!--.row-->
-    
-  <div class="invoicelist-body">
-    <table>
-      <thead >
-        <th width="5%">N° Noches </th>
-        <th width="10%">servicio adicional  $</th>
-        <th width="15%">Precio $</th>
-        <th width="10%">Total $</th>
-      </thead>
-      <tbody>      
-        <tr>
-          <td width='5%'><?php  echo $row['numero_noches']?></td>         
-          <td class="amount"><?php  echo '$'.$row['costo_servicio']?></td>          
-          <td ><?php  echo '$'.$row['costo']?> </td>
-          <td ><?php  echo '$'.$row['total_pagar']?></td>
-        </tr>
-      </tbody>
-    </table>
-  </div><!--.invoice-body-->
-  <?php 
-    }
-    ?>
+    </div><!--.row-->
+    <div class="invoicelist-body">
+      <table>
+        <thead >
+          <th width="5%">N° Noches </th>
+          <th width="10%">servicio adicional  $</th>
+          <th width="15%">Precio $</th>
+          <th width="10%">Total $</th>
+        </thead>
+        <tbody>      
+          <tr>
+            <td width='5%'><?php  echo $row['numero_noches']?></td>         
+            <td class="amount"><?php  echo '$'.$row['costo_servicio']?></td>          
+            <td ><?php  echo '$'.$row['costo']?> </td>
+            <td ><?php  echo '$'.$row['total_pagar']?></td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--.invoice-body-->
+    <?php 
+  }?>
 
   <div class="note" >
     

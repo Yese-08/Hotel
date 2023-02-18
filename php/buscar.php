@@ -26,6 +26,7 @@ function mostrar($tabla, $id,){
 	if($tabla== 'habitacion'){
 		$getServicios1 = "SELECT * FROM $tabla where estado ='Disponible' order by $id";
 		$getServicios2 = mysqli_query($conexion,$getServicios1);
+		return $getServicios2 ;
 
 	
 	}elseif($tabla== 'servicios'){

@@ -3,6 +3,8 @@ include '../php/function_validarSesion.php';
 
 ?>
 <!DOCTYPE html>
+<?php
+  if($_SESSION['user']== 'Recepcionista'){?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,11 +18,13 @@ include '../php/function_validarSesion.php';
     <script src="../js/popper.min.js" ></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
-    <!---MENÚ PRINCIPAL-->
-    <script src="../js/menu.js"></script>    
-    <!--FIN MENÚ PRINCIPAL-->  
+    
        
 </head>
+
+<!---MENÚ PRINCIPAL-->
+<script src="../js/menu.js"></script>    
+<!--FIN MENÚ PRINCIPAL-->  
 <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover; ">
     <div class="container" >
         <br><br><br><br><br>
@@ -69,6 +73,7 @@ include '../php/function_validarSesion.php';
                             </div>
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                        
                                     <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="totalPagar();">
                                     <label for="CostoH">Costo habitación</label><br>
                                 </div>
@@ -253,5 +258,10 @@ include '../php/function_validarSesion.php';
        
             
     </script>
+
+    
 </body>
+
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>

@@ -21,6 +21,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+  if($_SESSION['user']== 'usuario'){?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,7 +96,7 @@
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Correo electronico</label>
-                                <br><input class="form-control" name="Email"  id="Email" type="text" value= <?php echo $nombre?> required><br>
+                                <br><input class="form-control" name="Email"  id="Email" type="email" value= <?php echo $email?> required><br>
                             </div>
                         </div>
                     </div>    
@@ -123,3 +125,5 @@
 
 </body>
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>

@@ -53,8 +53,8 @@
                         </thead>
                         <tbody>
                           <?php
-                          include 'php/buscarHabDis.php';
-                          $query= buscar('habitacion','numero_hab', 'estado');
+                          include 'php/buscar.php';
+                          $query= mostrar('habitacion','numero_hab');
                           while($row=mysqli_fetch_array($query)){
                           ?>
                               <tr>

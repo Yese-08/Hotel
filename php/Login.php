@@ -14,30 +14,23 @@
 			if ( $obj->tipo_usuario == 'Recepcionista'){
 				header("location: ../html/pageRecepcionista.php" );
 				$_SESSION['usuario'] = $obj->nombre;
-				$_SESSION['tipo']=$obj->tipo_usuario;
-				echo "Recepcionista";
-				
-				
+				$_SESSION['user'] = $obj->tipo_usuario;
+				$_SESSION['ide'] = $obj->numero_documento;
 			}
 			else if ( $obj->tipo_usuario == 'usuario'){
 				header("location: ../html/pageCliente.php");
 				$_SESSION['usuario'] = $obj->nombre;
-				$_SESSION['ide'] = $obj->numero_documento;
-				$_SESSION['tipo']=$obj->tipo_usuario;
+				$_SESSION['user'] = $obj->tipo_usuario;
+				$_SESSION['ide'] = $obj->numero_documento;			
 				
 				
 			}
 		}
 	}
 	else{
-		if(isset($_REQUEST['email'])){ ?>
-         <div class="alert show showAlert" style="color:#f44336;">
-               <strong> Ops.! </strong>
-               El Correo no Existe, por favor Verifique.
-        </div>
-	<?php }
+		echo '<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/Login.html?emaiIncorrecto=1">';
+		
 	}
-	
 
 ?>
 
