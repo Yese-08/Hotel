@@ -21,6 +21,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php
+  if($_SESSION['user']== 'usuario'){?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -123,3 +125,5 @@
 
 </body>
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>
