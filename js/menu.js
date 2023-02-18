@@ -15,7 +15,7 @@ document.write(
 '<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">'+
 '<li class="nav-item">'+
 
-'<a class="nav-link active" aria-current="page" href="../php/Registro_Reservas.php"> <img src="../assets/img/iconReserva.png" alt="Clientes" width="30" height="24"> Reserva</a>'+
+'<a class="nav-link active" aria-current="page" href="Registro_Reservas.php"> <img src="../assets/img/iconReserva.png" alt="Clientes" width="30" height="24"> Reserva</a>'+
 
 '</li>'+
 
@@ -36,7 +36,7 @@ document.write(
 
 '<li class="nav-item">'+
 
-'<a class="nav-link active" href="cerrarSesionRecep.html"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">  Cerrar sesión</a>'+
+'<a class="nav-link active" href="../php/cerrar_sesion.php"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">  Cerrar sesión</a>'+
 
 
 '</li>'+

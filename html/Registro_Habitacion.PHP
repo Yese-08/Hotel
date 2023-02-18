@@ -79,7 +79,7 @@ include '../php/function_validarSesion.php'
                   <form action="Registro_Habitacion.php" method="POST">
                   <div class="input-group mb-3">
                       <input type="text" class="form-control" placeholder="Número de habitación" name="buscar">
-                      <button class="btn btn-dark btn-lg btn-block" type="submit" id="button-addon2" value = "buscar">Buscar</button>
+                      <button type="submit"> <img src="../assets/img/lupa.png"></button>
                   </div>
                   </form>
                 </div>

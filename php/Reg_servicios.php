@@ -1,8 +1,8 @@
 <?php
 	include 'conexion.php';
 	session_start();	
-	$nombre= $_POST['NomServicio'];
-	$precio =$_POST['CostServicio'];
+	$nombre= $_POST['nombre'];
+	$precio =$_POST['precio'];
 	
 	$sql = "INSERT INTO servicios values( '','$nombre', '$precio')";
 		$_consulta = mysqli_query($conexion, $sql);
