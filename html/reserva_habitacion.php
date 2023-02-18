@@ -3,6 +3,8 @@ include '../php/function_validarSesion.php';
 
 ?>
 <!DOCTYPE html>
+<?php
+  if($_SESSION['user']== 'Recepcionista'){?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,11 +18,13 @@ include '../php/function_validarSesion.php';
     <script src="../js/popper.min.js" ></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
-    <!---MENÚ PRINCIPAL-->
-    <script src="../js/menu.js"></script>    
-    <!--FIN MENÚ PRINCIPAL-->  
+    
        
 </head>
+
+<!---MENÚ PRINCIPAL-->
+<script src="../js/menu.js"></script>    
+<!--FIN MENÚ PRINCIPAL-->  
 <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover; ">
     <div class="container" >
         <br><br><br><br><br>
@@ -255,3 +259,5 @@ include '../php/function_validarSesion.php';
     </script>
 </body>
 </html>
+<?php
+}else{echo 'usuario no tiene acceso';}?>

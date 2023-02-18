@@ -94,7 +94,7 @@
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Correo electronico</label>
-                                <br><input class="form-control" name="Email"  id="Email" type="text" value= <?php echo $nombre?> required><br>
+                                <br><input class="form-control" name="Email"  id="Email" type="email" value= <?php echo $email?> required><br>
                             </div>
                         </div>
                     </div>    

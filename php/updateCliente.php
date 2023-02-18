@@ -19,13 +19,16 @@ $_consulta=mysqli_query($conexion,$sql);
 
    
     if($_consulta ){		
-        echo '
-			<script> 
-				alert("se registro exitosamente");
-			</script>
-		';	
-        header("location: ../html/Ver_Clientes.php" );  
-    }
+       
+       if($_SESSION['user'] == 'usuario'){
+            header ('location: http://localhost/conGra/proyecto/html/Informacion_Cliente.php');
+       }
+       else if($_SESSION['user'] == 'Recepcionista'){
+        echo '<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/pageRecepcionista.php">';
+       }
+
+       
+    }       
     else{
         echo 'error de consulta';
     }
