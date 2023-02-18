@@ -10,6 +10,8 @@
 	$numPer =$_POST['numPer'];
 	$email =$_POST['Email'];
 	$Genero =$_POST['Genero'];
+	$pregunta =$_POST['pregunta'];
+	$respuesta =$_POST['respuesta'];
 	$Usuario =$_POST['Usuario'];
 	$contraseña =$_POST['contraseña'];
 
@@ -23,7 +25,7 @@
 		';	
 	}
 	else {	
-		$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$email', '$Genero', '$Usuario', '$contraseña','$T_usuario')";
+		$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$email', '$Genero','$pregunta','$respuesta', '$Usuario', '$contraseña','$T_usuario')";
 		$_consulta = mysqli_query($conexion, $sql);
 			echo '
 			<script> 
