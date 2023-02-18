@@ -16,17 +16,12 @@
 				$_SESSION['usuario'] = $obj->nombre;
 				$_SESSION['user'] = $obj->tipo_usuario;
 				$_SESSION['ide'] = $obj->numero_documento;
-				
-				
-				
-				
 			}
 			else if ( $obj->tipo_usuario == 'usuario'){
 				header("location: ../html/pageCliente.php");
 				$_SESSION['usuario'] = $obj->nombre;
 				$_SESSION['user'] = $obj->tipo_usuario;
-				$_SESSION['ide'] = $obj->numero_documento;
-				
+				$_SESSION['ide'] = $obj->numero_documento;			
 				
 				
 			}

@@ -45,21 +45,25 @@
                             <div class="modal-body">
                               <table class="table">
                                 <thead>
-                                  <tr>
-                                    <th scope="col">N° de habitacion</th>
-                                    <th scope="col">Tipo</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Simple</td>
-                                    
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Doble</td>
-                                    
+                                <tr>
+                                <th>No de Habitación</th>
+                                <th>Categoria</th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+                          include 'php/buscar.php';
+                          $query= mostrar('habitacion','numero_hab');
+                          while($row=mysqli_fetch_array($query)){
+                          ?>
+                              <tr>
+                                  <th><?php  echo $row['numero_hab']?></th>
+                                  <th><?php  echo $row['categoria']?></th>   
+                              </tr>
+                          <?php 
+                              }
+                          ?>    
                                   </tr>
                                 </tbody>
                               </table>

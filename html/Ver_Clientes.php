@@ -32,14 +32,16 @@ include '../php/function_validarSesion.php'
         <div class="col-md-3">
             <h2>Buscar cliente</h2>
 
+            <div class="container mt-5">
                 <form action="Ver_Clientes.php" method="POST">
-                    <input type="text" class="form-control mb-3" name="buscar" placeholder="Numero de documento" require>
-                     
-                    <input type="submit" class="btn btn-primary" value="Buscar">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Número de documento" name="buscar">
+                    <button type="submit"> <img src="../assets/img/lupa.png" ></button>
+                </div>
                 </form>
+                </div>
                 
-               
-                <br>
+                </div>
 
                 </div>
                 <div class="col">

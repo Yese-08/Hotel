@@ -24,7 +24,7 @@ $total_pagar =$_POST['TPagar'];
 $sql = "INSERT INTO reserva values('', '$nombre_client','$tipo_documento', '$numero_documento', '$fecha_nacimiento', '$nacionalidad','$telefono', '$email', '$genero', '$numero_hab', '$costo','$numero_personas','$fecha_ingreso','$fecha_salida','$numero_noches','$servicios_adicionales','$costo_servicio','$total_pagar')";
     $_consulta = mysqli_query($conexion, $sql);
     if($_consulta ){
-        $sql2="UPDATE habitacion SET  estado ='ocupado'  WHERE numero_hab='$numero_hab'";
+        $sql2="UPDATE habitacion SET  estado ='Ocupado'  WHERE numero_hab='$numero_hab'";
         $_consulta2=mysqli_query($conexion,$sql2);		
         echo '
 			<script> 
@@ -37,7 +37,8 @@ $sql = "INSERT INTO reserva values('', '$nombre_client','$tipo_documento', '$num
 		
             while ($obj = mysqli_fetch_object($_consulta1)) {
                 $id= $obj->numero_reserva;
-                Header("Location: ../html/Factura.php?numero_reserva=$id");
+                $num= $obj->numero_hab;
+                Header("Location: ../html/Factura.php?numero_reserva=$id&numero_hab=$num");
                 
             }
         }

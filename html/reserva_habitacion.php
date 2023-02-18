@@ -73,6 +73,7 @@ include '../php/function_validarSesion.php';
                             </div>
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                        
                                     <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="totalPagar();">
                                     <label for="CostoH">Costo habitación</label><br>
                                 </div>
@@ -257,7 +258,10 @@ include '../php/function_validarSesion.php';
        
             
     </script>
+
+    
 </body>
+
 </html>
 <?php
 }else{echo 'usuario no tiene acceso';}?>
