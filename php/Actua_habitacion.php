@@ -83,7 +83,12 @@
                       <label for="Detalles">Precio</label>
                   </div>
 
-                  
+                  <select class="form-select" aria-label="Default select example" name="estado" id="estado">
+                      <option value="<?php echo $row['estado']  ?>"><?php echo $row['estado']  ?></option>
+                      <option value="Disponible" >Disponible</option>
+                      <option value="Ocupado">Ocupado</option>
+                    </select>
+                    
                     <br>
                   <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar"> Actualizar</button>

@@ -7,9 +7,9 @@ $N_habitacion =$_POST['habitacion'];
 $Categoria = $_POST['Categoria'];
 $Detalles =$_POST['Detalles'];
 $Precio =$_POST['Precio'];
+$Estado = $_POST['estado'];
 
-
-$sql="UPDATE habitacion SET  categoria='$Categoria', detalles='$Detalles', precio='$Precio' WHERE numero_hab='$N_habitacion'";
+$sql="UPDATE habitacion SET  categoria='$Categoria', detalles='$Detalles', precio='$Precio', estado ='$Estado'  WHERE numero_hab='$N_habitacion'";
 
 $_consulta=mysqli_query($conexion,$sql);
 
