@@ -63,8 +63,8 @@
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
                       <input type="header"  class="form-control" name="codigo" placeholder="Codigo servicio" value="<?php echo $row['cod']  ?>" disabled>
-                      <label for="habitacion">"Codigo servicio"</label>
-                  <br>
+                      <label for="habitacion">Código de servicio</label>
+                  
                   <input type="hidden"  class="form-control" name="codigo" placeholder="N° Habitacion" value="<?php echo $row['cod']  ?>">
 
                   

@@ -35,6 +35,7 @@ include '../php/function_validarSesion.php'
   <!--  INICIO VIZULIZACION DE TABLA--> 
   <br><br>        
   <br><br>
+  <table>
   <div class="container mt-5">
       <div class="row">                         
           <div class="col-md-3">
@@ -50,6 +51,7 @@ include '../php/function_validarSesion.php'
                 </div>
 
                   </div>
+
                   <div class="col">
                       <table class="table table-striped table-hover table-primary " >
                           <thead class=" table-striped table-dark" >
@@ -110,6 +112,7 @@ include '../php/function_validarSesion.php'
           </div>
       </div>  
   </div>
+                                    </table>
 </body>
 </html>
 <!--fin vizuliazar tabla-->
