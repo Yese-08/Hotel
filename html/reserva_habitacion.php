@@ -158,20 +158,17 @@ include '../php/function_validarSesion.php';
                                     <option selected>Servicios adicionales</option>
                                         <?php
                                         $getServicios2= mostrar('servicios','nombre'); 
-
-                                    
                                         while($row = mysqli_fetch_array($getServicios2)){
                                             $cod = $row['cod'];
                                             $nombre = $row['nombre'];
-                                            $precio = $row['precio'];
+                                            $precioS = $row['precio'];
 
                                             ?>
                                             <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
                                             <?php
-                                      }
-
-                                    ?>
-                                    </select>                                  
+                                        } ?>
+                                    </select>        
+                                                              
                                 </div>
                             </div>
                         </div>
@@ -182,11 +179,25 @@ include '../php/function_validarSesion.php';
                                     <label for="Email">Email</label><br>
                                 </div>
                             </div>
-                            <div class="col">                            
+                            <div class="col"> 
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required  onchange="totalPagar();">
+                               
+                                                <script>
+                                                function autocomS(){
+                                                    var CostoH = document.getElementById('serviciosAd').value;
+                                                    while (CostoH) {
+                                                        
+                                                        return console.log( CostoH);
+                                                    }
+                                                    
+                                                }
+                                                </script>
+                                        
+                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" value="<?php echo $precioS; ?>" required  onchange="totalPagar();">
                                     <label for="CServicio">Costo de servicio</label><br>
+                                   
                                 </div>
+                                
                             </div>
                         </div>               
                         <div class="row">
@@ -202,7 +213,7 @@ include '../php/function_validarSesion.php';
                             </div>                        
                             <div class="col"  >
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="totalPagar();">
+                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="autocomS();">
                                     <label for="TPagar">Total a pagar</label><br>
                                 </div>                            
                             </div>
@@ -254,6 +265,7 @@ include '../php/function_validarSesion.php';
             
             
         }
+
 
        
             
