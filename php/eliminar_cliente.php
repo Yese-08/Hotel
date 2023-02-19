@@ -17,7 +17,7 @@ if(($query)>0){
         </script>
         ';	
         include 'cerrar_sesion.php';
-        Header("Location:http://localhost/conGra/proyecto/");	
+        Header("Location:http://localhost/proyecto/");	
 	}
     
 }
@@ -29,6 +29,6 @@ else{
         </script>
     ';	
 
-    Header("Location:index.html");	
+    Header("Location:index.php");	
 }    
 ?>

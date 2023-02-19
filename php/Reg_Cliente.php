@@ -16,14 +16,31 @@
 	$contraseña =$_POST['contraseña'];
 
 
-	$verificar_correo =  mysqli_query($conexion,"SELECT * FROM cliente WHERE email='$email' and usario='$Usuario'");
+	$verificar_correo =  mysqli_query($conexion,"SELECT * FROM cliente WHERE email='$email'  ");
 	if (mysqli_num_rows($verificar_correo) > 0) {
 		echo '
 			<script> 
 				alert("este correo ya se encuentra registrado, intenta con otro diferente");
 			</script>
 		';	
+		$verificar_correo =  mysqli_query($conexion,"SELECT * FROM cliente WHERE   numero_documento='$NDocum'");
+		if (mysqli_num_rows($verificar_correo) > 0) {
+		echo '
+			<script> 
+				alert("este numero de documento ya se encuentra registrado, intenta con otro diferente");
+			</script>
+		';	
+		}
+		$verificar_usuario =  mysqli_query($conexion,"SELECT * FROM cliente WHERE usario='$Usuario'");
+		if (mysqli_num_rows($verificar_usuario) > 0) {
+		echo '
+			<script> 
+				alert("este usuario ya se encuentra registrado, intenta con otro diferente");
+			</script>
+		';	
+		}
 	}
+	
 	else {	
 		$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$email', '$Genero','$pregunta','$respuesta', '$Usuario', '$contraseña','$T_usuario')";
 		$_consulta = mysqli_query($conexion, $sql);
