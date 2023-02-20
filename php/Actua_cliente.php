@@ -67,7 +67,7 @@
                   
                   <br>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" name="NomApe" placeholder="Nombre y Apellido" value="<?php echo $row['nombre']  ?>" pattern="^[A-Za-z]+$" maxlength="50" required>
+                      <input type="text" class="form-control" name="NomApe" placeholder="Nombre y Apellido" value="<?php echo $row['nombre']  ?>" required>
                       <label for="NomApe">Nombre y apellidos</label>
                   </div>
 
