@@ -30,7 +30,7 @@ include '../php/function_validarSesion.php'
   <br>
   <br>
   
-  <h1 style="text-align: center; font-family: cursive"> ----- <?php echo '<strong style="text-align: center; font-family: cursive">'.$varsesion.'</strong>';?> -----  </h1>
+  <h1 style="text-align: center; font-family: cursive"> ♡♡♡ <?php echo '<strong style="text-align: center; font-family: cursive">'.$varsesion.'</strong>';?> ♡♡♡  </h1>
   <h1 style="text-align: center; font-family: cursive"> ° BIENVENIDO(A) ° </h1>
   <h2 style="text-align: center; font-family: cursive">----- A NUESTRO -----</h2>
   <h2 style="text-align: center; font-family: cursive" >PEQUEÑO HOGAR</h2>

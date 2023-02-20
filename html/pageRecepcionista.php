@@ -23,7 +23,7 @@ include '../php/function_validarSesion.php'
   <div>
     
     <br><br><br><br>
-    <h1 style="text-align: center; font-family: cursive"> ----- <?php echo '<strong style="text-align: center; font-family: cursive">'.$varsesion.'</strong>';?> -----  </h1>
+    <h1 style="text-align: center; font-family: cursive"> ♡ <?php echo '<strong style="text-align: center; font-family: cursive">'.$varsesion.'</strong>';?> ♡ </h1>
   <h1 style="text-align: center; font-family: cursive"> ° BIENVENIDO(A)  °</h1>
   <h2 style="text-align: center; font-family: cursive">Un sueño no se hace realidad por arte de</h2>
   <h2 style="text-align: center; font-family: cursive" >magia; necesita sudor, determinación y</h2>

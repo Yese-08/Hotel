@@ -1,7 +1,7 @@
 document.write(
 
 
-    '<nav class="navbar  bg-dark bg-body-tertiary fixed-top" data-bs-theme="dark">'+
+    '<nav class="navbar  navbar-dark bg-dark bg-body-tertiary fixed-top" data-bs-theme="dark">'+
     '    <div class="container-fluid">'+
     '    '+
     '      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">'+
@@ -9,20 +9,20 @@ document.write(
     '      </button>'+
     '      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">'+
     '        <div class="offcanvas-header">'+
-    '          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú de opciones</h5>'+
+    '          <a class="nav-link active" aria-current="page" href="http://localhost/proyecto/html/pageCliente.php"><h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENÚ DE OPCIONES</h5></a>'+
     '          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>'+
     '        </div>'+
     '        <div class="offcanvas-body">'+
     '          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">'+
     '            <li class="nav-item">'+
     '             '+
-    '                    <a class="nav-link active" aria-current="page" href="Reserva_cliente.php">  <img src="../assets/img/iconReserva.png" alt="Clientes" width="30" height="24">  Reserva</a>'+
+    '                    <a class="nav-link active" aria-current="page" href="http://localhost/proyecto/html/Reserva_cliente.php">  <img src="../assets/img/iconReserva.png" alt="Clientes" width="30" height="24">  Reserva</a>'+
     '                 '+
     '            </li>'+
 ''+
     '            <li class="nav-item">'+
     '              '+
-    '              <a class="nav-link active" href="Informacion_Cliente.php"> <img src="../assets/img/iconUser.png" alt="Clientes" width="30" height="24">  Información personal</a>'+
+    '              <a class="nav-link active" href="http://localhost/proyecto/html/Informacion_Cliente.php"> <img src="../assets/img/iconUser.png" alt="Clientes" width="30" height="24">  Información personal</a>'+
     '                  '+
     '            </li>'+
 ''+

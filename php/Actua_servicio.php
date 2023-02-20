@@ -28,7 +28,7 @@
     </head>
     <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
     <!---MENÚ PRINCIPAL-->
-    <script src="../js/menu2.js"></script>    
+    <script src="../js/menu.js"></script>    
     <!--FIN MENÚ PRINCIPAL-->
    <br><br><br><br>
 
@@ -63,8 +63,8 @@
               <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="form-floating mb-3">
                       <input type="header"  class="form-control" name="codigo" placeholder="Codigo servicio" value="<?php echo $row['cod']  ?>" disabled>
-                      <label for="habitacion">"Codigo servicio"</label>
-                  <br>
+                      <label for="habitacion">Código de servicio</label>
+                  
                   <input type="hidden"  class="form-control" name="codigo" placeholder="N° Habitacion" value="<?php echo $row['cod']  ?>">
 
                   
@@ -74,7 +74,7 @@
                       <label for="Nombre">Nombre</label>
                   </div>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" name="precio" placeholder="precio" value="<?php echo $row['precio']  ?>">
+                      <input type="number" class="form-control" name="precio" placeholder="precio" value="<?php echo $row['precio']  ?>" pattern="^[0-9]+$">
                       <label for="Detalles">Precio</label>
                   </div>
 

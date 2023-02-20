@@ -1,5 +1,21 @@
 <?php
 include '../php/function_validarSesion.php';
+include "../php/conexion.php";
+
+$user = $_SESSION['ide'];
+$query= "SELECT nombre, tipo_documento, numero_documento, fecha_nacimiento, nacionalidad, telefono, email, genero FROM cliente where numero_documento='$user'";
+$_consulta= mysqli_query($conexion,$query);
+while($Date=mysqli_fetch_assoc($_consulta)){
+    $nombre = $Date['nombre'];
+    $T_Documento = $Date['tipo_documento'];
+    $n_Documento = $Date['numero_documento'];
+    $fecha = $Date['fecha_nacimiento'];
+    $nacionalidad = $Date['nacionalidad'];
+    $telefono = $Date['telefono'];
+    $email = $Date['email'];
+    $genero = $Date['genero'];
+   
+}
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +75,7 @@ include '../php/function_validarSesion.php';
                                     <div class="row" >
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="NomApe" id="NomApe" placeholder="Nombre y apellido" name="NomApe" required/>
+                                            <input class="form-control" name="NomApe" id="NomApe" name="NomApe" value= <?php echo $nombre?> required/>
                                             <label for="NomApe">Nombre y apellido</label><br>
                                         </div>
                                         </div>
@@ -91,14 +107,17 @@ include '../php/function_validarSesion.php';
             
                                     <div class="row">
                                         <div class="col">
-                                          <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
-                                            <select class="form-select" aria-label="Default select example" name="Tdocumento" id ="Tdocumento"required>
-                                                <option selected>Tipo documento</option>
-                                                <option value="C.C">C.C</option>
-                                                <option value="T.I">T.I</option>
-                                                <option value="C.E">C.E</option>
+                                        <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;">
+                                        <div class="form-outline mb-4 text-lg-start">
+                                        <label for="TipoDoc">Tipo de documento</label>
+                                        <br><select class="form-select" aria-label="Default select example" name="Tdocumento" id="Tdocumento">
+                                        <option selected><?php echo $T_Documento; ?></option>
+                                            <option value="T.I" >T.I</option>
+                                            <option value="C.C">C.C</option>
+                                            <option value="C.E">C.E</option>
                                             </select>
-                                        </div>     
+                                                </div>
+                                        </div>
                                         </div>
                                         <div class="col">                            
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
@@ -110,13 +129,13 @@ include '../php/function_validarSesion.php';
                                     <div class="row">                       
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="NDocum" id="NDocum" placeholder="Numero de documento" required/>
+                                            <input class="form-control" name="NDocum" id="NDocum" type= "number" value= <?php echo $n_Documento?> required/>
                                             <label for="NDocum">Numero de documento</label><br>
                                         </div>                       
                                         </div>        
                                         <div class="col">                            
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                                <input class="form-control" name="Nperso"  id="Nperso" placeholder="N° de Personas" required>
+                                                <input class="form-control" name="Nperso"  id="Nperso" type= "number" placeholder="N° de Personas" required>
                                                 <label for="NPerso">N° de Personas</label><br>
                                             </div>
                                         </div>
@@ -124,7 +143,7 @@ include '../php/function_validarSesion.php';
                                     <div class="row">
                                         <div class="col">
                                           <div  class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">                                            
-                                            <input class="form-control" name="FNacimiento" id="FNacimiento" type="date" placeholder="Fecha de nacimiento" required/>
+                                            <input class="form-control" name="FNacimiento" id="FNacimiento" type="date" value= <?php echo $fecha?> required/>
                                             <label>Fecha de nacimiento</label>
                                         </div>
                                         </div>
@@ -137,15 +156,10 @@ include '../php/function_validarSesion.php';
                                     <div class="row">
                                         <div class="col">   
                                           <br>                         
-                                          <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
-                                            <select class="form-select" aria-label="Default select example" name ="nacionalidad" id="nacionalidad">
-                                                <option selected>Procedencia</option>
-                                                <option value="Colombia">Colombia</option>
-                                                <option value="Ecuador">Ecuador</option>
-                                                <option value="Venezuela">Venezuela</option>
-                                                <option value="Brasil">Brasil </option>
-                                            </select>
-                                        </div>    
+                                          <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" name="nacionalidad" id="nacionalidad" value= <?php echo $nacionalidad?> required/>
+                                            <label for="NDocum">Nacionalidad</label><br>
+                                        </div>     
                                         </div>
                                         <div class="col">                         
                                             <div  class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">                                                
@@ -171,7 +185,7 @@ include '../php/function_validarSesion.php';
                                     <div class="row">
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="Email" id="Email" placeholder="Email" required/>
+                                            <input class="form-control" name="Email" id="Email" value= <?php echo $email?> required required/>
                                             <label for="Email">Email</label><br>
                                         </div>
                                         </div>
@@ -199,15 +213,18 @@ include '../php/function_validarSesion.php';
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                          <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;"  >
-                                            <select class="form-select" aria-label="Default select example" name="genero" id="genero">
-                                                <option selected>Genero</option>
+                                            <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <div class="form-outline mb-4 text-lg-start">
+                                                <label for="Genero">Genero</label>
+                                                <br><select class="form-select" aria-label="Default select example" name="Tdocumento" id="Tdocumento">
+                                                <option selected><?php echo $genero; ?></option>
+                                                <option value="Masculino" >Masculino</option>
                                                 <option value="Femenino">Femenino</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="otro">otro</option>
-                                            </select>
+                                                <option value="Otro">Otro</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        </div>
+                                    </div>
                                         <div class="col">                            
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
                                                 <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required onchange="totalPagar();">

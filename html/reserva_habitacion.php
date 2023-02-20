@@ -67,7 +67,7 @@ include '../php/function_validarSesion.php';
                         <div class="row">
                             <div class="col">
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="NomApe" id="NomApe" placeholder="Nombre y apellido" name="NomApe" required/>
+                                    <input class="form-control" name="NomApe" id="NomApe" placeholder="Nombre y apellido" name="NomApe" required pattern="^[A-Za-z]+$" maxlength="50">
                                     <label for="NomApe">Nombre y apellido</label><br>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@ include '../php/function_validarSesion.php';
                             </div>        
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="Nperso"  id="Nperso" placeholder="N° de Personas" required>
+                                    <input class="form-control" name="Nperso"  id="Nperso" type= "number" placeholder="N° de Personas" required>
                                     <label for="NPerso">N° de Personas</label><br>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ include '../php/function_validarSesion.php';
                         <div class="row">
                             <div class="col">
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="NDocum" id="NDocum" placeholder="Numero de documento" required/>
+                                    <input class="form-control" name="NDocum" id="NDocum" type= "number"placeholder="Numero de documento"  required/>
                                     <label for="NDocum">Numero de documento</label><br>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@ include '../php/function_validarSesion.php';
                         <div class="row">
                             <div class="col">
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control" name="Telefono" id="Telefono" placeholder="Telefono" required/>
+                                    <input class="form-control" name="Telefono" id="Telefono" type= "number" placeholder="Telefono" required >
                                     <label for="Telefono">Telefono</label><br>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@ include '../php/function_validarSesion.php';
                         <div class="container text-center">
                             <div class="row">                          
                             <div class="col align-self-center">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" >
                                     Generar reporte
                                 </button>
                     
@@ -267,6 +267,9 @@ include '../php/function_validarSesion.php';
             
         }
 
+
+        
+            
 
        
             

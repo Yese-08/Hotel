@@ -28,13 +28,14 @@ include '../php/function_validarSesion.php'
   <br><br>
   <br><br>
   <!---INICIO CONTENIDO-->
-  <a href="../html/reserva_habitacion.php">
+  <a href="http://localhost/proyecto/html/reserva_habitacion.php">
     <button type="button" class="btn btn-primary" name="regReserva" id="regReserva" >Registrar reserva</button>
   </a>
   <!--FIN CONTENIDO-->
   <!--  INICIO VIZULIZACION DE TABLA--> 
   <br><br>        
   <br><br>
+  <table>
   <div class="container mt-5">
       <div class="row">                         
           <div class="col-md-3">
@@ -50,6 +51,7 @@ include '../php/function_validarSesion.php'
                 </div>
 
                   </div>
+
                   <div class="col">
                       <table class="table table-striped table-hover table-primary " >
                           <thead class=" table-striped table-dark" >
@@ -104,12 +106,12 @@ include '../php/function_validarSesion.php'
                                       </tr>
                                   <?php 
                                       }
-                                  ?>
-                                  
+                                  ?>   
                         </tbody>                                
           </div>
       </div>  
   </div>
+</table>
 </body>
 </html>
 <!--fin vizuliazar tabla-->

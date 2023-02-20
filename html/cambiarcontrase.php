@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +10,17 @@
 <body>
 <div class="container" >
             
-            <br>
-            <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Responda esta pregunta de seguridad</h1><br>
-            <div class="panel panel-primary" >               
-                <div class="panel-body" >            
+           
                     <form id="form" class="form-horizontal" role="form" action="../php/cambiarcontra.php" method="post" >
                         <div class="row">
                             <div class="col">                            
                                 <div class="col-md-8" style="margin: 0 auto;">
-                                    <label>Pregunta</label>
+                                  
                                     
                                     
-                                </div>
                             </div>
+                            </div>
+                            
                             <div class="col">                         
                                 <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                     <label>Respuesta 1</label>
@@ -38,5 +37,5 @@
                 </div>
             </div>
         </div>
-</body>
+    </body>
 </html>

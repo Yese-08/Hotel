@@ -39,16 +39,7 @@
 </head>
 <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover; ">    
   
-    <!--hhh-->    
-    <nav class=" navbar bg-dark navbar-expand-lg " data-bs-theme="dark" >
-        <div class="container-fluid">
-            <p>
-                <img src="../assets/img/icon1.png" alt="img-icon1" style="padding: -50px; ">
-                <a class="navbar-brand" href="#">HOTEL MAR AZUL</a>
-            </p>
-        </div>
-        </div>
-    </nav>
+<script src="../js/menu3.js"></script>    
     <!--hhh-->
 
     <div class="container" >

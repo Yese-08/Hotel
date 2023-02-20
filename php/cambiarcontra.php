@@ -5,11 +5,11 @@
 		$email= $_REQUEST['email'] ;
 		$respuesta=$_REQUEST['respuesta1'];
         $respuesta1=$_REQUEST['respuesta2'];
-
-        if($respuesta==$respuesta1){
+        echo $email,$respuesta,$respuesta1;
+        if($respuesta == $respuesta1){
             $sql="UPDATE cliente SET contraseña='$respuesta' WHERE email='$email'";
             $_consulta=mysqli_query($conexion,$sql);
-            
+           
             if($_consulta){
                 echo '
                 <script> alert("Su contraseña fue actualizada exitosamente");</script>';
