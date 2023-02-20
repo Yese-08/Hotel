@@ -1,41 +1,39 @@
+<?php 
+   
+    include '../php/conexion.php';
+    
+    $email = $_GET['email'];
+    $respuesta=$_GET['respuesta'];
 
+    $sql="SELECT * FROM cliente WHERE email=$email and respuesta='$respuesta'";
+    $query=mysqli_query($conexion,$sql);
+    $row=mysqli_fetch_array($query);      
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cambiar contraseña</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Recuperar contraseña</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <script src="../js/popper.min.js" ></script>
+      <script src="../js/bootstrap.bundle.min.js"></script>
+      <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
 </head>
-<body>
-<div class="container" >
-            
-           
-                    <form id="form" class="form-horizontal" role="form" action="../php/cambiarcontra.php" method="post" >
-                        <div class="row">
-                            <div class="col">                            
-                                <div class="col-md-8" style="margin: 0 auto;">
-                                  
-                                    
-                                    
-                            </div>
-                            </div>
-                            
-                            <div class="col">                         
-                                <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <label>Respuesta 1</label>
-                                    <br><input class="form-control" name="respuesta1"   id="respuesta" type="text"  required><br>
-                                        <label>Respuesta 2</label>
-                                    <br><input class="form-control" name="respuesta2"   id="respuesta" type="text"  required><br>
-                                </div>
-                            </div>
-                            
-                        </div>    
-                        <input type="hidden" name='email' value= <?php echo $_REQUEST['emailC']?> >  
-                        <button type="submit" class="btn btn-primary btn-block mb-4" value="Actualizar"> Enviar respuesta</button>    
-                    </form>
-                </div>
-            </div>
+<body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover; ">
+    <!--hhh-->    
+    <nav class=" navbar bg-dark navbar-expand-lg " data-bs-theme="dark" >
+        <div class="container-fluid">
+            <p>
+                <img src="../assets/img/icon1.png" alt="img-icon1" style="padding: -50px; ">
+                <a class="navbar-brand" href="#">HOTEL MAR AZUL</a>
+            </p>
         </div>
+        </div>
+    </nav>
+    <!--hhh-->
+
     </body>
 </html>
