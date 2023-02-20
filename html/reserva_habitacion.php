@@ -213,7 +213,7 @@ include '../php/function_validarSesion.php';
                             </div>                        
                             <div class="col"  >
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="autocomS();">
+                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="totalPagar();">
                                     <label for="TPagar">Total a pagar</label><br>
                                 </div>                            
                             </div>
@@ -254,11 +254,12 @@ include '../php/function_validarSesion.php';
         function calcularnoche(){
             var fechaI = document.getElementById('FIngreso').value;
             var fechaS = document.getElementById('FSalida').value;
+            var diasDeDiferencia = 0;
             var fecha1 = new Date(fechaI);
             var fecha2 = new Date(fechaS);
             
             var diferencia = fecha2.getTime() - fecha1.getTime();
-            var diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
+            diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
             document.getElementById('NNoches').value = diasDeDiferencia
         
             return diasDeDiferencia ;
