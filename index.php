@@ -350,7 +350,7 @@
   })*/
 
 Swal.fire({
-  title: '<strong>¿Desea reserva la habitacion?</strong>',
+  title: '<strong>¿Desea reservar la habitacion?</strong>',
   icon: 'question',
   html:"¡Debe inciar sesion para reservar la habitacion! ",
   showCloseButton: true,
@@ -362,7 +362,7 @@ Swal.fire({
     //Read more about isConfirmed, isDenied below 
     if (result.isConfirmed) {
       
-      window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+      window.location.href = "http://localhost/proyecto/html/Login.html";
     } else if (result.isDenied) {
       Swal.fire('Changes are not saved', '', 'info')
     }

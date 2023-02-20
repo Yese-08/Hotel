@@ -114,7 +114,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Habitacion" id="Habitacion" placeholder="Habitacion"  value="<?php echo $row['numero_hab']  ?>"  required/>
+                                        <input class="form-control" type="number" name="Habitacion" id="Habitacion" placeholder="Habitacion"  value="<?php echo $row['numero_hab']  ?>"  required pattern="^[0-9]+$"/>
                                         <label for="Habitacion">Habitacion</label><br>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="N_Persona" id="N_Persona" placeholder="N_Persona"  value="<?php echo $row['numero_personas']  ?>"  required/>
+                                        <input class="form-control" type="number" name="N_Persona" id="N_Persona" placeholder="N_Persona"  value="<?php echo $row['numero_personas']  ?>"  required pattern="^[0-9]+$" />
                                         <label for="N_Persona">N° Personas</label><br>
                                     </div>
                                 </div>

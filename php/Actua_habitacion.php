@@ -79,7 +79,7 @@
                       <label for="Detalles">Detalles</label>
                   </div>
                   <div class="form-floating mb-3">
-                      <input type="text" class="form-control" name="Precio" placeholder="Precio" value="<?php echo $row['precio']  ?>">
+                      <input class="form-control" type="number" name="Precio" placeholder="Precio" value="<?php echo $row['precio']  ?>" pattern="^[0-9]+$"/>
                       <label for="Detalles">Precio</label>
                   </div>
 
