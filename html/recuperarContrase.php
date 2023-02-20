@@ -1,6 +1,6 @@
 <?php
 	include "../php/conexion.php";
-   
+    $email= $_GET['email'] ;
     $query= "SELECT pregunta FROM cliente where email='$email'";
 	$_consulta= mysqli_query($conexion,$query);
     while($Date=mysqli_fetch_assoc($_consulta)){
@@ -44,7 +44,7 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Pregunta</label>
-                                <h1 style="text-align: center; font-family: cursive"> <?php echo '<strong style="text-align: center; font-family: cursive">'.$pregunta.'</strong>';?> </h1>
+                                <h1 style="text-align: center; font-family: cursive"> <?php echo '<p style="text-align: righ; font-family: cursive">'.$pregunta.'</p>';?> </h1>
                             </div>
                         </div>
                         <div class="col">                         

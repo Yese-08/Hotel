@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" href="assets/img/log1.png" type="image/x-icon">
 </head>
 <body>
-
+    
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
           <img src="assets/img/icon1.png" alt="img-icon1" style="padding: -50px; ">
@@ -58,7 +59,7 @@
                           while($row=mysqli_fetch_array($query)){
                           ?>
                               <tr>
-                                  <th><?php  echo $row['numero_hab']?></th>
+                                  <th onclick="aler();"><?php  echo $row['numero_hab']?></th>
                                   <th><?php  echo $row['categoria']?></th>   
                               </tr>
                           <?php 
@@ -297,5 +298,79 @@
 </footer>
 <!-- Footer -->
     
+<script >
+  function aler(params) {
+    //let age = prompt ('¿Cuántos años tienes?',);
+    //alert('Tienes'+age +'años!'); //Tienes 100 años!
+    /*if (confirm("Desea reservar la habitacion")) {
+      if (confirm("Debe inciar sesion para reservar la habitacion")) {
+        open("http://localhost/conGra/proyecto/html/Login.html", "login",'popup=yes');
+      }
+       
+    }
+    /*let sign = prompt("What's your sign?");
+
+    if (sign.toLowerCase() === "scorpio") {
+      alert("Wow! I'm a Scorpio too!");
+    }*/
+
+
+   /* Swal.fire({
+      title: "¿Desea reserva la habitacion? ",
+      text: "¡Debe inciar sesion para reservar la habitacion! ",
+      icon: "question",
+      showDenyButton: true,
+      showCancelButton: true,
+      bconfirmButtonText: 'si',
+     
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+     
+  /*Swal.fire({
+    title: "¿Desea reserva la habitacion? ",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: 'si',
+    denyButtonText: 'Cerrar',
+  }).then((result) => {
+    /* Read more about isConfirmed, isDenied below 
+    if (result.isConfirmed) {
+      Swal.fire('Saved!', '', 'success')
+    } else if (result.isDenied) {
+      Swal.fire('Changes are not saved', '', 'info')
+    }
+  })*/
+
+Swal.fire({
+  title: '<strong>¿Desea reserva la habitacion?</strong>',
+  icon: 'question',
+  html:"¡Debe inciar sesion para reservar la habitacion! ",
+  showCloseButton: true,
+  showCancelButton: true,  
+  confirmButtonText: 'Si',
+  cancelButtonText:'Cancelar',
+  cancelButtonAriaLabel:'Thumbs down'
+}).then((result) => {
+    //Read more about isConfirmed, isDenied below 
+    if (result.isConfirmed) {
+      
+      window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+    } else if (result.isDenied) {
+      Swal.fire('Changes are not saved', '', 'info')
+    }
+  })
+
+
+  }
+  
+</script>
 </body>
 </html>

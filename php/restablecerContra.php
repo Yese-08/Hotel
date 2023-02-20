@@ -1,12 +1,12 @@
 <?php 
 	include "conexion.php";
 	
-	$email= $_POST['email'] ;
+	$email= $_GET['email'] ;
 	
     $query= "SELECT * FROM cliente where email ='$email'";
 	$_consulta= mysqli_query($conexion,$query);
 	if(mysqli_num_rows($_consulta)>0){
-		header("location: ../html/recuperarContrase.php" );
+		header("location: ../html/recuperarContrase.php?email=$email" );
 	}
 	
 	else{
