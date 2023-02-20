@@ -2,7 +2,7 @@
 	include "../php/conexion.php";
     $email= $_GET['email'] ;
     $query= "SELECT * FROM cliente where email='$email'";
-	$_consulta= mysqli_query($conexion,$query);
+	  $_consulta= mysqli_query($conexion,$query);
     while($Date=mysqli_fetch_assoc($_consulta)){
         $pregunta = $Date['pregunta'];
         $respuesta = $Date['respuesta'];
@@ -41,11 +41,11 @@
           <div class="card-body p-5 text-center">
 
             <div class="mb-md-5 mt-md-4 pb-5">
-            <form action="../php/buscarContra.php" method="get">
-            <h1 style="text-align: righ; font-family: cursive">Para poder restalecer su contraseña, responda esta pregunta de seguridad</h1><br>
+            <form action="../php/buscarContra.php" method="post">
+            <h1 style="text-align: righ; font-family: cursive">Para poder restalecer su contraseña, responda la siguiente pregunta de seguridad:</h1><br>
             <h1 style="text-align: center; font-family: cursive"> <?php echo '<p style="text-align: righ; font-family: cursive">'.$pregunta.'</p>';?> </h1>
             
-            <input type="hidden" value='<?php $respuesta ?>'  name='respuesta2'>
+            
               <div class="form-outline form-white mb-4">
               <input class="form-control" name="respuesta"  id="respuesta" type="text" >
                 

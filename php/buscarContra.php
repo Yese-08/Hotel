@@ -3,20 +3,21 @@
 	
 	
 	$respuesta= $_GET['respuesta'] ;
-	$respuesta2 = $_GET['respuesta2'];
-   
 	
-	if($respuesta==$respuesta2){
-		echo 'Exito';
+    $query= "SELECT * FROM cliente where respuesta ='$respuesta'";
+	$_consulta= mysqli_query($conexion,$query);
+	if(mysqli_num_rows($_consulta)>0){
+		header("location: ../html/cambiarContrase.php?respuesta=$respuesta" );
 	}
-		if(isset($_REQUEST['respuesta'])){ echo $respuesta2, $respuesta?>
+	
+	else{
+		if(isset($_REQUEST['respuesta'])){ ?>
          <div class="alert show showAlert" style="color:#f44336;">
                <strong> Ops.! </strong>
-               
-			   La respuesta no existe, por favor Verifique.
+               La pregunta no existe, por favor Verifique.
         </div>
 	<?php }
-	
+	}
 	
 
 ?>
