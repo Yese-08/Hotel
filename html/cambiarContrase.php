@@ -48,36 +48,23 @@
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-
-                <form>
-
+                <form action="">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                     <span class="h1 fw-bold mb-0">HOTEL MAR AZUL</span>
                   </div>
-
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingrese su nueva contraseña</h5>
-
                   <div class="form-outline mb-4">
-                    <input type="password" id="contra1" class="form-control form-control-lg" name='contra1' required/>
-                   
+                    <input type="password" id="contra1" class="form-control form-control-lg" name='contra1' required/>                  
                   </div>
-
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Reescriba su nueva contraseña</h5>
                   <div class="form-outline mb-4">
                     <input type="password" id="contra2" class="form-control form-control-lg" name='contra2' required/>
-                    
                   </div>
-
                   <div class="pt-1 mb-4">
                     <button class="btn btn-dark btn-lg btn-block" type="button">Restablecer</button>
                   </div>
-
-                  
-                 
-                  
                 </form>
-
               </div>
             </div>
           </div>
@@ -85,6 +72,5 @@
       </div>
     </div>
   </div>
-
-    </body>
+</body>
 </html>
