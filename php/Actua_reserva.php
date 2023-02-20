@@ -24,7 +24,7 @@
 </head>
 <body>
 <!---MENÚ PRINCIPAL-->
-<script src="../js/menu2.js"></script>    
+<script src="../js/menu.js"></script>    
 <!--FIN MENÚ PRINCIPAL-->    
 <!-- Section: Design Block -->
 <br><br><br><br>

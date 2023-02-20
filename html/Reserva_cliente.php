@@ -129,13 +129,13 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                     <div class="row">                       
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="NDocum" id="NDocum" value= <?php echo $n_Documento?> required/>
+                                            <input class="form-control" name="NDocum" id="NDocum" type= "number" value= <?php echo $n_Documento?> required/>
                                             <label for="NDocum">Numero de documento</label><br>
                                         </div>                       
                                         </div>        
                                         <div class="col">                            
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                                <input class="form-control" name="Nperso"  id="Nperso" placeholder="N° de Personas" required>
+                                                <input class="form-control" name="Nperso"  id="Nperso" type= "number" placeholder="N° de Personas" required>
                                                 <label for="NPerso">N° de Personas</label><br>
                                             </div>
                                         </div>
@@ -171,7 +171,7 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                     <div class="row">
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="Telefono" id="Telefono" value= <?php echo $telefono?> required/>
+                                            <input class="form-control" name="Telefono" id="Telefono" placeholder="Telefono" required/>
                                             <label for="Telefono">Telefono</label><br>
                                         </div>                
                                         </div>    

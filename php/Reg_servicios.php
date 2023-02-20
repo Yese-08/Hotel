@@ -7,12 +7,7 @@
 	$sql = "INSERT INTO servicios values( '','$nombre', '$precio')";
 		$_consulta = mysqli_query($conexion, $sql);
 		if($_consulta){			
-			echo '
-			<script> 
-				alert("se registro exitosamente");
-
-			</script>
-		';	
+			Header("Location: ../html/Registro_servicios.php");	
         }
         else{
             echo 'error de consulta';

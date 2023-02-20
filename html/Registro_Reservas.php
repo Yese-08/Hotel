@@ -28,7 +28,7 @@ include '../php/function_validarSesion.php'
   <br><br>
   <br><br>
   <!---INICIO CONTENIDO-->
-  <a href="../html/reserva_habitacion.php">
+  <a href="http://localhost/proyecto/html/reserva_habitacion.php">
     <button type="button" class="btn btn-primary" name="regReserva" id="regReserva" >Registrar reserva</button>
   </a>
   <!--FIN CONTENIDO-->
@@ -106,13 +106,12 @@ include '../php/function_validarSesion.php'
                                       </tr>
                                   <?php 
                                       }
-                                  ?>
-                                  
+                                  ?>   
                         </tbody>                                
           </div>
       </div>  
   </div>
-                                    </table>
+</table>
 </body>
 </html>
 <!--fin vizuliazar tabla-->

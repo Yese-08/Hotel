@@ -350,7 +350,7 @@
   })*/
 
 Swal.fire({
-  title: '<strong>¿Desea reserva la habitacion?</strong>',
+  title: '<strong>¿Desea reservar la habitacion?</strong>',
   icon: 'question',
   html:"¡Debe inciar sesion para reservar la habitacion! ",
   showCloseButton: true,

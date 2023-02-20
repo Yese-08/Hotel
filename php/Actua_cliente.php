@@ -31,7 +31,7 @@
     </head>
     <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover;">
     <!---MENÚ PRINCIPAL-->
-    <script src="../js/menu2.js"></script>    
+    <script src="../js/menu.js"></script>    
     <!--FIN MENÚ PRINCIPAL-->
    <br><br><br><br>
 

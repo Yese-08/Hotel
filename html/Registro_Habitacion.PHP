@@ -53,7 +53,7 @@ include '../php/function_validarSesion.php'?>
                   <label for="Detalles">Detalles</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" name="Precio" id="Precio" placeholder="$50.000" required>
+                  <input type="number" class="form-control" name="Precio" id="Precio" placeholder="$50.000" required>
                   <label for="Precio">Precio</label>
                 </div>
                 <div class="modal-footer">
