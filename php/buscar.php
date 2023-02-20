@@ -32,6 +32,7 @@ function mostrar($tabla, $id,){
 	}elseif($tabla== 'servicios'){
 		$getServicios1 = "SELECT * FROM $tabla  order by $id";
 		$getServicios2 = mysqli_query($conexion,$getServicios1);
+	
 	}
 	
 	return $getServicios2;
@@ -39,8 +40,8 @@ function mostrar($tabla, $id,){
 
 function mostrarre($tabla, $id,$nomcol){
 	include 'conexion.php';
-	$cod_reserva=$_GET[$id];
-    $sql="SELECT * FROM $tabla WHERE $nomcol='$cod_reserva'";
+	$cod=$_GET[$id];
+    $sql="SELECT * FROM $tabla WHERE $nomcol='$cod'";
     $query=mysqli_query($conexion,$sql);
 	return $query;
 	

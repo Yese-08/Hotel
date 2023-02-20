@@ -28,8 +28,9 @@
 		}
 	}
 	else{
-		echo '<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/Login.html?emaiIncorrecto=1">';
-		
+		echo '
+			<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/Login.html?emaiIncorrecto=1">';
+			
 	}
 
 ?>
