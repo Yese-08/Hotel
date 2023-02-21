@@ -45,11 +45,11 @@
                   </div>
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Ingrese su nueva contraseña</h5>
                   <div class="form-outline mb-4">
-                    <input type="password" id="contra1" class="form-control form-control-lg" name='respuesta1' required/>                  
+                    <input type="password" id="respuesta1" class="form-control form-control-lg" name='respuesta1' required/>                  
                   </div>
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Reescriba su nueva contraseña</h5>
                   <div class="form-outline mb-4">
-                    <input type="password" id="contra2" class="form-control form-control-lg" name='respuesta2' required/>
+                    <input type="password" id="respuesta2" class="form-control form-control-lg" name='respuesta2' required/>
                   </div>
                   <div class="pt-1 mb-4">
                     <input type="hidden" name='email' value= <?php echo $_REQUEST['emailC']?>>
