@@ -6,7 +6,7 @@
     $query= "SELECT * FROM cliente where email ='$email'";
 	$_consulta= mysqli_query($conexion,$query);
 	if(mysqli_num_rows($_consulta)>0){
-		header("location: ../html/recuperarContrase.php?email=$email" );
+		header("location: ../html/recuperarContrase.php?emailR=$email" );
 	}
 	
 	else{

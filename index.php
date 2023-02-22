@@ -44,11 +44,11 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                              <table class="table">
+                          <table class="table" id="row" onclick="tabla();">
                                 <thead>
                                 <tr>
-                                <th>No de Habitación</th>
-                                <th>Categoria</th>
+                                <th>No de Habitación</td>
+                                <th>Categoria</td>
                                
                             </tr>
                         </thead>
@@ -58,9 +58,9 @@
                           $query= mostrar('habitacion','numero_hab');
                           while($row=mysqli_fetch_array($query)){
                           ?>
-                              <tr>
-                                  <th onclick="aler();"><?php  echo $row['numero_hab']?></th>
-                                  <th><?php  echo $row['categoria']?></th>   
+                              <tr id="row1">
+                                  <td onclick="tabla();"><?php  echo $row['numero_hab']?></td>
+                                  <td><?php  echo $row['categoria']?></td>   
                               </tr>
                           <?php 
                               }
@@ -299,78 +299,86 @@
 <!-- Footer -->
     
 <script >
-  function aler(params) {
-    //let age = prompt ('¿Cuántos años tienes?',);
-    //alert('Tienes'+age +'años!'); //Tienes 100 años!
-    /*if (confirm("Desea reservar la habitacion")) {
-      if (confirm("Debe inciar sesion para reservar la habitacion")) {
-        open("http://localhost/conGra/proyecto/html/Login.html", "login",'popup=yes');
+ 
+function tabla() {
+  /*var obtenerFila1 = document.getElementById("row");
+   var elementosFila = obtenerFila1.getElementsByTagName("td");
+   
+    for (let i=0; i<=5; i++) {
+    console.log(elementosFila[i].innerHTML);
+    }
+  */
+  var rows = document.getElementById('row').getElementsByTagName('tr');
+  for (i = 0; i < rows.length; i++) {
+    rows[i].onclick = function() {
+      var result = this.getElementsByTagName('td')[1].innerHTML;
+      if(result=='Suite'){
+        Swal.fire({
+          title: '<strong>¿Desea reserva la habitacion?</strong>',
+          icon: 'question',
+          html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
+              "<br><img src='http://localhost/conGra/proyecto/assets/img/hab5.png' with='500' height='250' >",
+          showCloseButton: true,
+          showCancelButton: true,  
+          confirmButtonText: 'Si',
+          cancelButtonText:'Cancelar',
+          cancelButtonAriaLabel:'Thumbs down'})
+          .then((result) => {
+          //Read more about isConfirmed, isDenied below 
+          if (result.isConfirmed) {
+            
+            window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')}})
+
       }
-       
-    }
-    /*let sign = prompt("What's your sign?");
+      if(result=='Doble'){
+        Swal.fire({
+          title: '<strong>¿Desea reserva la habitacion?</strong>',
+          icon: 'question',
+          html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
+              "<br><img src='http://localhost/conGra/proyecto/assets/img/doble.PNG' with='500' height='250' >",
+          showCloseButton: true,
+          showCancelButton: true,  
+          confirmButtonText: 'Si',
+          cancelButtonText:'Cancelar',
+          cancelButtonAriaLabel:'Thumbs down'})
+          .then((result) => {
+          //Read more about isConfirmed, isDenied below 
+          if (result.isConfirmed) {
+            
+            window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')}})
 
-    if (sign.toLowerCase() === "scorpio") {
-      alert("Wow! I'm a Scorpio too!");
-    }*/
-
-
-   /* Swal.fire({
-      title: "¿Desea reserva la habitacion? ",
-      text: "¡Debe inciar sesion para reservar la habitacion! ",
-      icon: "question",
-      showDenyButton: true,
-      showCancelButton: true,
-      bconfirmButtonText: 'si',
-     
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
-          icon: "success",
-        });
-      } else {
-        swal("Your imaginary file is safe!");
       }
-    });
-     
-  /*Swal.fire({
-    title: "¿Desea reserva la habitacion? ",
-    showDenyButton: true,
-    showCancelButton: true,
-    confirmButtonText: 'si',
-    denyButtonText: 'Cerrar',
-  }).then((result) => {
-    /* Read more about isConfirmed, isDenied below 
-    if (result.isConfirmed) {
-      Swal.fire('Saved!', '', 'success')
-    } else if (result.isDenied) {
-      Swal.fire('Changes are not saved', '', 'info')
-    }
-  })*/
+      if(result=='Simple'){
+        Swal.fire({
+          title: '<strong>¿Desea reserva la habitacion?</strong>',
+          icon: 'question',
+          html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
+              "<br><img src='http://localhost/conGra/proyecto/assets/img/cama1.PNG' with='500' height='250' >",
+          showCloseButton: true,
+          showCancelButton: true,  
+          confirmButtonText: 'Si',
+          cancelButtonText:'Cancelar',
+          cancelButtonAriaLabel:'Thumbs down'})
+          .then((result) => {
+          //Read more about isConfirmed, isDenied below 
+          if (result.isConfirmed) {
+            
+            window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+          } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')}})
 
-Swal.fire({
-  title: '<strong>¿Desea reservar la habitacion?</strong>',
-  icon: 'question',
-  html:"¡Debe inciar sesion para reservar la habitacion! ",
-  showCloseButton: true,
-  showCancelButton: true,  
-  confirmButtonText: 'Si',
-  cancelButtonText:'Cancelar',
-  cancelButtonAriaLabel:'Thumbs down'
-}).then((result) => {
-    //Read more about isConfirmed, isDenied below 
-    if (result.isConfirmed) {
-      
-      window.location.href = "http://localhost/proyecto/html/Login.html";
-    } else if (result.isDenied) {
-      Swal.fire('Changes are not saved', '', 'info')
-    }
-  })
+      }
 
+        console.log(result)
+    }
 
   }
   
+}
 </script>
 </body>
 </html>

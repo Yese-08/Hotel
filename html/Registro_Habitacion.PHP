@@ -126,4 +126,4 @@ include '../php/function_validarSesion.php'?>
 </html>
 </body>
 </html><?php
-}else{echo 'usuario no tiene acceso';}?>
+}else{header('location: http://localhost/conGra/proyecto/html/Login.html');}?>
