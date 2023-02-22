@@ -2,22 +2,23 @@
 	
 	//function comprobares(){
 		include "conexion.php";
-		$email= $_REQUEST['email'] ;
+		$email= $_REQUEST['email'];
 		$respuesta=$_REQUEST['respuesta1'];
         $respuesta1=$_REQUEST['respuesta2'];
-        echo $email,$respuesta,$respuesta1;
+        
         if($respuesta == $respuesta1){
-            $sql="UPDATE cliente SET contraseña='$respuesta' WHERE email='$email'";
+            $sql="UPDATE cliente SET contraseña='$respuesta1'  WHERE email='$email'";
             $_consulta=mysqli_query($conexion,$sql);
-           
-            if($_consulta){
+            
+            if($_consulta ){
                 echo '
                 <script> alert("Su contraseña fue actualizada exitosamente");</script>';
                 header("location: ../html/Login.html" );
             }	
             else{
                 echo '
-                <script > alert("Respuesta incorrecta, por favor Verifique.");</script>';			
+                <script > alert("error de consulta");</script>';
+                			
             
             } 
         }
@@ -26,7 +27,6 @@
 			<script> alert("Las contraseñas no coinciden");</script>';			
 		
         }
-		
 		
 	//}
 	

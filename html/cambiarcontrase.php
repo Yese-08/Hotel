@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-                <form id="form" class="form-horizontal" role="form" action="../php/cambiarcontra.php" method="post">
+                <form id="form" class="form-horizontal" role="form" action="../php/cambiarcontra.php" method="get">
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
                     <span class="h1 fw-bold mb-0">HOTEL MAR AZUL</span>
@@ -52,7 +52,7 @@
                     <input type="password" id="respuesta2" class="form-control form-control-lg" name='respuesta2' required/>
                   </div>
                   <div class="pt-1 mb-4">
-                    <input type="hidden" name='email' value= <?php echo $_REQUEST['emailC']?>>
+                    <input type="hidden" name='email' value= <?php echo $_GET['emailC']?>>
                     <button class="btn btn-dark btn-lg btn-block" type="submit">Restablecer</button>
                   </div>
                 </form>
