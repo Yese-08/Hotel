@@ -10,7 +10,7 @@
 		if(mysqli_num_rows($_consulta)>0){
 			echo $email,$respuesta;
 
-			header("location: ../html/cambiarcontrase.php?emailC=.'$email.'" );
+			header("location: ../html/cambiarcontrase.php?emailC=$email" );
 		}	
 		else{
 			echo '
