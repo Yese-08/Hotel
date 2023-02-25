@@ -18,13 +18,14 @@
             else{
                 echo '
                 <script > alert("error de consulta");</script>';
-                			
-            
+                header("location: ../html/cambiarcontrase.php" );
+              
             } 
         }
         else{
             echo '
-			<script> alert("Las contraseñas no coinciden");</script>';			
+			<script> alert("Las contraseñas no coinciden");</script>';	
+           	
 		
         }
 		

@@ -28,8 +28,15 @@
 		}
 	}
 	else{
-	
-		echo'<script language="javascript">alert("Error de autentificacion");window.location.href="../html/Login.html"</script>';
+		//echo '
+			//<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/Login.html?emaiIncorrecto=1">';
+		?>
+		
+		<script>
+			alert("Credenciales incorrectas")
+			window.location.assign("../html/Login.html")
+		</script>
+		<?php	
 	}
 
 ?>

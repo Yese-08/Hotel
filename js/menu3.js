@@ -28,13 +28,13 @@ document.write(
 ''+
     '            <li class="nav-item">'+
     '              '+
-    '              <a class="nav-link active" href="../php/eliminar_cliente.php"> <img src="../assets/img/iconDelete.png" alt="Clientes" width="30" height="24">Eliminar cuenta</a>'+
+    '              <a class="nav-link active" href="../php/eliminar_cliente.php" onclick="return confir2();"> <img src="../assets/img/iconDelete.png" alt="Clientes" width="30" height="24">Eliminar cuenta</a>'+
     '                  '+
     '            </li>'+
     '            '+
     '              <li class="nav-item">'+
     '                '+
-    '                <a class="nav-link active" href="../php/cerrar_sesion.php"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">Cerrar sesión</a>'+
+    '                <a class="nav-link active" href="../php/cerrar_sesion.php" onclick="return confir();"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">Cerrar sesión</a>'+
     '               '+
     '              </li>'+
     '            '+
@@ -56,3 +56,23 @@ document.write(
     '    '+
     '  </nav>'
 )
+
+function confir() {
+    var respuesta = confirm("Esta seguro que desea Cerrar sesion");
+    if (respuesta== true) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function confir2() {
+    var respuesta = confirm("Esta seguro que desea eliminar su cuenta");
+    if (respuesta== true) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}

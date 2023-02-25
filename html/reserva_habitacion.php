@@ -41,7 +41,7 @@ include '../php/function_validarSesion.php';
                             </div>
                             <div class="col">                            
                                 <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion">
+                                    <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion" onchange=" Auto();">
                                     <option selected>Número de habitación</option>
                                         <?php
                                               include "../php/buscar.php";
@@ -49,8 +49,6 @@ include '../php/function_validarSesion.php';
                                         
                                             while($row = mysqli_fetch_array($getServicios2)){
                                                 $numero_hab = $row['numero_hab'];
-                                                $categoria = $row['categoria'];
-                                                $detalles = $row['detalles'];
                                                 $precio = $row['precio'];
 
                                                 ?>
@@ -182,17 +180,7 @@ include '../php/function_validarSesion.php';
                             <div class="col"> 
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
                                
-                                                <script>
-                                                function autocomS(){
-                                                    var CostoH = document.getElementById('serviciosAd').value;
-                                                    while (CostoH) {
-                                                        
-                                                        return console.log( CostoH);
-                                                    }
-                                                    
-                                                }
-                                                </script>
-                                        
+                                                
                                     <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" value="<?php echo $precioS; ?>" required  onchange="totalPagar();">
                                     <label for="CServicio">Costo de servicio</label><br>
                                    
@@ -261,10 +249,7 @@ include '../php/function_validarSesion.php';
             var diferencia = fecha2.getTime() - fecha1.getTime();
             diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
             document.getElementById('NNoches').value = diasDeDiferencia
-        
-            return diasDeDiferencia ;
-            
-            
+             return diasDeDiferencia ;
         }
 
         function Auto(){
@@ -273,15 +258,15 @@ include '../php/function_validarSesion.php';
                 document.getElementById('CostoH').value = <?php echo $precio; ?>;
             }
         
-        }   
+        } 
 
        
             
     </script>
 
-    
 </body>
 
 </html>
+                                        
 <?php
 }else{echo 'usuario no tiene acceso';}?>
