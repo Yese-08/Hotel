@@ -33,9 +33,9 @@ if(isset($_SESSION['fallo_login'])){
 if(isset($_REQUEST['noCoincide'])){?>
     <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
   top: 50%;
-  left: 80%; transform: translate(10%, -50%);">
+  left: 75%; transform: translate(10%, -50%);">
 
-  <strong>Credenciales incorrectas!</strong> verificar datos.
+  <strong>¡Las contraseñas no coiciden!</strong> Por favor verificar.
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <?php }

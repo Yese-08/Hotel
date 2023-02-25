@@ -18,6 +18,8 @@ include '../php/function_validarSesion.php';
     <script src="../js/popper.min.js" ></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
     
        
 </head>
@@ -33,7 +35,7 @@ include '../php/function_validarSesion.php';
             <div class="panel panel-primary" >               
                 
                 <div class="panel-body" >            
-                    <form action="../php/Reg_Reserva.php" method="post">
+                    <form action="../php/Reg_Reserva.php" method="post" >
 
                         <div class="row" >
                             <div class="col">
@@ -41,7 +43,7 @@ include '../php/function_validarSesion.php';
                             </div>
                             <div class="col">                            
                                 <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion" onchange=" Auto();">
+                                    <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion" onblur=" Auto();">
                                     <option selected>Número de habitación</option>
                                         <?php
                                               include "../php/buscar.php";
@@ -72,7 +74,7 @@ include '../php/function_validarSesion.php';
                             <div class="col">                            
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
                                         
-                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  onchange="totalPagar();">
+                                    <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required  >
                                     <label for="CostoH">Costo habitación</label><br>
                                 </div>
                             </div>
@@ -152,14 +154,14 @@ include '../php/function_validarSesion.php';
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
-                                    <select class="form-select" name="serviciosAd" id="serviciosAd">
+                                    <select class="form-select" name="serviciosAd" id="serviciosAd" onblur="auto();">
                                     <option selected>Servicios adicionales</option>
                                         <?php
                                         $getServicios2= mostrar('servicios','nombre'); 
                                         while($row = mysqli_fetch_array($getServicios2)){
-                                            $cod = $row['cod'];
+                                            
                                             $nombre = $row['nombre'];
-                                            $precioS = $row['precio'];
+                                            
 
                                             ?>
                                             <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
@@ -181,7 +183,7 @@ include '../php/function_validarSesion.php';
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
                                
                                                 
-                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" value="<?php echo $precioS; ?>" required  onchange="totalPagar();">
+                                    <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" onclick="totalPagar();" required  >
                                     <label for="CServicio">Costo de servicio</label><br>
                                    
                                 </div>
@@ -201,7 +203,7 @@ include '../php/function_validarSesion.php';
                             </div>                        
                             <div class="col"  >
                                 <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="totalPagar();">
+                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onclick="totalPagar();" >
                                     <label for="TPagar">Total a pagar</label><br>
                                 </div>                            
                             </div>
@@ -227,18 +229,7 @@ include '../php/function_validarSesion.php';
     </div>
     <script>
         // si la respuesta que se espera es sumar
-        function totalPagar(){
-            var CostoH = document.getElementById('CostoH').value;
-            var CServicio = document.getElementById('CServicio').value;
-            var Nnoches = calcularnoche();
-
-            if(CostoH !=='' && CServicio!==''){
-                var suma = parseInt(CostoH )+parseInt(CServicio);
-                var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
-                document.getElementById('TPagar').value = sumCosHbSer;
-            }
         
-        }
         function calcularnoche(){
             var fechaI = document.getElementById('FIngreso').value;
             var fechaS = document.getElementById('FSalida').value;
@@ -251,19 +242,78 @@ include '../php/function_validarSesion.php';
             document.getElementById('NNoches').value = diasDeDiferencia
              return diasDeDiferencia ;
         }
+        function totalPagar(){
+           var CostoH = document.getElementById('CostoH').value;
+            var CServicio = document.getElementById('CServicio').value;
+            var Nnoches = calcularnoche();
+              
 
-        function Auto(){
-            var habi = document.getElementById('Nhabitacion').value;
-            if(habi== 20){
-                document.getElementById('CostoH').value = <?php echo $precio; ?>;
+             /*var CostoH = $("#CostoH").val();
+            var CServicio = $("#CServicio").val();
+            var Nnoches = calcularnoche();*/ 
+            if(CostoH !=='' && CServicio!==''){
+                var suma = parseInt(CostoH )+parseInt(CServicio);
+                var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
+                document.getElementById('TPagar').value = sumCosHbSer
+               
             }
+            return console.log(CostoH,CServicio)
         
-        } 
+        }
+        
+
+
 
        
+        function Auto(){
+            Nhabitacion = $("#Nhabitacion").val();
             
+            var parametros = 
+            {
+            "buscar": "1",
+            "Nhabitacion" : Nhabitacion
+            
+            };
+            $.ajax(
+            {
+            data:  parametros,
+            dataType: 'json',
+            url:   '../php/Reg_reserva1.php',
+            type:  'post',
+            error: function()
+            {alert("Error");},
+            success:  function (valores){
+                $("#CostoH").val(valores.precio);
+                
+            }
+            }) 
+            
+        }   
+        function auto(){
+            serviciosAd = $("#serviciosAd").val();
+            var parametros = 
+            {
+            "buscar1": "1",
+            "serviciosAd" : serviciosAd
+            
+            };
+            $.ajax(
+            {
+            data:  parametros,
+            dataType: 'json',
+            url:   '../php/Reg_reserva1.php',
+            type:  'post',
+            
+            error: function()
+            {alert("Error");},
+            success:  function (valores){
+                $("#CServicio").val(valores.precio);
+                
+            }
+            })
+            
+        }      
     </script>
-
 </body>
 
 </html>
