@@ -267,9 +267,13 @@ include '../php/function_validarSesion.php';
             
         }
 
-
+        function Auto(){
+            var habi = document.getElementById('Nhabitacion').value;
+            if(habi== 20){
+                document.getElementById('CostoH').value = <?php echo $precio; ?>;
+            }
         
-            
+        }   
 
        
             

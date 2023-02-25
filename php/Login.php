@@ -28,9 +28,8 @@
 		}
 	}
 	else{
-		echo '
-			<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/Login.html?emaiIncorrecto=1">';
-			
+	
+		echo'<script language="javascript">alert("Error de autentificacion");window.location.href="../html/Login.html"</script>';
 	}
 
 ?>

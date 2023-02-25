@@ -317,7 +317,7 @@ function tabla() {
           title: '<strong>¿Desea reserva la habitacion?</strong>',
           icon: 'question',
           html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
-              "<br><img src='http://localhost/conGra/proyecto/assets/img/hab5.png' with='500' height='250' >",
+              "<br><img src='http://localhost/proyecto/assets/img/hab5.png' with='500' height='250' >",
           showCloseButton: true,
           showCancelButton: true,  
           confirmButtonText: 'Si',
@@ -327,7 +327,7 @@ function tabla() {
           //Read more about isConfirmed, isDenied below 
           if (result.isConfirmed) {
             
-            window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+            window.location.href = "http://localhost/proyecto/html/Login.html";
           } else if (result.isDenied) {
             Swal.fire('Changes are not saved', '', 'info')}})
 
@@ -337,7 +337,7 @@ function tabla() {
           title: '<strong>¿Desea reserva la habitacion?</strong>',
           icon: 'question',
           html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
-              "<br><img src='http://localhost/conGra/proyecto/assets/img/doble.PNG' with='500' height='250' >",
+              "<br><img src='http://localhost/proyecto/assets/img/doble.PNG' with='500' height='250' >",
           showCloseButton: true,
           showCancelButton: true,  
           confirmButtonText: 'Si',
@@ -347,7 +347,7 @@ function tabla() {
           //Read more about isConfirmed, isDenied below 
           if (result.isConfirmed) {
             
-            window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+            window.location.href = "http://localhost/proyecto/html/Login.html";
           } else if (result.isDenied) {
             Swal.fire('Changes are not saved', '', 'info')}})
 
@@ -357,7 +357,7 @@ function tabla() {
           title: '<strong>¿Desea reserva la habitacion?</strong>',
           icon: 'question',
           html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
-              "<br><img src='http://localhost/conGra/proyecto/assets/img/cama1.PNG' with='500' height='250' >",
+              "<br><img src='http://localhost/proyecto/assets/img/cama1.PNG' with='500' height='250' >",
           showCloseButton: true,
           showCancelButton: true,  
           confirmButtonText: 'Si',
@@ -367,7 +367,7 @@ function tabla() {
           //Read more about isConfirmed, isDenied below 
           if (result.isConfirmed) {
             
-            window.location.href = "http://localhost/conGra/proyecto/html/Login.html";
+            window.location.href = "http://localhost/proyecto/html/Login.html";
           } else if (result.isDenied) {
             Swal.fire('Changes are not saved', '', 'info')}})
 

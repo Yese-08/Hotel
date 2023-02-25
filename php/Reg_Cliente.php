@@ -44,6 +44,7 @@
 	else {	
 		$sql = "INSERT INTO cliente values('$NomApe', '$TipoDoc','$NDocum', '$fechaNacimiento', '$Nacionalidad', '$numPer', '$email', '$Genero','$pregunta','$respuesta', '$Usuario', '$contraseña','$T_usuario')";
 		$_consulta = mysqli_query($conexion, $sql);
+		
 			echo '
 			<script> 
 				alert("se registro exitosamente");
