@@ -28,15 +28,20 @@
 		}
 	}
 	else{
-		//echo '
-			//<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/Login.html?emaiIncorrecto=1">';
-		?>
+		
+		echo '
+			<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/Login.php?emaiIncorrecto=1">';
+		/*?>
 		
 		<script>
 			alert("Credenciales incorrectas")
-			window.location.assign("../html/Login.html")
+			window.location.assign("../html/Login.php")
 		</script>
-		<?php	
+		<?php	*/
+		/*$_SESSION['fallo_login'] = 'fallo inicio de sesion, datos incorrectos';//Creamos una nueva variable de sesion
+		header("Location: ../html/Login.php");
+		exit();*/
+		
 	}
 
 ?>
