@@ -50,6 +50,7 @@ $sql = "INSERT INTO reserva values('', '$nombre_client','$tipo_documento', '$num
         echo 'error de consulta';
     }
 
+    
 
 
 
