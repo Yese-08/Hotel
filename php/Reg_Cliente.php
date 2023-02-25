@@ -46,11 +46,8 @@
 		$_consulta = mysqli_query($conexion, $sql);
 		
 			echo '
-			<script> 
-				alert("se registro exitosamente");
-
-			</script>
-		';	
+			<<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/registrar.php?seRegistro=1">';
+			
         
        
    }    

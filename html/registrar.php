@@ -8,9 +8,37 @@
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+<?php
+/*session_start();
+if(isset($_SESSION['fallo_login'])){
+  echo $_SESSION['fallo_login'];
+}*/
+if(isset($_REQUEST['seRegistro'])){?>
+   <script>
+      Swal.fire({
+        title: '<strong>Se registró exitosamente</strong>'+
+        "<br><img src='https://www.cajacopi.com/Content/Imagenes/Pagina/iconocheck.png' with='500' height='250' >",
+        icon: 'check',
+        html:"<h4>¿Desea iniciar sesion?</h4>",
+        showCloseButton: true,
+        showCancelButton: true,  
+        confirmButtonText: 'Si',
+        cancelButtonText:'Cancelar',
+        cancelButtonAriaLabel:'Thumbs down'})
+        .then((result) => {
+        //Read more about isConfirmed, isDenied below 
+        if (result.isConfirmed) {
+          
+          window.location.href = "http://localhost/proyecto/html/Login.php";
+        } else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')}})
+    </script>
+<?php }
+
+?>
    <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
   <style>
@@ -113,7 +141,7 @@
               </div>
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
+              <button type="submit" class="btn btn-primary" >
                 Registrarse
               </button>
               <br>

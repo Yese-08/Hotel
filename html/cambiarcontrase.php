@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
     <script src="../js/popper.min.js" ></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-      
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body style="background-image: url(../assets/img/fondo1.jpg); background-repeat: no-repeat;  background-size: cover; ">
     <!--hhh-->    
@@ -25,7 +25,44 @@
         </div>
     </nav>
     <!--hhh-->
+<?php
+/*session_start();
+if(isset($_SESSION['fallo_login'])){
+  echo $_SESSION['fallo_login'];
+}*/
+if(isset($_REQUEST['noCoincide'])){?>
+    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+  top: 50%;
+  left: 80%; transform: translate(10%, -50%);">
 
+  <strong>Credenciales incorrectas!</strong> verificar datos.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php }
+if(isset($_REQUEST['seActualizo'])){?>
+  <script>
+     Swal.fire({
+       title: '<strong>Se actualizó correctamente</strong>'+
+       "<br><img src='https://www.cajacopi.com/Content/Imagenes/Pagina/iconocheck.png' with='500' height='250' >",
+       icon: 'check',
+       html:"<h4>¿Desea iniciar sesion?</h4>",
+       showCloseButton: true,
+       showCancelButton: true,  
+       confirmButtonText: 'Si',
+       cancelButtonText:'Cancelar',
+       cancelButtonAriaLabel:'Thumbs down'})
+       .then((result) => {
+       //Read more about isConfirmed, isDenied below 
+       if (result.isConfirmed) {
+         
+         window.location.href = "http://localhost/proyecto/html/Login.php";
+       } else if (result.isDenied) {
+         Swal.fire('Changes are not saved', '', 'info')}})
+   </script>
+
+   <?php }
+
+?>
     
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

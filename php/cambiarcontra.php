@@ -11,9 +11,7 @@
             $_consulta=mysqli_query($conexion,$sql);
             
             if($_consulta ){
-                echo '
-                <script> alert("Su contraseña fue actualizada exitosamente");</script>';
-                header("location: ../html/Login.html" );
+                header("location:http://localhost/proyecto/html/cambiarcontrase.php?emailC=$email&seActualizo=1" );
             }	
             else{
                 echo '
@@ -23,8 +21,9 @@
             } 
         }
         else{
-            echo '
-			<script> alert("Las contraseñas no coinciden");</script>';	
+            
+            header("location:http://localhost/proyecto/html/cambiarcontrase.php?emailC=$email&noCoincide=1" );
+			
            	
 		
         }
