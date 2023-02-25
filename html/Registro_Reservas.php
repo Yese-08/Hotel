@@ -102,7 +102,7 @@ include '../php/function_validarSesion.php'
                                           <th><?php  echo  "$".$row['total_pagar']?></th>
                                           
                                           <th><a href="../php/Actua_reserva.php?numero_reserva=<?php echo $row['numero_reserva'] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>    
-                                          <th><a href="../php/eliminar_reserva.php?numero_reserva=<?php echo $row['numero_reserva'] ?>"> <img src="../assets/img/iconEliminar.png" alt="Eliminar" width="30" height="24"></a></th>                                                                                                                                                                            
+                                          <th><a href="../php/eliminar_reserva.php?numero_reserva=<?php echo $row['numero_reserva'] ?>" onclick="return confir();"> <img src="../assets/img/iconEliminar.png" alt="Eliminar" width="30" height="24"></a></th>                                                                                                                                                                            
                                       </tr>
                                   <?php 
                                       }
@@ -117,5 +117,16 @@ include '../php/function_validarSesion.php'
 <!--fin vizuliazar tabla-->
 </body>
 </html>
+<script>
+    function confir() {
+        var respuesta = confirm("Esta seguro que desea eliminar la reserva");
+        if (respuesta== true) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+</script>
 <?php
 }else{echo 'usuario no tiene acceso';}?>

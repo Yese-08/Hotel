@@ -36,7 +36,7 @@ document.write(
 
 '<li class="nav-item">'+
 
-'<a class="nav-link active" href="../php/cerrar_sesion.php"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24">  Cerrar sesión</a>'+
+'<a class="nav-link active" href="../php/cerrar_sesion.php" onclick="return confir();"> <img src="../assets/img/iconCerrar.png" alt="Clientes" width="30" height="24" >  Cerrar sesión</a>'+
 
 
 '</li>'+
@@ -60,3 +60,12 @@ document.write(
 
 
 )
+function confir() {
+    var respuesta = confirm("Esta seguro que desea Cerrar sesion");
+    if (respuesta== true) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
