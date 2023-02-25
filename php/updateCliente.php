@@ -21,11 +21,11 @@ $_consulta=mysqli_query($conexion,$sql);
     if($_consulta ){		
        
        if($_SESSION['user'] == 'usuario'){
-            header ('location: http://localhost/conGra/proyecto/html/Informacion_Cliente.php');
+            header ('location: http://localhost/proyecto/html/Informacion_Cliente.php');
             
         }
        else if($_SESSION['user'] == 'Recepcionista'){
-        echo '<meta http-equiv="refresh" content="0;url=http://localhost/conGra/proyecto/html/pageRecepcionista.php">';
+        echo '<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/pageRecepcionista.php">';
        }
 
        

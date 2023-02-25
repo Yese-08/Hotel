@@ -6,6 +6,7 @@
     $query= "SELECT nombre, tipo_documento, numero_documento, fecha_nacimiento, nacionalidad, telefono, email, genero FROM cliente where numero_documento='$user'";
 	$_consulta= mysqli_query($conexion,$query);
     while($Date=mysqli_fetch_assoc($_consulta)){
+
         $nombre = $Date['nombre'];
         $T_Documento = $Date['tipo_documento'];
         $n_Documento = $Date['numero_documento'];
@@ -44,7 +45,7 @@
 
     <div class="container" >
         
-        <br>
+        <br><br><br><br>
         <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Mis datos</h1><br>
         <div class="panel panel-primary" >               
             <div class="panel-body" >            
@@ -53,7 +54,7 @@
                         <div class="col">                            
                             <div class="col-md-8" style="margin: 0 auto;">
                                 <label>Nombres</label>
-                                <input class="form-control" name="NomApe" id="Nombre" type="text" value= <?php echo $nombre?> required/>
+                                <input class="form-control" name="NomApe" id="Nombre" type="text" value="<?php echo $nombre?>" required/>
                             </div>
                         </div>
                         <div class="col">                         

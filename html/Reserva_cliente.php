@@ -75,7 +75,7 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                     <div class="row" >
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="NomApe" id="NomApe" name="NomApe" value= <?php echo $nombre?> required/>
+                                            <input class="form-control" name="NomApe" id="NomApe" name="NomApe" value= "<?php echo $nombre?>" required/>
                                             <label for="NomApe">Nombre y apellido</label><br>
                                         </div>
                                         </div>
