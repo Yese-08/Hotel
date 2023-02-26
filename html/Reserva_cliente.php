@@ -21,10 +21,11 @@ while($Date=mysqli_fetch_assoc($_consulta)){
 <!DOCTYPE html>
 <?php
   if($_SESSION['user']== 'usuario'){?>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva_Cliente</title>
 
     <!-- Lineas importantes-->
@@ -33,6 +34,8 @@ while($Date=mysqli_fetch_assoc($_consulta)){
     <script src="../js/popper.min.js" ></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 </head>
 <body >
 <!---MENÚ PRINCIPAL-->
@@ -81,23 +84,20 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                         </div>
                                         <div class="col">                            
                                             <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;" >
-                                                <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion">
+                                                <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion" onblur=" Auto();">
                                                 <option selected>Número de habitación</option>
                                                 <?php
-                                                    include "../php/buscar.php";
-                                                    $getServicios2= mostrar('habitacion','numero_hab');
-
-                                                
-                                                    while($row = mysqli_fetch_array($getServicios2)){
-                                                        $numero_hab = $row['numero_hab'];
-                                                        $categoria = $row['categoria'];
-                                                        $detalles = $row['detalles'];
-                                                        $precio = $row['precio'];
-
-                                                        ?>
-                                                        <option value="<?php echo $numero_hab; ?>"><?php echo $numero_hab; ?></option>
-                                                        <?php
-                                                  }
+                                                   include "../php/buscar.php";
+                                                   $getServicios2= mostrar('habitacion','numero_hab');
+                                             
+                                                 while($row = mysqli_fetch_array($getServicios2)){
+                                                     $numero_hab = $row['numero_hab'];
+                                                     $precio = $row['precio'];
+     
+                                                     ?>
+                                                     <option value="<?php echo $numero_hab; ?>"><?php echo $numero_hab; ?></option>
+                                                     <?php
+                                             }
 
                                                 ?>
                                                 </select> <br>
@@ -121,7 +121,7 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                         </div>
                                         <div class="col">                            
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                                <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required onchange="totalPagar();">
+                                                <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required >
                                                 <label for="CostoH">Costo habitación</label><br>
                                             </div>
                                         </div>
@@ -171,7 +171,7 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                     <div class="row">
                                         <div class="col">
                                           <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                            <input class="form-control" name="Telefono" id="Telefono" placeholder="Telefono" required/>
+                                            <input class="form-control" name="Telefono" id="Telefono" value= <?php echo $telefono?> placeholder="Telefono" required/>
                                             <label for="Telefono">Telefono</label><br>
                                         </div>                
                                         </div>    
@@ -191,21 +191,19 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                         </div>
                                         <div class="form-group col-md-6">
                                             <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
-                                            <select class="form-select" name="serviciosAd" id="serviciosAd" >
+                                            <select class="form-select" name="serviciosAd" id="serviciosAd" onblur="auto();">
                                             <option selected>Servicios adicionales</option>
-                                                <?php
-                                                    $getServicios2= mostrar('servicios','nombre');                                                
-                                                    while($row = mysqli_fetch_array($getServicios2)){
-                                                        $cod = $row['cod'];
-                                                        $nombre = $row['nombre'];
-                                                        $precio = $row['precio'];
-
-                                                        ?>
-                                                        <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
-                                                        <?php
-                                                  }
+                                            <?php
+                                        $getServicios2= mostrar('servicios','nombre'); 
+                                            while($row = mysqli_fetch_array($getServicios2)){
+                                                
+                                                $nombre = $row['nombre'];
+                                                
 
                                                 ?>
+                                                <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
+                                                <?php
+                                            } ?>
                                                 
                                             </select>                                  
                                             </div>
@@ -227,7 +225,7 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                     </div>
                                         <div class="col">                            
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                                <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio" required onchange="totalPagar();">
+                                                <input class="form-control" name="CServicio"  id="CServicio"  placeholder="Costo de servicio"  onclick="totalPagar();" required>
                                                 <label for="CServicio">Costo de servicio</label><br>
                                             </div>
                                         </div>
@@ -238,7 +236,7 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                         </div>                        
                                         <div class="col"  >
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                                <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" required onchange="totalPagar();">
+                                                <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar" onclick="totalPagar();" required>
                                                 <label for="TPagar">Total a pagar</label><br>
                                             </div>                            
                                         </div>
@@ -277,35 +275,90 @@ while($Date=mysqli_fetch_assoc($_consulta)){
 
   <script>
         // si la respuesta que se espera es sumar
-        function totalPagar(){
-            var CostoH = document.getElementById('CostoH').value;
-            var CServicio = document.getElementById('CServicio').value;
-            var Nnoches = calcularnoche();
-           
-
-            if(CostoH !=='' && CServicio!==''){
-                var suma = parseInt(CostoH )+parseInt(CServicio);
-                var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
-                document.getElementById('TPagar').value = sumCosHbSer
-                return console.log(suma,sumCosHbSer,Nnoches)
-            }
         
-        }
-
         function calcularnoche(){
             var fechaI = document.getElementById('FIngreso').value;
             var fechaS = document.getElementById('FSalida').value;
+            var diasDeDiferencia = 0;
             var fecha1 = new Date(fechaI);
             var fecha2 = new Date(fechaS);
             
             var diferencia = fecha2.getTime() - fecha1.getTime();
-            var diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
+            diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
             document.getElementById('NNoches').value = diasDeDiferencia
-        
-            return diasDeDiferencia ;
-            
-            
+             return diasDeDiferencia ;
         }
+        function totalPagar(){
+           var CostoH = document.getElementById('CostoH').value;
+            var CServicio = document.getElementById('CServicio').value;
+            var Nnoches = calcularnoche();
+              
+
+             /*var CostoH = $("#CostoH").val();
+            var CServicio = $("#CServicio").val();
+            var Nnoches = calcularnoche();*/ 
+            if(CostoH !=='' && CServicio!==''){
+                var suma = parseInt(CostoH )+parseInt(CServicio);
+                var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
+                document.getElementById('TPagar').value = sumCosHbSer
+               
+            }
+            return console.log(CostoH,CServicio)
+        
+        }
+        
+
+
+
+       
+        function Auto(){
+            Nhabitacion = $("#Nhabitacion").val();
+            
+            var parametros = 
+            {
+            "buscar": "1",
+            "Nhabitacion" : Nhabitacion
+            
+            };
+            $.ajax(
+            {
+            data:  parametros,
+            dataType: 'json',
+            url:   '../php/Reg_reserva1.php',
+            type:  'post',
+            error: function()
+            {alert("Error");},
+            success:  function (valores){
+                $("#CostoH").val(valores.precio);
+                
+            }
+            }) 
+            
+        }   
+        function auto(){
+            serviciosAd = $("#serviciosAd").val();
+            var parametros = 
+            {
+            "buscar1": "1",
+            "serviciosAd" : serviciosAd
+            
+            };
+            $.ajax(
+            {
+            data:  parametros,
+            dataType: 'json',
+            url:   '../php/Reg_reserva1.php',
+            type:  'post',
+            
+            error: function()
+            {alert("Error");},
+            success:  function (valores){
+                $("#CServicio").val(valores.precio);
+                
+            }
+            })
+            
+        }      
     </script>
 </body>
 </html>

@@ -28,7 +28,7 @@ document.write(
 ''+
     '            <li class="nav-item">'+
     '              '+
-    '              <a class="nav-link active" href="../php/eliminar_cliente.php"> <img src="../assets/img/iconDelete.png" alt="Clientes" width="30" height="24">Eliminar cuenta</a>'+
+    '              <a class="nav-link active" href="../php/eliminar_cliente.php" onclick="return confir2();"> <img src="../assets/img/iconDelete.png" alt="Clientes" width="30" height="24">Eliminar cuenta</a>'+
     '                  '+
     '            </li>'+
     '            '+
@@ -59,6 +59,16 @@ document.write(
 
 function confir() {
     var respuesta = confirm("Esta seguro que desea Cerrar sesion");
+    if (respuesta== true) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function confir2() {
+    var respuesta = confirm("Esta seguro que desea eliminar su cuenta");
     if (respuesta== true) {
         return true;
     }
