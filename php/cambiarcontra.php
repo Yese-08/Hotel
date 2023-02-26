@@ -13,18 +13,19 @@
             if($_consulta ){
                 echo '
                 <script> alert("Su contraseña fue actualizada exitosamente");</script>';
-                header("location: ../html/Login.html" );
+                header("location: ../html/Login.php" );
             }	
             else{
                 echo '
                 <script > alert("error de consulta");</script>';
-                			
-            
+                header("location: ../html/cambiarcontrase.php" );
+              
             } 
         }
         else{
             echo '
-			<script> alert("Las contraseñas no coinciden");</script>';			
+			<script> alert("Las contraseñas no coinciden");</script>';	
+           	
 		
         }
 		

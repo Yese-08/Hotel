@@ -28,8 +28,9 @@
 		}
 	}
 	else{
+		
 		echo '
-			<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/Login.html?emaiIncorrecto=1">';
+			<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/Login.php?emaiIncorrecto=1">';
 			
 	}
 

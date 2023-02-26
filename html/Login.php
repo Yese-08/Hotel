@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,21 @@
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
 </head>
 <body>
-  
+<?php
+/*session_start();
+if(isset($_SESSION['fallo_login'])){
+  echo $_SESSION['fallo_login'];
+}*/
+if(isset($_REQUEST['emaiIncorrecto'])){?>
+    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+  top: 50%;
+  left: 90%;">
+  <strong>Credenciales incorrectas!</strong> verificar datos.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php }
+
+?>
   <section class="vh-100" style="background-image: url(../assets/img/fon10.jpg)">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -37,7 +52,7 @@
                       <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Contraseña" required/>
                     </div>
                     <div class="pt-1 mb-4" style="text-align: center;">
-                      <button class="btn btn-dark btn-lg btn-block" type="submit">Iniciar</button>
+                      <button class="btn btn-dark btn-lg btn-block" id="bte" type="submit">Iniciar</button>
                     </div>
                   </form>
                   <!--restablecer contraseña-->

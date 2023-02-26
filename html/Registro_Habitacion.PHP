@@ -86,7 +86,7 @@ include '../php/function_validarSesion.php'?>
                     </div>      
                   </div>
                           <div class="col">
-                              <table class="table table-striped table-hover table-primary   table-responsive"  >
+                              <table class="table table-striped table-hover table-primary   table-responsive" onclick="Auto();" >
                                   <thead class=" table-striped table-dark" >
                                       <tr>
                                           <th>N° habitacion</th>
@@ -106,12 +106,12 @@ include '../php/function_validarSesion.php'?>
                                           while($row=mysqli_fetch_array($query)){
                                           
                                           ?>
-                                              <tr>
-                                                  <th><?php  echo $row["numero_hab"]?></th>
-                                                  <th><?php  echo $row["categoria"]?></th>
-                                                  <th><?php  echo $row["detalles"]?></th>
-                                                  <th><?php  echo "$".$row["precio"]?></th>                                       
-                                                  <th><?php  echo $row["estado"]?></th></th>  
+                                              <tr id="fila">
+                                                  <td ><?php  echo $row["numero_hab"]?></td>
+                                                  <td><?php  echo $row["categoria"]?></td>
+                                                  <td><?php  echo $row["detalles"]?></td>
+                                                  <td><?php  echo "$".$row["precio"]?></td>                                       
+                                                  <td><?php  echo $row["estado"]?></th></td>  
                                                   <th><a href="../php/Actua_habitacion.php?numero_hab=<?php echo $row["numero_hab"] ?>"> <img src="../assets/img/icon3.png" alt="Actualizar" width="30" height="24"></a></th>                                                                                        
                                               </tr>
                                           <?php 
@@ -125,5 +125,8 @@ include '../php/function_validarSesion.php'?>
 </body>
 </html>
 </body>
-</html><?php
+
+</html>
+
+<?php
 }else{header('location: http://localhost/conGra/proyecto/html/Login.html');}?>
