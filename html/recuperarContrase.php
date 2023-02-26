@@ -32,7 +32,22 @@
         </div>
     </nav>
     <!--hhh-->
+<?php
+/*session_start();
+if(isset($_SESSION['fallo_login'])){
+  echo $_SESSION['fallo_login'];
+}*/
+if(isset($_REQUEST['respuestaIncorrecta'])){?>
+    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+  top: 50%;
+  left: 70%; transform: translate(10%, -50%);">
 
+  <strong>¡Respuesta incorrecta!</strong> Intente nuevamente
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php }
+
+?>
     <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">

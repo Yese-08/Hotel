@@ -13,8 +13,8 @@
 			header("location: ../html/cambiarcontrase.php?emailC=$email" );
 		}	
 		else{
-			echo '
-			<script> alert("Respuesta incorrecta, por favor Verifique.");</script>';			
+			header("location:http://localhost/proyecto/html/recuperarContrase.php?emailR=$email&respuestaIncorrecta=1" );
+					
 		
 		}
 		

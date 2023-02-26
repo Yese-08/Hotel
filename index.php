@@ -314,7 +314,7 @@ function tabla() {
       var result = this.getElementsByTagName('td')[1].innerHTML;
       if(result=='Suite'){
         Swal.fire({
-          title: '<strong>¿Desea reserva la habitacion?</strong>',
+          title: '<strong>¿Desea reservar la habitacion?</strong>',
           icon: 'question',
           html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
               "<br><img src='http://localhost/proyecto/assets/img/hab5.png' with='500' height='250' >",
@@ -334,7 +334,7 @@ function tabla() {
       }
       if(result=='Doble'){
         Swal.fire({
-          title: '<strong>¿Desea reserva la habitacion?</strong>',
+          title: '<strong>¿Desea reservar la habitacion?</strong>',
           icon: 'question',
           html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
               "<br><img src='http://localhost/proyecto/assets/img/doble.PNG' with='500' height='250' >",
@@ -354,7 +354,7 @@ function tabla() {
       }
       if(result=='Simple'){
         Swal.fire({
-          title: '<strong>¿Desea reserva la habitacion?</strong>',
+          title: '<strong>¿Desea reservar la habitacion?</strong>',
           icon: 'question',
           html:"<h4>¡Debe inciar sesion para reservar la habitacion!</h4>"+
               "<br><img src='http://localhost/proyecto/assets/img/cama1.PNG' with='500' height='250' >",
