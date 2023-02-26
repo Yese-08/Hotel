@@ -77,6 +77,9 @@
               
               </form>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="html/autores.html">Autores</a>
+              </li>
             </ul>
             
           </div>
