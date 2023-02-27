@@ -12,16 +12,21 @@
 </head>
 <body>
 <?php
-/*session_start();
-if(isset($_SESSION['fallo_login'])){
-  echo $_SESSION['fallo_login'];
-}*/
 if(isset($_REQUEST['emaiIncorrecto'])){?>
-    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+  <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
   top: 50%;
   left: 80%; transform: translate(10%, -50%);">
 
-  <strong>Credenciales incorrectas!</strong> verificar datos.
+  <strong>¡redenciales incorrectas!</strong> Verificar datos.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php }
+if(isset($_REQUEST['emailNoexiste'])){?>
+  <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+  top: 50%;
+  left: 80%; transform: translate(10%, -50%);">
+
+  <strong>¡El correco no existe!</strong> Verificar datos.
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <?php }
@@ -63,9 +68,9 @@ if(isset($_REQUEST['emaiIncorrecto'])){?>
                         <form action="../php/restablecerContra.php" method="get">
                           <div class="modal-header">
                             <h1 class="modal-title fs-5" id="Actualizar">
-                              <div class="card-header h5 text-white bg-primary">Restablecer contraseña</div>
+                              <div class="card-header h2 text-white bg-primary"><strong>RESTABLECER CONTRASEÑA</strong> </div>
                             </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            
                           </div>
                           <div class="modal-body">
                             <div class="card-body px-5">
@@ -77,13 +82,13 @@ if(isset($_REQUEST['emaiIncorrecto'])){?>
                               <div class="form-outline">
                                 <input type="email" id="Email" name="email" class="form-control my-3" placeholder="Email" required autocomplete="off"/>                    
                               </div>
-                              <a class="btn btn-primary w-100"><button class="btn btn-dark btn-lg btn-block" type="submit">Restablecer la contraseña</button></a>
+                              <a class="btn btn-primary w-100"><button class="btn btn-primary btn-lg btn-block" type="submit">Restablecer</button></a>
                             </div>
                           </div>
                           
                         </form>
-                        <div class="modal-footer">Cerrar
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"></button>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                       </div>
                     </div>

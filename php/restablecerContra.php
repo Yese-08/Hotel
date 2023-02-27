@@ -11,10 +11,7 @@
 	
 	else{
 		if(isset($_REQUEST['email'])){ ?>
-         <div class="alert show showAlert" style="color:#f44336;">
-               <strong> Ops.! </strong>
-               El Correo no Existe, por favor Verifique.
-        </div>
+         <meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/Login.php?emailNoexiste=1">';
 	<?php }
 	}
 	
