@@ -17,7 +17,7 @@ if(isset($_REQUEST['emaiIncorrecto'])){?>
   top: 50%;
   left: 80%; transform: translate(10%, -50%);">
 
-  <strong>¡redenciales incorrectas!</strong> Verificar datos.
+  <strong>¡Credenciales incorrectas!</strong> Verificar datos.
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 <?php }

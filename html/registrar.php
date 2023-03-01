@@ -16,8 +16,33 @@
 if(isset($_SESSION['fallo_login'])){
   echo $_SESSION['fallo_login'];
 }*/
-if(isset($_REQUEST['seRegistro'])){?>
-   <script>
+
+  if(isset($_REQUEST['correoYaExiste'])){?>
+    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+    top: 50%;
+    left: 80%; transform: translate(10%, -50%);">
+    <strong>¡El correo ya se encuentra registrado!</strong>Intenta con otro diferente.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div> 
+<?php }
+  if(isset($_REQUEST['documentoYaExiste'])){?>
+    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+    top: 50%;
+    left: 80%; transform: translate(10%, -50%);">
+    <strong>¡El documento ya se encuentra registrado!</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div> 
+<?php }
+    if(isset($_REQUEST['usuarioYaExiste'])){?>
+      <div class="alert alert-warning alert-dismissible fade show " role="alert" style="color: red;position: absolute;
+      top: 50%;
+      left: 80%; transform: translate(10%, -50%);">
+      <strong>¡El usuario ya se encuentra registrado!</strong>Intenta con uno diferente.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div> 
+<?php }
+  if(isset($_REQUEST['seRegistro'])){?>
+    <script>
       Swal.fire({
         title: '<strong>Se registró exitosamente</strong>'+
         "<br><img src='https://www.cajacopi.com/Content/Imagenes/Pagina/iconocheck.png' with='500' height='250' >",
@@ -36,8 +61,7 @@ if(isset($_REQUEST['seRegistro'])){?>
         } else if (result.isDenied) {
           Swal.fire('Changes are not saved', '', 'info')}})
     </script>
-<?php }
-
+<?php } 
 ?>
    <!-- Section: Design Block -->
 <section class="text-center text-lg-start">

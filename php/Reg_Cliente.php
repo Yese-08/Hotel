@@ -19,25 +19,17 @@
 	$verificar_correo =  mysqli_query($conexion,"SELECT * FROM cliente WHERE email='$email'  ");
 	if (mysqli_num_rows($verificar_correo) > 0) {
 		echo '
-			<script> 
-				alert("este correo ya se encuentra registrado, intenta con otro diferente");
-			</script>
-		';	
-		$verificar_correo =  mysqli_query($conexion,"SELECT * FROM cliente WHERE   numero_documento='$NDocum'");
-		if (mysqli_num_rows($verificar_correo) > 0) {
+			<<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/registrar.php?correoYaExiste=1">';
+		
+		$verificar_documento =  mysqli_query($conexion,"SELECT * FROM cliente WHERE   numero_documento='$NDocum'");
+		if (mysqli_num_rows($verificar_documento) > 0) {
 		echo '
-			<script> 
-				alert("este numero de documento ya se encuentra registrado, intenta con otro diferente");
-			</script>
-		';	
+			<<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/registrar.php?documentoYaExiste=1">';
 		}
 		$verificar_usuario =  mysqli_query($conexion,"SELECT * FROM cliente WHERE usario='$Usuario'");
 		if (mysqli_num_rows($verificar_usuario) > 0) {
 		echo '
-			<script> 
-				alert("este usuario ya se encuentra registrado, intenta con otro diferente");
-			</script>
-		';	
+			<<meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/registrar.php?usuarioYaExiste=1">';
 		}
 	}
 	
