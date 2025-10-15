@@ -1,45 +1,106 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+Hotel Mar Azul
+📋 Descripción general
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+    Hotel Mar Azul es un sistema de gestión hotelera desarrollado para administrar reservas, clientes, habitaciones y servicios adicionales.
+    Permite controlar el flujo completo de operaciones en un hotel, desde el registro de usuarios y control de habitaciones, hasta la facturación y generación de reportes.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+    El sistema incorpora control de acceso por roles, permitiendo diferenciar entre recepcionistas y usuarios externos, garantizando seguridad y organización en cada proceso.
 
----
+⚙️ Tecnologías utilizadas
 
-## Edit a file
+    Frontend: HTML5, CSS3, JavaScript, AJAX
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+    Backend: PHP
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+    Base de datos: MySQL
 
----
+    Servidor local: XAMPP
 
-## Create a file
+🚀 Características principales
 
-Next, you’ll add a new file to this repository.
+    🧑‍💼 Registro y gestión de usuarios con diferentes roles.
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+    🏠 CRUD completo para habitaciones, clientes y servicios adicionales.
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+    🧾 Facturación automática según los servicios utilizados.
 
----
+    🗓️ Gestión de reservas con control de disponibilidad.
 
-## Clone a repository
+    🔐 Cambio y recuperación de contraseñas.
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+    📊 Reportes dinámicos sobre ocupación, servicios y usuarios.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+🧩 Estructura del proyecto
+    Hotel-Mar-Azul/
+    │
+    ├── assets/              # Recursos estáticos (imágenes, íconos)
+    ├── css/                 # Hojas de estilo
+    ├── html/                # Páginas estructurales
+    ├── js/                  # Funciones JavaScript y AJAX
+    ├── php/                 # Lógica del servidor (CRUD, control de acceso, etc.)
+    ├── sql/                 # Script de base de datos (hotel.sql)
+    ├── index.php            # Página principal del sistema
+    └── README.md            # Documentación del proyecto
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+💻 Instalación y configuración
+
+    Clona o descarga este repositorio.
+
+    git clone https://github.com/Yese-08/Hotel.git
+
+
+    Instala y ejecuta XAMPP (o Laragon).
+
+    Asegúrate de tener activados los módulos Apache y MySQL.
+
+    Copia la carpeta del proyecto dentro de:
+
+    C:\xampp\htdocs\
+
+
+Crea la base de datos:
+
+    Abre http://localhost/phpmyadmin
+
+    Crea una base de datos llamada hotel_mar_azul
+
+    Importa el archivo sql.sql
+
+    Ejecuta el sistema:
+
+    Abre en tu navegador:
+
+    http://localhost/Hotel/
+
+    🔐 Roles de acceso
+    Rol	Descripción
+    Recepcionista	Administra habitaciones, clientes y servicios.
+    Usuario externo	Puede realizar reservas y gestionar su perfil.
+
+👩‍💻 Equipo de desarrollo
+
+    Yesenia Castro Arboleda
+
+    Harold Ávila Araujo
+
+    Clariza Angulo Castillo
+
+    Vanessa Angulo Mesa
+
+⚖️ Licencia
+
+    Este proyecto está bajo la licencia
+    Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)
+    .
+
+    Esto significa que:
+
+        Puedes copiar y redistribuir el material en cualquier medio o formato.
+
+        Puedes adaptarlo o modificarlo.
+
+        Debe darse crédito a los autores.
+
+        No puede usarse con fines comerciales.
+
+        Las obras derivadas deben compartirse bajo la misma licencia.
