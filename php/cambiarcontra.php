@@ -11,7 +11,7 @@
             $_consulta=mysqli_query($conexion,$sql);
             
             if($_consulta ){
-                header("location:http://localhost/proyecto/html/cambiarcontrase.php?emailC=$email&seActualizo=1" );
+                header("location:../html/cambiarcontrase.php?emailC=$email&seActualizo=1" );
             }	
             else{
                 echo '
@@ -22,7 +22,7 @@
         }
         else{
             
-            header("location:http://localhost/proyecto/html/cambiarcontrase.php?emailC=$email&noCoincide=1" );
+            header("location:../html/cambiarcontrase.php?emailC=$email&noCoincide=1" );
 			
            	
 		

@@ -55,7 +55,7 @@ if(isset($_REQUEST['seActualizo'])){?>
        //Read more about isConfirmed, isDenied below 
        if (result.isConfirmed) {
          
-         window.location.href = "http://localhost/proyecto/html/Login.php";
+         window.location.href = "../html/Login.php";
        } else if (result.isDenied) {
          Swal.fire('Changes are not saved', '', 'info')}})
    </script>

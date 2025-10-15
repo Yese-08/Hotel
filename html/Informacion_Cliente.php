@@ -74,7 +74,7 @@
                         <div class="col">                         
                             <div class="col-md-7 col-lg-8" style="margin: 0 auto;">
                                 <label>Telefono</label>
-                                <br><input class="form-control" name="numPer"  id="Telefono" type="text" value= <?php echo $telefono?> required><br>
+                                <br><input class="form-control" name="numPer"  id="Telefono" type="tel" value= <?php echo $telefono?> required><br>
                             </div>
                         </div>
                     </div>    

@@ -14,15 +14,12 @@ include '../php/function_validarSesion.php';
     <div class="container">
       <div class="row">
         <div class="col-2-4">
-          <div class="slogan">Facturación
-            <a href="#">volver</a>
-            <a href="">¿Necesito ayuda?</a>
-          </div>
-          
-        </div>
         <div class="slogan">
           <a href="javascript:window.print()">Imprimir</a>
-        </div><!--.col-->
+        </div>
+          
+        </div>
+        <!--.col-->
       </div><!--.row-->
     </div><!--.container-->
   </div><!--.control-bar-->

@@ -1,14 +1,22 @@
 <?php 
-    include 'conexion.php';
-    include '../php/conexion.php';
-    session_start();
+   include "conexion.php";
+    include "function_validarSesion.php";
+    
+    $user = $_SESSION['ide'];
+    $query= "SELECT nombre, tipo_documento, numero_documento, fecha_nacimiento, nacionalidad, telefono, email, genero FROM cliente where numero_documento='$user'";
+	$_consulta= mysqli_query($conexion,$query);
+    while($Date=mysqli_fetch_assoc($_consulta)){
 
-    $numero_documento=$_GET['numero_documento'];
-
-    $sql="SELECT * FROM cliente WHERE numero_documento='$numero_documento'";
-    $query=mysqli_query($conexion,$sql);
-    $row=mysqli_fetch_array($query);      
-
+        $nombre = $Date['nombre'];
+        $T_Documento = $Date['tipo_documento'];
+        $n_Documento = $Date['numero_documento'];
+        $fecha = $Date['fecha_nacimiento'];
+        $nacionalidad = $Date['nacionalidad'];
+        $telefono = $Date['telefono'];
+        $email = $Date['email'];
+        $genero = $Date['genero'];
+       
+    }
 ?>
 
 <!DOCTYPE html>

@@ -19,7 +19,6 @@ include '../php/function_validarSesion.php'
      <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
 </head>
 <body>
-  
   <script src="../js/menu3.js"></script>
   
   <br>

@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../assets/img/log1.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
 <!---MENÚ PRINCIPAL-->
@@ -112,19 +113,46 @@
                             </div>
                             <!--editable-->
                             <div class="row">
-                                <div class="col">
-                                    <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" type="number" name="Habitacion" id="Habitacion" placeholder="Habitacion"  value="<?php echo $row['numero_hab']  ?>"  required pattern="^[0-9]+$"/>
-                                        <label for="Habitacion">Habitacion</label><br>
+                                
+                                <div class="col">                            
+                                    <div class="col-xs-4  col-md-7 col-lg-8" style="margin: 0 auto;" >
+                                    <label for="Genero">Número de habitación</label>
+                                        <br><select class="form-select" aria-label="Default select example" name="Nhabitacion" id="Nhabitacion"  onblur=" Auto();">
+                                        <option selected><?php echo $row['numero_hab']  ?></option>
+                                        
+                                        <?php
+                                            include "../php/buscar.php";
+                                            $getServicios2= mostrar('habitacion','numero_hab');
+                                        
+                                            while($row = mysqli_fetch_array($getServicios2)){
+                                                $numero_hab = $row['numero_hab'];
+                                                $precio = $row['precio'];
+
+                                                ?>
+                                                <option value="<?php echo $numero_hab; ?>"><?php echo $numero_hab; ?></option>
+                                                <?php
+                                        }
+
+                                        ?>
+                                        </select> <br>
                                     </div>
                                 </div>
+                            
                                 <div class="col">                            
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Costo"  id="Costo" placeholder="Costo habitacion" value="<?php echo $row['costo']  ?>"   required onchange="totalPagar();">
-                                        <label for="Costo">Costo habitacion</label><br>
+                                        <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitacion"  >
+                                        <label for="CostoH">Costo habitacion</label><br>
                                     </div>
                                 </div>
                             </div>
+                            <?php 
+  
+                            $numero_reserva=$_GET['numero_reserva'];
+                            $sql="SELECT * FROM reserva WHERE numero_reserva='$numero_reserva'";
+                            $query=mysqli_query($conexion,$sql);
+                            $row=mysqli_fetch_array($query);      
+
+                            ?>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
@@ -132,55 +160,88 @@
                                         <label for="N_Persona">N° Personas</label><br>
                                     </div>
                                 </div>
-                                <div class="col">                            
-                                    <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Fecha_ingreso"  id="Fecha_ingreso" placeholder="Fecha_ingreso" value="<?php echo $row['fecha_ingreso']  ?>"   required>
-                                        <label for="Fecha_ingreso">Fecha ingreso</label><br>
+                               
+                                    <div class="col">                            
+                                        <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" type= "date"name="Fecha_ingreso"  id="Fecha_ingreso" placeholder="Fecha_ingreso" value="<?php echo $row['fecha_ingreso']  ?>" required onchange="calcularnoche();">
+                                            <label for="Fecha_ingreso">Fecha ingreso</label><br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Fecha_salida"  id="Fecha_salida" placeholder="Fecha_salida" value="<?php echo $row['fecha_salida']  ?>"   required>
+                                        <input class="form-control" name="Fecha_salida" type= "date" id="Fecha_salida" placeholder="Fecha_salida" value="<?php echo $row['fecha_salida']  ?>"   required onchange="calcularnoche();">
                                         <label for="Fecha_salida">Fecha salida</label><br>
                                     </div>
                                     
                                 </div>
-                                <div class="col">                            
-                                <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="N_Noches" id="N_Noches" placeholder="N_Noches"  value="<?php echo $row['numero_noches']  ?>"  required onchange="totalPagar();">
-                                        <label for="N_Noches"> Noches</label><br>
+                            
+                              
+                                    <div class="col">                            
+                                    <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                            <input class="form-control" name="N_Noches" id="N_Noches" placeholder="N_Noches"  value="<?php echo $row['numero_noches']  ?>"  required onchange="calcularnoche();">
+                                            <label for="N_Noches"> Noches</label><br>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Servicios"  id="Servicios" placeholder="Servicios" value="<?php echo $row['servicios_adicionales']  ?>"   required>
-                                        <label for="Servicios">Servicios</label><br>
-                                    </div>
-                                    
+                                <div class="form-group col-md-6">
+                                <div class="col-xs-4  col-md-7 col-lg-8"style="margin: 0 auto;" >
+                                <label for="Genero">Servicios adicionales</label>
+                                    <select class="form-select" name="serviciosAd" id="serviciosAd" onblur="auto();">
+                                    <option selected><?php echo $row['servicios_adicionales']  ?></option>
+                                   
+                                        <?php
+                                        $getServicios2= mostrar('servicios','nombre'); 
+                                        while($row = mysqli_fetch_array($getServicios2)){
+                                            
+                                            $nombre = $row['nombre'];
+                                            
+
+                                            ?>
+                                            <option value="<?php echo $nombre; ?>"><?php echo $nombre; ?></option>
+                                            <?php
+                                        } ?>
+                                    </select>        
+                                                              
                                 </div>
-                                <div class="col">                            
-                                <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control" name="Costos_servicios" id="Costos_servicios" placeholder="Costos_servicios"  value="<?php echo $row['costo_servicio']  ?>"  required onchange="totalPagar();">
-                                        <label for="Costos_servicios"> Costo servicios</label><br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    
-                                </div>                        
-                                <div class="col"  >
-                                    <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                        <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar"  value="<?php echo $row['total_pagar']  ?>"  required onchange="totalPagar();">
-                                        <label for="TPagar">Total a pagar</label><br>
-                                    </div>                            
-                                </div>
+                                        
+                            </div> 
                                 
+                            <div class="row">
+                                        <div class="col">                            
+                                            <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                                    <input class="form-control" name="CServicio" id="CServicio" placeholder="Costos servicios" requiered onclick="totalPagar();">
+                                                    <label for="CServicio"> Costo servicios</label><br>
+                                            </div>
+                                        </div>
+                                    
+                                
+                                    <?php 
+    
+                                    $numero_reserva=$_GET['numero_reserva'];
+                                    $sql="SELECT * FROM reserva WHERE numero_reserva='$numero_reserva'";
+                                    $query=mysqli_query($conexion,$sql);
+                                    $row=mysqli_fetch_array($query);      
+
+                                ?>
+                            
+                                
+                            </div> 
+                            <div class="row">
+                                <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
+                                    <input class="form-control"   name="TPagar"  id="TPagar" placeholder="Total a pagar"  value="<?php echo $row['total_pagar']  ?>"  required onclick="totalPagar();">
+                                    <label for="TPagar">Total a pagar</label><br>
+                                </div>                            
+                            
                             </div>
+                            
+                          
+
                                    
                             <div class="container text-center">
                                 <div class="row">                          
@@ -214,18 +275,85 @@
   <!-- Section: Design Block -->
   <script>
         // si la respuesta que se espera es sumar
+        function calcularnoche(){
+            var fechaI = document.getElementById('Fecha_ingreso').value;
+            var fechaS = document.getElementById('Fecha_salida').value;
+            var diasDeDiferencia = 0;
+            var fecha1 = new Date(fechaI);
+            var fecha2 = new Date(fechaS);
+            
+            var diferencia = fecha2.getTime() - fecha1.getTime();
+            diasDeDiferencia = diferencia / 1000 / 60 / 60 / 24;
+            document.getElementById('N_Noches').value = diasDeDiferencia
+             return diasDeDiferencia ;
+        }
         function totalPagar(){
-            var CostoH = document.getElementById('Costo').value;
-            var CServicio = document.getElementById('Costos_servicios').value;
-            var Nnoches = document.getElementById('N_Noches').value;
+           var CostoH = document.getElementById('CostoH').value;
+            var CServicio = document.getElementById('CServicio').value;
+            var Nnoches = calcularnoche();
+              
 
+             /*var CostoH = $("#CostoH").val();
+            var CServicio = $("#CServicio").val();
+            var Nnoches = calcularnoche();*/ 
             if(CostoH !=='' && CServicio!==''){
                 var suma = parseInt(CostoH )+parseInt(CServicio);
                 var sumCosHbSer = parseInt(suma)*parseInt(Nnoches);
-                document.getElementById('TPagar').value = sumCosHbSer;
+                document.getElementById('TPagar').value = sumCosHbSer
+               
             }
+            return console.log(CostoH,CServicio)
         
-        } 
+        }
+        function Auto(){
+            Nhabitacion = $("#Nhabitacion").val();
+            
+            var parametros = 
+            {
+            "buscar": "1",
+            "Nhabitacion" : Nhabitacion
+            
+            };
+            $.ajax(
+            {
+            data:  parametros,
+            dataType: 'json',
+            url:   '../php/Reg_reserva1.php',
+            type:  'post',
+            error: function()
+            {alert("Error");},
+            success:  function (valores){
+                $("#CostoH").val(valores.precio);
+                
+            }
+            }) 
+            
+        }   
+        function auto(){
+            serviciosAd = $("#serviciosAd").val();
+            var parametros = 
+            {
+            "buscar1": "1",
+            "serviciosAd" : serviciosAd
+            
+            };
+            $.ajax(
+            {
+            data:  parametros,
+            dataType: 'json',
+            url:   '../php/Reg_reserva1.php',
+            type:  'post',
+            
+            error: function()
+            {alert("Error");},
+            success:  function (valores){
+                $("#CServicio").val(valores.precio);
+                
+            }
+            })
+            
+        }      
+    </script>
     </script>
 </body>
 </html>

@@ -119,9 +119,9 @@ while($Date=mysqli_fetch_assoc($_consulta)){
                                                 </div>
                                         </div>
                                         </div>
-                                        <div class="col">                            
+                                        <div class="col">                             
                                             <div class="form-floating col-md-7 col-lg-8" style="margin: 0 auto;">
-                                                <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" required >
+                                                <input class="form-control" name="CostoH"  id="CostoH" placeholder="Costo habitación" value=  "<?php echo  $precio?>"  required >
                                                 <label for="CostoH">Costo habitación</label><br>
                                             </div>
                                         </div>

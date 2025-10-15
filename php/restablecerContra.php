@@ -11,7 +11,7 @@
 	
 	else{
 		if(isset($_REQUEST['email'])){ ?>
-         <meta http-equiv="refresh" content="0;url=http://localhost/proyecto/html/Login.php?emailNoexiste=1">';
+         <meta http-equiv="refresh" content="0;url=../html/Login.php?emailNoexiste=1">';
 	<?php }
 	}
 	

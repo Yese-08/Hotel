@@ -19,9 +19,15 @@ $servicios_adicionales =$_POST['serviciosAd'];
 $costo_servicio =$_POST['CServicio'];
 $total_pagar =$_POST['TPagar'];
 
-
-
-$sql = "INSERT INTO reserva values('', '$nombre_client','$tipo_documento', '$numero_documento', '$fecha_nacimiento', '$nacionalidad','$telefono', '$email', '$genero', '$numero_hab', '$costo','$numero_personas','$fecha_ingreso','$fecha_salida','$numero_noches','$servicios_adicionales','$costo_servicio','$total_pagar')";
+$sql = "INSERT INTO reserva (
+    numero_documento, nombre_cliente, nacionalidad, telefono, email,
+    numero_hab, costo, numero_personas, fecha_ingreso, fecha_salida,
+    numero_noches, servicios_adicionales, costo_servicio, total_pagar
+) VALUES (
+    '$numero_documento', '$nombre_client', '$nacionalidad', '$telefono', '$email',
+    '$numero_hab', '$costo', '$numero_personas', '$fecha_ingreso', '$fecha_salida',
+    '$numero_noches', '$servicios_adicionales', '$costo_servicio', '$total_pagar'
+)";
     $_consulta = mysqli_query($conexion, $sql);
     if($_consulta ){
         $sql2="UPDATE habitacion SET  estado ='Ocupado'  WHERE numero_hab='$numero_hab'";

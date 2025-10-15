@@ -13,7 +13,7 @@
 			header("location: ../html/cambiarcontrase.php?emailC=$email" );
 		}	
 		else{
-			header("location:http://localhost/proyecto/html/recuperarContrase.php?emailR=$email&respuestaIncorrecta=1" );
+			header("location:../html/recuperarContrase.php?emailR=$email&respuestaIncorrecta=1" );
 					
 		
 		}
