@@ -33,14 +33,14 @@ Hotel Mar Azul
 🧩 Estructura del proyecto
     Hotel-Mar-Azul/
     │
-    ├── assets/              # Recursos estáticos (imágenes, íconos)
-    ├── css/                 # Hojas de estilo
-    ├── html/                # Páginas estructurales
-    ├── js/                  # Funciones JavaScript y AJAX
-    ├── php/                 # Lógica del servidor (CRUD, control de acceso, etc.)
-    ├── sql/                 # Script de base de datos (hotel.sql)
-    ├── index.php            # Página principal del sistema
-    └── README.md            # Documentación del proyecto
+    ├── assets/     # Recursos estáticos (imágenes, íconos)
+    ├── css/        # Hojas de estilo
+    ├── html/       # Páginas estructurales
+    ├── js/         # Funciones JavaScript y AJAX
+    ├── php/        # Lógica del servidor (CRUD, control de acceso, etc.)
+    ├── sql/        # Script de base de datos (hotel.sql)
+    ├── index.php   # Página principal del sistema
+    └── README.md    # Documentación del proyecto
 
 💻 Instalación y configuración
 
